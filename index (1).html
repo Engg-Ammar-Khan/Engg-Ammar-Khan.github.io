@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ammar Khan · Portfolio</title>
+<link rel="artifact-thumbnail" href="thumb.jpg">
+<meta name="description" content="Ammar Khan — MSc (Mechanics) Sustainable Manufacturing and Advanced Technologies, École Centrale de Lyon (ENISE) & Mines Saint-Étienne. Seeking a 6-month end-of-studies internship in manufacturing & materials R&D.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+/* VOICE: a materials & manufacturing student's CV, made interactive — precise, academic first
+   IDEA: a technical drawing sheet: grid, dimension lines, mono readouts
+   PICTURE: the current programme (ENISE + Mines campuses) leads; research projects carry the page
+   COLOUR and TYPE: graphite ground, blueprint steel-blue, molten-metal orange accent; Archivo + Inter
+   LAYOUT: CV order — profile, education, research projects + live models, experience, skills, activities, contact */
+:root{color-scheme:dark;--bg:#0f1115;--panel:#17191e;--panel2:#1d2026;--line:#2f3238;--ink:#f5f5f4;--mute:#a8a29e;--steel:#b5aea6;--hot:#ff9f43;--ok:#7dd3fc}
+*{box-sizing:border-box;min-width:0}[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4,.disp{font-family:Archivo,Inter,sans-serif;letter-spacing:-.01em}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.grid-bg{background-image:linear-gradient(rgba(255,159,67,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,159,67,.07) 1px,transparent 1px),linear-gradient(rgba(255,159,67,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,159,67,.035) 1px,transparent 1px);background-size:80px 80px,80px 80px,16px 16px,16px 16px}
+.glass{background:rgba(15,17,21,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line)}
+.card{background:rgba(23,25,30,.78);backdrop-filter:blur(7px) saturate(1.1);-webkit-backdrop-filter:blur(7px) saturate(1.1);border:1px solid var(--line);border-radius:14px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.lift:hover{transform:translateY(-4px);border-color:rgba(255,159,67,.45);box-shadow:0 16px 40px -18px rgba(255,159,67,.35)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.6rem 1.1rem;border-radius:10px;font-weight:600;transition:all .2s;cursor:pointer}
+.btn-hot{background:var(--hot);color:#0a0b0d}.btn-hot:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-line{border:1px solid var(--line);color:var(--ink)}.btn-line:hover{border-color:var(--steel);color:var(--steel)}
+:focus-visible{outline:2px solid var(--steel);outline-offset:3px}
+.chip{display:inline-flex;align-items:center;gap:.35rem;font-size:13px;padding:.25rem .6rem;border-radius:999px;border:1px solid var(--line);color:var(--mute);background:var(--panel2);white-space:nowrap}
+.tab{min-height:44px;padding:.5rem 1rem;border-radius:999px;border:1px solid var(--line);color:var(--mute);font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab[aria-pressed=true]{background:var(--hot);color:#0a0b0d;border-color:var(--hot)}
+.lang button{padding:.3rem .55rem;border-radius:6px;font-weight:600;font-size:14px;color:var(--mute);min-height:36px}
+.lang button[aria-pressed=true]{color:#0a0b0d;background:var(--ink)}
+.caret::after{content:"";display:inline-block;width:3px;height:1em;background:var(--hot);margin-left:4px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.gear{animation:spin 30s linear infinite}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.spot{border:1.5px solid transparent;border-radius:15px;background:linear-gradient(var(--panel),var(--panel)) padding-box,conic-gradient(from var(--a),rgba(255,159,67,.15),#ff9f43 12%,rgba(255,159,67,.15) 30%,rgba(255,159,67,.15)) border-box;animation:rot 6s linear infinite}
+@keyframes rot{to{--a:360deg}}
+.sk{cursor:pointer;transition:all .25s;min-height:32px}.sk .dot{width:6px;height:6px;border-radius:50%;background:var(--mute);transition:all .25s}
+.sk:hover{border-color:var(--hot);color:var(--ink)}
+.sk[aria-pressed=true]{background:rgba(255,159,67,.16);border-color:var(--hot);color:var(--ink);box-shadow:0 0 0 3px rgba(255,159,67,.10),0 0 18px rgba(255,159,67,.35)}
+.sk[aria-pressed=true] .dot,.sk:hover .dot{background:var(--hot);box-shadow:0 0 8px var(--hot)}
+.in .sk{animation:skin .7s both;animation-delay:calc(var(--i)*70ms)}
+@keyframes skin{0%{opacity:0;transform:translateY(6px)}55%{opacity:1;border-color:var(--hot);box-shadow:0 0 16px rgba(255,159,67,.45)}100%{transform:none}}
+.seg{width:22px;height:7px;border-radius:3px;background:var(--panel2);border:1px solid var(--line)}
+.in .seg.on{animation:segin .4s both;animation-delay:calc(.9s + var(--i)*120ms)}
+@keyframes segin{to{background:var(--hot);border-color:var(--hot);box-shadow:0 0 8px rgba(255,159,67,.5)}}
+.sk-tip{position:absolute;z-index:5;max-width:260px;padding:.45rem .7rem;border-radius:8px;font-size:13px;background:var(--ink);color:var(--bg);pointer-events:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.sk-tip::after{content:"";position:absolute;left:var(--ax,20px);top:-5px;width:10px;height:10px;background:var(--ink);transform:rotate(45deg)}
+details.rpt[open] .chev{transform:rotate(180deg)}details.rpt summary::-webkit-details-marker{display:none}details.rpt summary{list-style:none}
+.feat{border-color:rgba(255,159,67,.45)}.cov img{transition:transform .6s}.feat:hover .cov img{transform:scale(1.06)}
+.glow{position:relative;background:linear-gradient(135deg,#ff9f43,#7dd3fc);box-shadow:0 0 0 0 rgba(255,159,67,.55);animation:glow 2.4s infinite}
+.glow:hover{filter:brightness(1.08);transform:translateY(-1px)}@keyframes glow{0%{box-shadow:0 0 0 0 rgba(255,159,67,.55)}70%{box-shadow:0 0 0 12px rgba(255,159,67,0)}100%{box-shadow:0 0 0 0 rgba(255,159,67,0)}}
+@media(max-width:600px){.stack thead{display:none}.stack tr{display:block;padding:8px 0;border-radius:10px}.stack td{display:block;padding:2px 12px!important}}
+
+#bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:var(--bg)}
+#bgfx>div{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease}
+#bgfx>div.on{opacity:1}
+#bgfx canvas{position:absolute;inset:0;width:100%;height:100%}
+#bgfx [data-scene=profile].on{opacity:.75}@media (max-width:700px){#bgfx [data-scene=profile].on{opacity:.4}}
+#bgfx [data-scene=grains].on{opacity:.5}
+#bgfx [data-scene=spray].on{opacity:.8}
+#bgfx [data-scene=fem].on{opacity:.6}
+#bgfx [data-scene=blueprint].on{opacity:.8}
+#bgfx [data-scene=grains] canvas{image-rendering:auto;filter:blur(.9px) contrast(1.1)}
+#bgfx .scrim{position:absolute;inset:0;opacity:1!important;background:radial-gradient(120% 90% at 18% 35%,rgba(15,17,21,.82) 0%,rgba(15,17,21,.55) 45%,rgba(15,17,21,.15) 100%)}
+#bgfx [data-scene=blueprint] svg *{fill:none;stroke:#ff9f43;stroke-width:2.2;filter:drop-shadow(0 0 4px rgba(255,159,67,.6));stroke-dashoffset:calc(var(--L) * 1px * (1 - var(--p,0)));transition:stroke-dashoffset .2s linear}
+#bgfx [data-scene=blueprint] svg .dim{stroke:#7dd3fc;stroke-width:1}
+#bgfx [data-scene=blueprint] svg .hot{stroke:#ffb347}
+#bgfx [data-scene=fem] video{position:absolute;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%)}
+.bgcap{position:fixed;right:16px;bottom:14px;z-index:5;opacity:0;font:12px/1.3 "JetBrains Mono",monospace;color:#a8a29e;background:rgba(15,17,21,.75);border:1px solid var(--line);border-radius:8px;padding:6px 10px;pointer-events:none;transition:opacity .5s}
+main,footer,header{position:relative}main,footer{z-index:2}
+body.grid-bg{background-image:none}
+@media (max-width:700px){.bgcap{display:none}}
+
+.grad{background:linear-gradient(92deg,#ffffff 0%,#ffe2bf 35%,#ffb766 65%,#ff8a3d 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1.grad{background-size:200% 100%;animation:shine 8s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.sec-h .n{color:#ffb766!important;text-shadow:0 0 12px rgba(255,159,67,.55)}
+#typed{color:#ffb766!important;text-shadow:0 0 18px rgba(255,183,102,.45)}
+.card h3{color:#ffffff}
+.kcv{color:#ffb766!important;background:rgba(255,183,102,.14)!important;box-shadow:inset 0 0 0 1px rgba(255,183,102,.35)}
+.kb{animation:kb 16s ease-in-out infinite alternate;transform-origin:40% 40%}@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+.bar{height:100%;border-radius:6px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.sec-h{display:flex;align-items:baseline;gap:.8rem}.sec-h .n{font-family:"JetBrains Mono",monospace;color:var(--hot);font-size:15px}
+dialog{padding:0;border:0;background:transparent;max-width:min(940px,94vw);width:100%;color:var(--ink)}
+dialog::backdrop{background:rgba(3,7,12,.78);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.fig{position:relative;min-height:300px}.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+input[type=range]{width:100%;accent-color:var(--hot);height:28px}
+.scroll{overflow-x:auto;scrollbar-width:thin}
+.gallery{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory}.gallery img{scroll-snap-align:start;flex:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="grid-bg">
+<div id="bgfx" aria-hidden="true">
+ <div data-scene="profile"></div>
+ <div data-scene="grains"></div>
+ <div data-scene="blueprint"><svg viewBox="0 0 1200 800" preserveAspectRatio="xMaxYMid slice" style="position:absolute;inset:0;width:100%;height:100%">
+  <g transform="translate(640 90)">
+   <polygon points="80,260 300,140 440,250 220,370"/><polygon points="80,260 220,370 220,400 80,290"/><polygon points="220,370 440,250 440,280 220,400"/>
+   <ellipse cx="260" cy="255" rx="46" ry="26"/><polyline class="hot" points="80,262 220,372 220,388 80,278"/>
+   <line class="dim" x1="80" y1="430" x2="440" y2="430"/><line class="dim" x1="80" y1="420" x2="80" y2="440"/><line class="dim" x1="440" y1="420" x2="440" y2="440"/>
+  </g>
+  <g transform="translate(760 520)">
+   <path d="M0 0 L60 0 L110 150 L-50 150 Z"/><path d="M-50 150 L110 150 L110 170 L-50 170 Z"/>
+   <path d="M-40 130 Q-10 105 20 130 M20 130 Q50 105 80 130 M-28 95 Q5 72 38 95 M38 95 Q70 72 92 98 M-15 60 Q15 40 45 60 M45 60 Q72 40 98 62 M-5 25 Q25 8 55 25 M55 25 Q80 8 104 30"/>
+   <path d="M-160 0 L0 0 L-50 150 L-160 150 Z"/><path d="M60 0 L220 0 L220 150 L110 150 Z"/>
+  </g>
+  <g transform="translate(1040 300)">
+   <circle r="95"/><circle r="70"/><circle class="dim" r="4"/><path d="M-30 80 L-22 240 L22 240 L30 80"/><line class="dim" x1="-95" y1="-120" x2="95" y2="-120"/>
+  </g>
+  <g transform="translate(560 600)">
+   <circle r="70"/><circle r="22"/><path d="M0 -92 L10 -70 L-10 -70 Z M92 0 L70 10 L70 -10 Z M0 92 L-10 70 L10 70 Z M-92 0 L-70 -10 L-70 10 Z M65 -65 L57 -43 L43 -57 Z M65 65 L43 57 L57 43 Z M-65 65 L-57 43 L-43 57 Z M-65 -65 L-43 -57 L-57 -43 Z"/>
+  </g>
+  <path class="dim" d="M600 40 H1180 M600 760 H1180 M600 40 V760 M1180 40 V760 M1000 700 H1180 M1000 700 V760"/>
+ </svg></div>
+ <div data-scene="fem">
+  <video src="bg-cutting-dark.mp4" muted loop playsinline preload="none" style="right:-2%;top:10%;width:min(70vw,1000px)"></video>
+  <video src="bg-friction-dark.mp4" muted loop playsinline preload="none" style="left:-2%;bottom:4%;width:min(46vw,620px)"></video>
+ </div>
+ <div data-scene="spray"></div>
+ <div class="scrim"></div>
+</div>
+<div class="bgcap" id="bgcap"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="fixed top-0 inset-x-0 z-40 glass" style="border-width:0 0 1px">
+  <nav class="max-w-[1160px] mx-auto flex items-center gap-4 px-4 sm:px-6 h-16">
+    <a href="#top" class="disp font-extrabold text-lg flex items-center gap-2"><span class="grid place-items-center w-9 h-9 rounded-lg" style="background:var(--hot);color:#0a0b0d">AK</span><span class="hidden sm:inline">Ammar Khan</span></a>
+    <div class="hidden lg:flex gap-5 ml-6 text-[15px]" style="color:var(--mute)">
+      <a href="#about" class="hover:text-white" data-i="nav_about">About</a>
+      <a href="#education" class="hover:text-white" data-i="nav_edu">Education</a>
+      <a href="#research" class="hover:text-white" data-i="nav_res">Research</a>
+      <a href="#projects" class="hover:text-white" data-i="nav_proj">Projects</a>
+      <a href="#experience" class="hover:text-white" data-i="nav_exp">Experience</a>
+      <a href="#contact" class="hover:text-white" data-i="nav_contact">Contact</a>
+    </div>
+    <div class="ml-auto flex items-center gap-2">
+      <div class="lang flex items-center rounded-lg p-1" style="border:1px solid var(--line)" role="group" aria-label="Language">
+        <button id="b-en" aria-pressed="true">EN</button><span style="color:var(--line)">|</span><button id="b-fr" aria-pressed="false">FR</button>
+      </div>
+      <a href="Ammar_Khan_CV.pdf" target="_blank" rel="noopener" class="btn btn-hot !min-h-[40px] !py-1.5 text-sm"><i data-lucide="download" class="w-4 h-4"></i><span data-i="cv">CV (PDF)</span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+<!-- ============ PROFILE (HERO) ============ -->
+<section class="relative pt-28 pb-10 px-4 sm:px-6" style="overflow-x:clip">
+  <div class="max-w-[1160px] mx-auto">
+    <div class="flex items-center gap-5 sm:gap-9">
+      <div class="relative flex-none w-[118px] h-[177px] sm:w-[180px] sm:h-[270px]">
+        <img src="portrait.jpg" alt="Ammar Khan" class="w-full h-full rounded-2xl object-cover" style="border:1px solid rgba(255,159,67,.5);box-shadow:0 24px 60px -24px rgba(255,159,67,.55)">
+        <span class="absolute -left-2 -top-2 w-5 h-5" style="border-left:2px solid var(--hot);border-top:2px solid var(--hot)"></span>
+        <span class="absolute -right-2 -bottom-2 w-5 h-5" style="border-right:2px solid var(--hot);border-bottom:2px solid var(--hot)"></span>
+      </div>
+      <div>
+        <h1 class="grad disp font-extrabold text-[clamp(34px,5.5vw,60px)] leading-[1.08]">Ammar Khan</h1>
+        <p class="disp text-[clamp(16px,2vw,22px)] font-medium mt-1" style="color:var(--steel)" data-i="role">MSc (Mechanics) Sustainable Manufacturing and Advanced Technologies (SMAT) — M2</p>
+        <p class="text-[15px]" style="color:var(--mute)">École Centrale de Lyon (ENISE) · Mines Saint-Étienne (EMSE)</p>
+      </div>
+    </div>
+
+    <div class="mt-7 inline-flex flex-wrap items-center gap-2 px-3 py-2 rounded-xl" style="background:rgba(125,211,252,.1);border:1px solid rgba(125,211,252,.35)">
+      <span class="relative flex w-2.5 h-2.5"><span class="absolute inset-0 rounded-full animate-ping" style="background:var(--ok);opacity:.6"></span><span class="relative w-2.5 h-2.5 rounded-full" style="background:var(--ok)"></span></span>
+      <span class="text-sm font-medium" style="color:#d6f0fd" data-i="avail">Available from February 2027 • 6-month M2 internship • Mobility: France, Europe &amp; Canada</span>
+    </div>
+
+    <div class="mt-6 text-[clamp(20px,2.6vw,30px)] disp font-bold min-h-[2.8em] sm:min-h-[1.4em]"><span style="color:var(--mute)" data-i="type_pre">Ready to contribute to </span><span id="typed" class="caret" style="color:var(--hot)"></span></div>
+
+    <p class="mt-3 max-w-[72ch] text-[17px]" style="color:#e7e5e4" data-i="pitch">M2 student in Sustainable Manufacturing and Advanced Technologies, working where processes meet materials: machining and tool wear, additive manufacturing, weld metallurgy, tribology, surface metrology and composite materials.</p>
+
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a href="Ammar_Khan_CV.pdf" target="_blank" rel="noopener" class="btn btn-hot"><i data-lucide="file-down" class="w-5 h-5"></i><span data-i="cv_full">Download CV (PDF)</span></a>
+            <a href="https://www.linkedin.com/in/ammar-khan-a016a524a" target="_blank" rel="noopener" class="btn btn-line"><i data-lucide="linkedin" class="w-5 h-5"></i>LinkedIn</a>
+      <a href="#contact" class="btn btn-line"><i data-lucide="mail" class="w-5 h-5"></i><span data-i="contact_me">Contact</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="px-4 sm:px-6 py-14">
+  <div class="max-w-[1160px] mx-auto">
+    <h2 class="sec-h disp font-extrabold text-[clamp(28px,3.6vw,40px)] reveal"><span class="n">01</span><span class="grad" data-i="about_t">About me</span></h2>
+    <div class="grid lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)] gap-8 mt-6 items-start">
+      <div class="reveal">
+        <p class="text-[17px]" style="color:#e7e5e4" data-i="about_p1">I'm an M2 student in Sustainable Manufacturing and Advanced Technologies at École Centrale de Lyon (ENISE) and Mines Saint-Étienne. My work sits where processes meet materials: how a tool wears while cutting, how a laser-clad or cold-sprayed 316L layer forms, what a weld's microstructure says about its thermal history, and how far a 3D microscope can be trusted to measure a surface.</p>
+        <p class="text-[17px] mt-4" style="color:#e7e5e4" data-i="about_p2">Before the Master's I spent a year as a Lean Manufacturing Engineer at Interloop, helping ramp up a new plant, and interned at OGDCL's Dakhni gas processing plant on PLC, HMI and SCADA systems. That industrial background shapes how I do research: measurable, practical and close to production.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="tiles">
+        <!-- 1 turning -->
+        <figure class="card lift m-0 p-3 reveal"><svg viewBox="0 0 200 120" class="w-full rounded-lg" style="background:#141619" aria-hidden="true">
+          <defs><pattern id="stp" width="40" height="10" patternUnits="userSpaceOnUse" patternTransform="skewX(-25)"><rect width="40" height="10" fill="#36322f"/><rect width="40" height="4" fill="#5c5650"/><animateTransform attributeName="patternTransform" type="translate" additive="sum" from="0 0" to="0 10" dur=".35s" repeatCount="indefinite"/></pattern>
+          <linearGradient id="cyl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient></defs>
+          <rect x="8" y="30" width="26" height="60" rx="3" fill="#66605a"/>
+          <rect x="34" y="42" width="110" height="36" fill="url(#stp)"/><rect x="34" y="42" width="110" height="36" fill="url(#cyl)"/>
+          <g><rect x="34" y="42" width="110" height="36" fill="none"/><line x1="40" y1="42" x2="40" y2="78" stroke="#ff9f43" stroke-width="3" opacity=".5"><animate attributeName="x1" values="40;140;40" dur="2.4s" repeatCount="indefinite"/><animate attributeName="x2" values="40;140;40" dur="2.4s" repeatCount="indefinite"/></line></g>
+          <polygon points="150,92 172,92 172,104 140,104" fill="#a8a29e"/><polygon points="140,80 150,78 150,92 140,92" fill="#fb7185"/>
+          <path d="M146 78 q6 -14 18 -14 q8 2 6 10" fill="none" stroke="#ffb347" stroke-width="2.5" stroke-linecap="round"><animate attributeName="opacity" values="1;.2;1" dur=".6s" repeatCount="indefinite"/></path>
+          <circle cx="150" cy="76" r="2" fill="#ffd27a"><animate attributeName="cy" values="76;50" dur=".8s" repeatCount="indefinite"/><animate attributeName="cx" values="150;175" dur=".8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur=".8s" repeatCount="indefinite"/></circle>
+          <circle cx="148" cy="76" r="1.6" fill="#fb7185"><animate attributeName="cy" values="76;46" dur="1.1s" repeatCount="indefinite"/><animate attributeName="cx" values="148;188" dur="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.1s" repeatCount="indefinite"/></circle>
+        </svg><figcaption class="mt-2"><b class="text-[15px]" data-i="tl1">Machining &amp; tool wear</b><span class="block text-xs" style="color:var(--mute)" data-i="td1">Turning trials, flank wear VB, tool life, cutting power</span></figcaption></figure>
+        <!-- 2 laser cladding -->
+        <figure class="card lift m-0 p-3 reveal"><svg viewBox="0 0 200 120" class="w-full rounded-lg" style="background:#141619" aria-hidden="true">
+          <defs><radialGradient id="glow"><stop offset="0" stop-color="#fff3b0"/><stop offset=".4" stop-color="#fb7185"/><stop offset="1" stop-color="#fb7185" stop-opacity="0"/></radialGradient><linearGradient id="bead" x1="0" x2="1"><stop offset="0" stop-color="#8a847d"/><stop offset=".85" stop-color="#c4bdb5"/><stop offset="1" stop-color="#ffb347"/></linearGradient></defs>
+          <rect x="10" y="92" width="180" height="20" fill="#44403c"/>
+          <rect x="20" y="84" height="9" rx="4" fill="url(#bead)" width="0"><animate attributeName="width" values="0;150;150" keyTimes="0;.85;1" dur="3.2s" repeatCount="indefinite"/></rect>
+          <g><animateTransform attributeName="transform" type="translate" values="0 0;150 0;150 0" keyTimes="0;.85;1" dur="3.2s" repeatCount="indefinite"/>
+            <rect x="10" y="14" width="20" height="30" rx="3" fill="#9c968f"/><polygon points="10,44 30,44 24,56 16,56" fill="#78716c"/>
+            <line x1="20" y1="56" x2="20" y2="86" stroke="#fb7185" stroke-width="3"><animate attributeName="stroke-opacity" values="1;.6;1" dur=".3s" repeatCount="indefinite"/></line>
+            <circle cx="20" cy="86" r="10" fill="url(#glow)"/>
+            <circle cx="14" cy="60" r="1.5" fill="#e7e5e4"><animate attributeName="cy" values="58;82" dur=".7s" repeatCount="indefinite"/></circle><circle cx="26" cy="64" r="1.5" fill="#e7e5e4"><animate attributeName="cy" values="58;82" dur=".9s" repeatCount="indefinite"/></circle>
+          </g>
+        </svg><figcaption class="mt-2"><b class="text-[15px]" data-i="tl2">Additive manufacturing</b><span class="block text-xs" style="color:var(--mute)" data-i="td2">Laser cladding &amp; cold spray of 316L, SEM powder analysis, Ansys melt pool</span></figcaption></figure>
+        <!-- 3 surface metrology -->
+        <figure class="card lift m-0 p-3 reveal"><svg viewBox="0 0 200 120" class="w-full rounded-lg" style="background:#141619" aria-hidden="true">
+          <defs><linearGradient id="turbo" x1="0" x2="1"><stop offset="0" stop-color="#30123b"/><stop offset=".2" stop-color="#4686fb"/><stop offset=".4" stop-color="#1be5b5"/><stop offset=".6" stop-color="#a4fc3c"/><stop offset=".8" stop-color="#fb8022"/><stop offset="1" stop-color="#7a0403"/></linearGradient></defs>
+          <path d="M10 92 C25 70 35 100 50 84 S75 66 90 88 S115 98 128 76 S152 70 165 90 S182 96 190 82 L190 112 L10 112 Z" fill="url(#turbo)" opacity=".9"/>
+          <g><animateTransform attributeName="transform" type="translate" values="0 0;150 0;0 0" dur="5s" repeatCount="indefinite"/>
+            <rect x="12" y="10" width="26" height="22" rx="3" fill="#9c968f"/><rect x="18" y="32" width="14" height="12" fill="#78716c"/>
+            <line x1="25" y1="44" x2="25" y2="96" stroke="#ff9f43" stroke-width="1.5" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" values="0;-12" dur=".6s" repeatCount="indefinite"/></line>
+          </g>
+        </svg><figcaption class="mt-2"><b class="text-[15px]" data-i="tl3">Surface metrology</b><span class="block text-xs" style="color:var(--mute)" data-i="td3">3D microscopy of surface topography — LTDS research</span></figcaption></figure>
+        <!-- 4 multi-pass weld -->
+        <figure class="card lift m-0 p-3 reveal"><svg viewBox="0 0 200 120" class="w-full rounded-lg" style="background:#141619" aria-hidden="true">
+          <polygon points="10,100 92,100 70,40 10,40" fill="#44403c"/><polygon points="190,100 108,100 130,40 190,40" fill="#44403c"/>
+          <g>
+          <path d="M92 100 Q100 86 108 100 Z" fill="#fb7185"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="6s" repeatCount="indefinite"/></path>
+          <path d="M88 92 Q100 72 112 92 Q100 100 88 92Z" fill="#f59e0b"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.2;.3;.9;1" dur="6s" repeatCount="indefinite"/></path>
+          <path d="M82 78 Q92 60 100 74 Q96 86 82 78Z" fill="#a78bfa"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.4;.5;.9;1" dur="6s" repeatCount="indefinite"/></path>
+          <path d="M100 74 Q108 58 118 78 Q104 86 100 74Z" fill="#ff9f43"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.55;.65;.9;1" dur="6s" repeatCount="indefinite"/></path>
+          <path d="M72 50 Q86 30 100 54 Q100 62 76 62Z" fill="#7dd3fc"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.7;.78;.9;1" dur="6s" repeatCount="indefinite"/></path>
+          <path d="M100 54 Q114 30 128 50 L124 62 Q100 62 100 54Z" fill="#f472b6"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.8;.86;.9;1" dur="6s" repeatCount="indefinite"/></path>
+          </g>
+          <text x="100" y="114" fill="#a8a29e" font-size="9" text-anchor="middle">pass 1 → 6</text>
+        </svg><figcaption class="mt-2"><b class="text-[15px]" data-i="tl4">Welding &amp; metallurgy</b><span class="block text-xs" style="color:var(--mute)" data-i="td4">Multi-pass C-Mn weld: etching, microscopy, grain size, phases</span></figcaption></figure>
+        <!-- 5 tribology -->
+        <figure class="card lift m-0 p-3 reveal"><svg viewBox="0 0 200 120" class="w-full rounded-lg" style="background:#141619" aria-hidden="true">
+          <line x1="0" y1="22" x2="200" y2="22" stroke="#a8a29e" stroke-width="1.5"/>
+          <line x1="0" y1="34" x2="200" y2="34" stroke="#c9a46a" stroke-width="3" stroke-dasharray="14 6"><animate attributeName="stroke-dashoffset" values="0;-40" dur=".5s" repeatCount="indefinite"/></line>
+          <line x1="40" y1="22" x2="40" y2="34" stroke="#a8a29e"/><line x1="160" y1="22" x2="160" y2="34" stroke="#a8a29e"/>
+          <rect x="70" y="36" width="60" height="7" rx="2" fill="#57534e"/>
+          <path d="M80 43 L100 78 L120 43 M100 78 L84 104 M100 78 L116 104" stroke="#ff9f43" stroke-width="3" fill="none"/>
+          <rect x="70" y="104" width="60" height="8" fill="#44403c"/>
+          <g fill="#ffd27a"><circle cx="96" cy="36" r="1.8"><animate attributeName="cx" values="96;80" dur=".4s" repeatCount="indefinite"/><animate attributeName="cy" values="36;48" dur=".4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur=".4s" repeatCount="indefinite"/></circle>
+          <circle cx="104" cy="36" r="1.5"><animate attributeName="cx" values="104;86" dur=".55s" repeatCount="indefinite"/><animate attributeName="cy" values="36;30" dur=".55s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur=".55s" repeatCount="indefinite"/></circle></g>
+        </svg><figcaption class="mt-2"><b class="text-[15px]" data-i="tl5">Tribology</b><span class="block text-xs" style="color:var(--mute)" data-i="td5">Friction &amp; wear of the pantograph–catenary contact</span></figcaption></figure>
+        <!-- 6 production & automation -->
+        <figure class="card lift m-0 p-3 reveal"><svg viewBox="0 0 200 120" class="w-full rounded-lg" style="background:#141619" aria-hidden="true">
+          <rect x="10" y="80" width="180" height="8" rx="4" fill="#44403c"/>
+          <g fill="#ff9f43"><animateTransform attributeName="transform" type="translate" values="0 0;60 0" dur="1.6s" repeatCount="indefinite"/>
+            <rect x="-50" y="62" width="18" height="18" rx="2"/><rect x="10" y="62" width="18" height="18" rx="2"/><rect x="70" y="62" width="18" height="18" rx="2"/><rect x="130" y="62" width="18" height="18" rx="2"/></g>
+          <rect x="0" y="56" width="10" height="34" fill="#141619"/><rect x="190" y="56" width="10" height="34" fill="#141619"/>
+          <path d="M140 46 A26 26 0 0 1 192 46" fill="none" stroke="#292524" stroke-width="7"/>
+          <path d="M140 46 A26 26 0 0 1 185 30" fill="none" stroke="#7dd3fc" stroke-width="7"/>
+          <line x1="166" y1="46" x2="182" y2="30" stroke="#fb7185" stroke-width="2.5"><animateTransform attributeName="transform" type="rotate" values="-40 166 46;8 166 46;-40 166 46" dur="3s" repeatCount="indefinite"/></line>
+          <text x="166" y="58" fill="#a8a29e" font-size="9" text-anchor="middle">OEE</text>
+          <g fill="#7dd3fc"><circle cx="20" cy="20" r="4"><animate attributeName="opacity" values="1;.2;1" dur="1s" repeatCount="indefinite"/></circle><circle cx="34" cy="20" r="4" fill="#fb7185"><animate attributeName="opacity" values=".2;1;.2" dur="1s" repeatCount="indefinite"/></circle></g>
+          <text x="46" y="24" fill="#a8a29e" font-size="9">PLC</text>
+        </svg><figcaption class="mt-2"><b class="text-[15px]" data-i="tl6">Production &amp; automation</b><span class="block text-xs" style="color:var(--mute)" data-i="td6">Plant ramp-up at Interloop; PLC, HMI, SCADA at OGDCL</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education" class="px-4 sm:px-6 py-14">
+  <div class="max-w-[1160px] mx-auto">
+    <h2 class="sec-h disp font-extrabold text-[clamp(28px,3.6vw,40px)] reveal"><span class="n">02</span><span class="grad" data-i="edu_t">Education</span></h2>
+
+    <!-- Current programme: the main card -->
+    <article class="card mt-6 overflow-hidden reveal">
+      <div class="grid grid-cols-2 h-44 sm:h-64">
+        <figure class="relative m-0 h-full overflow-hidden"><img src="enise.jpg" alt="ENISE campus, Saint-Étienne" class="absolute inset-0 w-full h-full object-cover"><figcaption class="absolute left-2 bottom-2 glass rounded-md px-2 py-1 text-xs">ENISE · Centrale Lyon</figcaption></figure>
+        <figure class="relative m-0 h-full overflow-hidden"><img src="mines.jpg" alt="Mines Saint-Étienne" class="absolute inset-0 w-full h-full object-cover"><figcaption class="absolute left-2 bottom-2 glass rounded-md px-2 py-1 text-xs">Mines Saint-Étienne</figcaption></figure>
+      </div>
+      <div class="p-5 sm:p-8">
+        <div class="flex flex-wrap items-center gap-2"><span class="chip" style="color:var(--ok);border-color:rgba(125,211,252,.4)" data-i="current">Current</span><span class="mono text-sm" style="color:var(--steel)">Sept 2025 – 2027 · France</span></div>
+        <h3 class="disp font-extrabold text-[clamp(22px,2.8vw,30px)] mt-2 leading-tight" data-i="msc_t">MSc (Mechanics) Sustainable Manufacturing and Advanced Technologies (M1 → M2)</h3>
+        <p class="mt-1" style="color:var(--mute)">École Centrale de Lyon (ENISE) · École des Mines de Saint-Étienne (EMSE)</p>
+        <h4 class="disp font-bold mt-6 mb-3" data-i="courses_t">Core courses</h4>
+        <div class="grid sm:grid-cols-2 gap-2" id="courses"></div>
+        <h4 class="disp font-bold mt-6 mb-3" data-i="research_now">Ongoing research</h4>
+        <a href="#research" class="flex items-start gap-3 rounded-xl p-4 lift" style="background:linear-gradient(90deg,rgba(255,159,67,.10),rgba(255,159,67,.06),rgba(255,159,67,.10));border:1px solid rgba(255,159,67,.35)">
+          <i data-lucide="microscope" class="w-6 h-6 flex-none mt-0.5" style="color:var(--hot)"></i>
+          <span><b data-i="rn_title">Exploring the limits of 3D microscopes for the characterisation of surface topographies</b><br><span class="text-sm" style="color:var(--mute)" data-i="rn_sub">Preparatory research project · LTDS (Centrale Lyon – ENISE) · Prof. Frédéric Cabanettes</span>
+          <span class="flex flex-wrap gap-1.5 mt-2"><span class="chip !text-xs" style="color:#7dd3fc">Optical</span><span class="chip !text-xs" style="color:#7dd3fc">Focus variation</span><span class="chip !text-xs" style="color:#ff9f43">Confocal</span><span class="chip !text-xs" style="color:#c084fc">SEM</span><span class="chip !text-xs" style="color:#fb7185">AFM</span></span></span>
+          <i data-lucide="arrow-down-right" class="w-5 h-5 flex-none ml-auto" style="color:var(--steel)"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Bachelor: secondary card -->
+    <article class="card mt-4 grid sm:grid-cols-[220px_minmax(0,1fr)] overflow-hidden reveal">
+      <img src="uet-peshawar.jpg" alt="UET Peshawar, Jalozai campus" class="w-full h-36 sm:h-full object-cover">
+      <div class="p-5 sm:p-6">
+        <span class="mono text-sm" style="color:var(--steel)">Oct 2020 – Aug 2024 · Pakistan</span>
+        <h3 class="disp font-bold text-[clamp(18px,2.2vw,22px)] mt-1" data-i="be_t">BE Industrial &amp; Manufacturing Engineering</h3>
+        <p class="text-sm" style="color:var(--mute)" data-i="be_o">University of Engineering and Technology Peshawar (Jalozai campus) · Washington Accord accredited</p>
+        <div class="flex flex-wrap gap-1.5 mt-3" id="be-courses"></div>
+        <p class="text-sm mt-4" style="color:#e7e5e4"><b data-i="fyp_l">Final-year project:</b> <span data-i="fyp_t">Enhancement of overall equipment effectiveness through predictive maintenance of machines (2024).</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ONGOING RESEARCH ============ -->
+<section id="research" class="px-4 sm:px-6 py-14">
+  <div class="max-w-[1160px] mx-auto">
+    <h2 class="sec-h disp font-extrabold text-[clamp(28px,3.6vw,40px)] reveal"><span class="n">03</span><span class="grad" data-i="res_t">Ongoing research</span></h2>
+    <div class="card mt-6 p-5 sm:p-8 reveal" style="background:linear-gradient(160deg,#17191e 0%,#11223a 60%,#13213a 100%)">
+      <div class="flex flex-wrap gap-2"><span class="chip" style="color:var(--ok);border-color:rgba(125,211,252,.4)" data-i="ongoing">Ongoing</span><span class="chip">LTDS · Centrale Lyon – ENISE</span><span class="chip" data-i="res_sup">Supervisor: Prof. Frédéric Cabanettes</span></div>
+      <h3 class="disp font-extrabold text-[clamp(22px,3vw,32px)] leading-tight mt-3 max-w-[30ch]" data-i="res_q">How far can a microscope be trusted to measure a surface?</h3>
+      <p class="mt-3 max-w-[75ch]" style="color:#e7e5e4" data-i="res_p">Every functional surface — a bearing race, a cutting insert, an additively built part — is judged from a topography measurement. But each instrument sees the surface differently: its resolution, its noise and the slopes it can follow all shape the result. My project explores those limits across five families of microscopes.</p>
+      <h4 class="disp font-bold mt-6 mb-3" data-i="obj_t">Objectives</h4>
+      <div class="grid sm:grid-cols-2 gap-2" id="res-obj"></div>
+
+      <div class="grid lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)] gap-6 mt-7">
+        <div>
+          <div class="text-sm mb-2" style="color:var(--mute)" data-i="res_pick">Select an instrument</div>
+          <div class="grid gap-2" id="mic-list" role="group" aria-label="Microscopes"></div>
+          <dl class="grid grid-cols-2 gap-2 mt-4" id="mic-spec"></dl>
+        </div>
+        <div>
+          <div class="relative rounded-xl overflow-hidden" style="border:1px solid var(--line)">
+            <canvas id="mic-map" width="220" height="220" class="block w-full aspect-[4/3] object-cover"></canvas>
+            <div class="absolute left-3 top-3 glass rounded-md px-2 py-1 text-xs" id="mic-label"></div>
+            <div class="absolute right-3 top-3 glass rounded-md px-2 py-1 text-xs mono" id="mic-type"></div>
+            <div class="absolute left-3 bottom-3 glass rounded-md px-2 py-1 text-xs" id="mic-zoom" hidden></div>
+          </div>
+          <div class="rounded-xl mt-3 p-3" style="background:var(--panel2);border:1px solid var(--line)">
+            <div class="flex flex-wrap justify-between gap-2 text-xs"><span data-i="res_prof">Height profile across the centre line</span><span><span style="color:#a8a29e">━ </span><span data-i="res_true">real surface</span> &nbsp;<span id="mic-col">━ </span><span data-i="res_meas">as measured</span></span></div>
+            <canvas id="mic-prof" class="block w-full h-[90px] mt-1"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="disp font-bold mt-8 mb-3" data-i="res_lat">Lateral resolution — typical ranges</h4>
+      <div id="mic-chart" class="space-y-2"></div>
+      <div class="flex justify-between text-xs mono mt-1 pl-[110px] sm:pl-[180px]" style="color:var(--mute)"><span>1 nm</span><span>10 nm</span><span>100 nm</span><span>1 µm</span><span>10 µm</span></div>
+      <p class="text-xs mt-4" style="color:var(--mute)" data-i="res_note">Simulated surface and typical orders of magnitude from the literature, shown to explain the question — not measurement results from the project. Results will be added as the work progresses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH & ACADEMIC PROJECTS ============ -->
+<section id="projects" class="px-4 sm:px-6 py-14">
+  <div class="max-w-[1160px] mx-auto">
+    <div class="reveal">
+      <h2 class="sec-h disp font-extrabold text-[clamp(28px,3.6vw,40px)]"><span class="n">04</span><span class="grad" data-i="proj_t">Research &amp; academic projects</span></h2>
+      <p class="mt-2 max-w-[62ch]" style="color:var(--mute)" data-i="proj_p">Machining, surfaces, metallurgy and materials. Open a card for the full case study.</p>
+    </div>
+    <div class="scroll mt-6 -mx-1 px-1"><div class="flex gap-2 w-max" id="filters" role="group" aria-label="Filter projects"></div></div>
+    <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"></div>
+  </div>
+</section>
+
+<!-- ============ PROFESSIONAL EXPERIENCE ============ -->
+<section id="experience" class="px-4 sm:px-6 py-14">
+  <div class="max-w-[1160px] mx-auto">
+    <h2 class="sec-h disp font-extrabold text-[clamp(28px,3.6vw,40px)] reveal"><span class="n">05</span><span class="grad" data-i="exp_t">Professional experience</span></h2>
+    <div class="mt-6 space-y-4" id="exp"></div>
+  </div>
+</section>
+
+<!-- ============ SKILLS + LANGUAGES ============ -->
+<section id="skills" class="px-4 sm:px-6 py-14">
+  <div class="max-w-[1160px] mx-auto">
+    <div class="card p-5 sm:p-7 reveal relative" id="skcard">
+      <h2 class="sec-h disp font-extrabold text-[clamp(24px,3vw,32px)]"><span class="n">06</span><span class="grad" data-i="sk_t">Skills &amp; languages</span></h2>
+      <div class="mt-5 grid sm:grid-cols-3 gap-5 relative" id="skillgroups"></div>
+      <div id="sk-tip" class="sk-tip" role="status" hidden></div>
+      <div class="flex flex-wrap gap-x-8 gap-y-2 mt-6" id="langs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEADERSHIP ============ -->
+<section id="leadership" class="px-4 sm:px-6 py-14">
+  <div class="max-w-[1160px] mx-auto">
+    <h2 class="sec-h disp font-extrabold text-[clamp(28px,3.6vw,40px)] reveal"><span class="n">07</span><span class="grad" data-i="lead_t">Leadership &amp; activities</span></h2>
+    <article class="spot mt-6 grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] reveal">
+      <figure class="relative m-0 min-h-[280px] sm:min-h-[380px] overflow-hidden rounded-t-[13px] lg:rounded-l-[13px] lg:rounded-tr-none">
+        <img src="iise.jpg" alt="Ammar Khan addressing students as IISE chapter president, UET Peshawar" class="kb absolute inset-0 w-full h-full object-cover object-top">
+        <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(15,17,21,0) 55%,rgba(15,17,21,.85))"></div>
+        <div class="absolute left-4 top-4 flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold" style="background:var(--hot);color:#0a0b0d"><i data-lucide="award" class="w-4 h-4"></i><span data-i="iise_badge">President · 2024</span></div>
+        <figcaption class="absolute left-4 right-4 bottom-4 text-sm" style="color:#e7e5e4" data-i="lead_cap">Addressing students at an IISE chapter session, UET Peshawar (Jalozai campus)</figcaption>
+      </figure>
+      <div class="p-6 sm:p-8 flex flex-col">
+        <svg viewBox="0 0 120 120" class="w-20 h-20" aria-hidden="true">
+          <g class="gear" style="transform-origin:60px 60px"><circle cx="60" cy="60" r="56" fill="none" stroke="#ff9f43" stroke-width="1.5" stroke-dasharray="5 6"/></g>
+          <polygon points="60,14 100,37 100,83 60,106 20,83 20,37" fill="rgba(255,159,67,.10)" stroke="#ff9f43" stroke-width="2"/>
+          <text x="60" y="68" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-style="italic" font-size="26" fill="#f5f5f4">IISE</text>
+        </svg>
+        <h3 class="disp font-extrabold text-[clamp(22px,2.8vw,30px)] leading-tight mt-4" data-i="iise_t">President, IISE student chapter</h3>
+        <p class="text-sm mt-1" style="color:var(--steel)" data-i="iise_o">Institute of Industrial and Systems Engineers · UET Peshawar (Jalozai campus)</p>
+        <p class="mt-4" style="color:#e7e5e4" data-i="iise_p">I led the university's chapter of the Institute of Industrial and Systems Engineers, the international professional body for industrial engineering. That meant running the chapter's team, representing it, and hosting its sessions for fellow students, like the one in this photo.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="chip"><i data-lucide="users" class="w-3.5 h-3.5" style="color:var(--hot)"></i><span data-i="iise_k1">Team leadership</span></span>
+          <span class="chip"><i data-lucide="mic" class="w-3.5 h-3.5" style="color:var(--hot)"></i><span data-i="iise_k2">Public speaking</span></span>
+          <span class="chip"><i data-lucide="calendar-check" class="w-3.5 h-3.5" style="color:var(--hot)"></i><span data-i="iise_k3">Event hosting</span></span>
+        </div>
+      </div>
+    </article>
+    <div class="grid sm:grid-cols-3 gap-3 mt-4" id="lead"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="px-4 sm:px-6 py-16">
+  <div class="max-w-[1000px] mx-auto card p-7 sm:p-10 text-center reveal" style="background:linear-gradient(135deg,#12253d,#0f1f33)">
+    <h2 class="disp font-extrabold text-[clamp(28px,4vw,44px)] leading-tight" data-i="ct_t">Looking for an M2 intern in manufacturing or materials R&amp;D?</h2>
+    <p class="mt-3 max-w-[56ch] mx-auto" style="color:#e7e5e4" data-i="ct_p">Available for 6 months from February 2027. I reply within 24 hours.</p>
+    <div class="mt-8 grid sm:grid-cols-2 gap-3 text-left">
+      <a href="mailto:ammarkhan5274@gmail.com" class="card lift p-4 flex items-center gap-3"><i data-lucide="mail" style="color:var(--hot)"></i><span class="break-all">ammarkhan5274@gmail.com</span></a>
+      <a href="tel:+33753640118" class="card lift p-4 flex items-center gap-3"><i data-lucide="phone" style="color:var(--hot)"></i><span class="whitespace-nowrap">+33 7 53 64 01 18</span></a>
+      <a href="https://www.linkedin.com/in/ammar-khan-a016a524a" target="_blank" rel="noopener" class="card lift p-4 flex items-center gap-3"><i data-lucide="linkedin" style="color:var(--hot)"></i><span>LinkedIn</span></a>
+      <a href="https://github.com/Engg-Ammar-Khan" target="_blank" rel="noopener" class="card lift p-4 flex items-center gap-3"><i data-lucide="github" style="color:var(--hot)"></i><span>GitHub</span></a>
+    </div>
+    <div class="mt-6 flex items-center justify-center gap-2 text-sm" style="color:var(--mute)"><i data-lucide="map-pin" class="w-4 h-4"></i><span data-i="ct_loc">Saint-Étienne, France · open to relocation</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="px-4 py-8 text-center text-sm" style="color:var(--mute);border-top:1px solid var(--line)">© 2026 Ammar Khan</footer>
+
+<!-- ============ CASE STUDY MODAL ============ -->
+<dialog id="modal" aria-labelledby="m-title">
+  <div class="relative rounded-2xl overflow-hidden" style="background:var(--panel);border:1px solid var(--line)">
+    <div class="relative h-36 sm:h-44 grid-bg" style="background-color:#141619" id="m-hero"></div>
+    <button id="m-close" class="absolute top-3 right-3 btn glass !min-h-[44px] !px-3" aria-label="Close"><i data-lucide="x"></i></button>
+    <div class="p-5 sm:p-8 max-h-[65vh] overflow-y-auto" id="m-body"></div>
+  </div>
+</dialog>
+
+<script>
+{
+/* ---------------- TRANSLATIONS ---------------- */
+const T={
+en:{obj_t:"Objectives",lead_t:"Leadership & activities",lead_cap:"Addressing students at an IISE chapter session, UET Peshawar (Jalozai campus)",iise_badge:"President · 2024",iise_t:"President, IISE student chapter",iise_o:"Institute of Industrial and Systems Engineers · UET Peshawar (Jalozai campus)",iise_p:"I led the university's chapter of the Institute of Industrial and Systems Engineers, the international professional body for industrial engineering. That meant running the chapter's team, representing it, and hosting its sessions for fellow students, like the one in this photo.",iise_k1:"Team leadership",iise_k2:"Public speaking",iise_k3:"Event hosting",
+about_t:"About me",about_p1:"I'm an M2 student in Sustainable Manufacturing and Advanced Technologies at École Centrale de Lyon (ENISE) and Mines Saint-Étienne. My work sits where processes meet materials: how a tool wears while cutting, how a laser-clad or cold-sprayed 316L layer forms, what a weld's microstructure says about its thermal history, and how far a 3D microscope can be trusted to measure a surface.",about_p2:"Before the Master's I spent a year as a Lean Manufacturing Engineer at Interloop, helping ramp up a new plant, and interned at OGDCL's Dakhni gas processing plant on PLC, HMI and SCADA systems. That industrial background shapes how I do research: measurable, practical and close to production.",tl1:"Machining & tool wear",td1:"Turning trials, flank wear VB, tool life, cutting power",tl2:"Additive manufacturing",td2:"Laser cladding & cold spray of 316L, SEM powder analysis, Ansys melt pool",tl3:"Surface metrology",td3:"3D microscopy of surface topography — LTDS research",tl4:"Welding & metallurgy",td4:"Multi-pass C-Mn weld: etching, microscopy, grain size, phases",tl5:"Tribology",td5:"Friction & wear of the pantograph–catenary contact",tl6:"Production & automation",td6:"Plant ramp-up at Interloop; PLC, HMI, SCADA at OGDCL",res_t:"Ongoing research",res_sup:"Supervisor: Prof. Frédéric Cabanettes",res_q:"How far can a microscope be trusted to measure a surface?",res_p:"Every functional surface — a bearing race, a cutting insert, an additively built part — is judged from a topography measurement. But each instrument sees the surface differently: its resolution, its noise and the slopes it can follow all shape the result. My project explores those limits across five families of microscopes.",res_pick:"Select an instrument",res_prof:"Height profile across the centre line",res_true:"real surface",res_meas:"as measured",res_lat:"Lateral resolution — typical ranges",res_note:"Simulated surface and typical orders of magnitude from the literature, shown to explain the question — not measurement results from the project. Results will be added as the work progresses.",
+nav_about:"About",nav_res:"Research",nav_edu:"Education",nav_proj:"Projects",nav_exp:"Experience",nav_contact:"Contact",cv:"CV (PDF)",cv_full:"Download CV (PDF)",contact_me:"Contact",
+avail:"Available from February 2027 • 6-month M2 internship • Mobility: France, Europe & Canada",
+role:"MSc (Mechanics) Sustainable Manufacturing and Advanced Technologies (SMAT) — M2",type_pre:"Ready to contribute to ",
+pitch:"M2 student in Sustainable Manufacturing and Advanced Technologies, working where processes meet materials: machining and tool wear, additive manufacturing, weld metallurgy, tribology, surface metrology and composite materials. Looking for a 6-month end-of-studies internship in manufacturing and materials R&D.",
+edu_t:"Education",current:"Current",msc_t:"MSc (Mechanics) Sustainable Manufacturing and Advanced Technologies (M1 → M2)",courses_t:"Core courses",research_now:"Ongoing research",
+rn_title:"Exploring the limits of 3D microscopes for the characterisation of surface topographies",rn_sub:"Preparatory research project · LTDS (Centrale Lyon – ENISE) · Prof. Frédéric Cabanettes",
+be_t:"BE Industrial & Manufacturing Engineering",be_o:"University of Engineering and Technology Peshawar (Jalozai campus) · Washington Accord accredited",
+fyp_l:"Final-year project:",fyp_t:"Enhancement of overall equipment effectiveness through predictive maintenance of machines (2024).",proj_t:"Research & academic projects",proj_p:"Machining, surfaces, metallurgy and materials. Open a card for the full case study.",
+f_all:"All",f_mach:"Machining & wear",f_surf:"Surfaces & characterisation",f_mat:"Materials & processes",
+view:"View case study",ongoing:"Ongoing",research:"Research",
+m_ctx:"Context & problem",m_meth:"Methodology & tools",m_act:"Work carried out",m_res:"Results",m_media:"Figures & media",m_lab:"Open the interactive model",
+m_ph:"Figures, report extract or video coming soon",m_ph2:"An image, PDF extract, Loom or GitHub link can be added here.",
+exp_t:"Professional experience",sk_t:"Skills & languages",ct_t:"Looking for an M2 intern in manufacturing or materials R&D?",ct_p:"Available for 6 months from February 2027, in France, elsewhere in Europe or in Canada. I reply within 24 hours.",ct_loc:"Saint-Étienne, France · mobile across Europe and Canada",
+typed:["materials characterisation", "surface metrology", "machining & tool-life studies", "additive manufacturing processes", "tribology & wear", "composite materials", "welding metallurgy", "process optimisation"]},
+fr:{obj_t:"Objectifs",lead_t:"Leadership & engagement",lead_cap:"Intervention lors d'une session du chapitre IISE, UET Peshawar (campus de Jalozai)",iise_badge:"Président · 2024",iise_t:"Président du chapitre étudiant IISE",iise_o:"Institute of Industrial and Systems Engineers · UET Peshawar (campus de Jalozai)",iise_p:"J'ai dirigé le chapitre universitaire de l'Institute of Industrial and Systems Engineers, l'association professionnelle internationale du génie industriel : animation de l'équipe, représentation du chapitre et organisation de ses sessions pour les étudiants, comme celle de cette photo.",iise_k1:"Direction d'équipe",iise_k2:"Prise de parole en public",iise_k3:"Organisation d'événements",
+about_t:"Profil",about_p1:"Je suis étudiant en M2 Sustainable Manufacturing and Advanced Technologies à l'École Centrale de Lyon (ENISE) et à Mines Saint-Étienne. Mon travail se situe là où les procédés rencontrent les matériaux : comment un outil s'use en coupe, comment se forme un dépôt de 316L par rechargement laser ou cold spray, ce que la microstructure d'une soudure révèle de son histoire thermique, et jusqu'où l'on peut se fier à un microscope 3D pour mesurer une surface.",about_p2:"Avant le Master, j'ai été ingénieur Lean Manufacturing pendant un an chez Interloop, où j'ai participé au démarrage d'une nouvelle usine, et stagiaire à l'usine de traitement de gaz de Dakhni (OGDCL) sur les automates, IHM et systèmes SCADA. Ce parcours industriel guide ma façon de faire de la recherche : mesurable, concrète et proche de la production.",tl1:"Usinage & usure d'outil",td1:"Essais de tournage, usure en dépouille VB, durée de vie, puissance de coupe",tl2:"Fabrication additive",td2:"Rechargement laser et cold spray de 316L, analyse MEB des poudres, bain fondu sous Ansys",tl3:"Métrologie des surfaces",td3:"Microscopie 3D de la topographie de surface — recherche au LTDS",tl4:"Soudage & métallurgie",td4:"Soudure multipasse C-Mn : attaque, microscopie, taille de grain, phases",tl5:"Tribologie",td5:"Frottement et usure du contact pantographe–caténaire",tl6:"Production & automatisme",td6:"Démarrage d'usine chez Interloop ; automates, IHM, SCADA chez OGDCL",res_t:"Recherche en cours",res_sup:"Encadrant : Pr Frédéric Cabanettes",res_q:"Jusqu'où peut-on se fier à un microscope pour mesurer une surface ?",res_p:"Toute surface fonctionnelle — piste de roulement, plaquette de coupe, pièce issue de fabrication additive — est jugée à partir d'une mesure de topographie. Mais chaque instrument voit la surface différemment : sa résolution, son bruit et les pentes qu'il peut suivre influencent le résultat. Mon projet explore ces limites sur cinq familles de microscopes.",res_pick:"Choisissez un instrument",res_prof:"Profil de hauteur le long de la ligne centrale",res_true:"surface réelle",res_meas:"surface mesurée",res_lat:"Résolution latérale — plages typiques",res_note:"Surface simulée et ordres de grandeur typiques issus de la littérature, pour illustrer la question — il ne s'agit pas de résultats de mesure du projet. Les résultats seront ajoutés au fil des travaux.",
+nav_about:"Profil",nav_res:"Recherche",nav_edu:"Formation",nav_proj:"Projets",nav_exp:"Expérience",nav_contact:"Contact",cv:"CV (PDF)",cv_full:"Télécharger mon CV (PDF)",contact_me:"Contact",
+avail:"Disponible dès février 2027 • Stage M2 de 6 mois • Mobilité : France, Europe et Canada",
+role:"Master (Mécanique) Sustainable Manufacturing and Advanced Technologies (SMAT) — M2",type_pre:"Prêt à contribuer à ",
+pitch:"Étudiant en M2 Sustainable Manufacturing and Advanced Technologies, je travaille à la rencontre des procédés et des matériaux : usinage et usure d'outil, fabrication additive, métallurgie du soudage, tribologie, métrologie des surfaces et matériaux composites. Je recherche un stage de fin d'études de 6 mois en R&D procédés et matériaux.",
+edu_t:"Formation",current:"En cours",msc_t:"Master (Mécanique) Sustainable Manufacturing and Advanced Technologies (M1 → M2)",courses_t:"Enseignements principaux",research_now:"Recherche en cours",
+rn_title:"Limites des microscopes 3D pour la caractérisation des topographies de surface",rn_sub:"Projet de recherche préparatoire · LTDS (Centrale Lyon – ENISE) · Pr Frédéric Cabanettes",
+be_t:"Diplôme d'ingénieur (BE) en génie industriel et de production",be_o:"University of Engineering and Technology Peshawar (campus de Jalozai) · accrédité Washington Accord",
+fyp_l:"Projet de fin d'études :",fyp_t:"Amélioration du TRS par la maintenance prédictive des machines (2024).",proj_t:"Projets de recherche & académiques",proj_p:"Usinage, surfaces, métallurgie et matériaux. Ouvrez une carte pour l'étude de cas complète.",
+f_all:"Tous",f_mach:"Usinage & usure",f_surf:"Surfaces & caractérisation",f_mat:"Matériaux & procédés",
+view:"Voir l'étude de cas",ongoing:"En cours",research:"Recherche",
+m_ctx:"Contexte & problématique",m_meth:"Méthodologie & outils",m_act:"Travail réalisé",m_res:"Résultats",m_media:"Figures & médias",m_lab:"Ouvrir le modèle interactif",
+m_ph:"Figures, extrait de rapport ou vidéo bientôt disponibles",m_ph2:"Une image, un extrait PDF, un lien Loom ou GitHub peut être ajouté ici.",
+exp_t:"Expérience professionnelle",sk_t:"Compétences & langues",ct_t:"Vous recherchez un stagiaire M2 en R&D procédés ou matériaux ?",ct_p:"Disponible 6 mois à partir de février 2027, en France, ailleurs en Europe ou au Canada. Je réponds sous 24 heures.",ct_loc:"Saint-Étienne, France · mobile en Europe et au Canada",
+typed:["la caractérisation des matériaux", "la métrologie des surfaces", "l'usinage et la durée de vie d'outil", "la fabrication additive", "la tribologie et l'usure", "l'ingénierie des matériaux composites", "la métallurgie du soudage", "l'optimisation des procédés"]}};
+
+/* ---------------- DATA ---------------- */
+const COURSES=[
+{i:"atom",en:"Materials engineering — characterisation, mechanics, metallurgy, materials processes",fr:"Génie des matériaux — caractérisation, mécanique, métallurgie, procédés"},
+{i:"cog",en:"Modelling of material removal",fr:"Modélisation de l'enlèvement de matière"},
+{i:"layers",en:"Additive manufacturing — laser cladding, cold spray",fr:"Fabrication additive — rechargement laser, cold spray"},
+{i:"hammer",en:"Metal working processes",fr:"Procédés de mise en forme des métaux"},
+{i:"factory",en:"Production engineering",fr:"Génie de production"},
+{i:"binary",en:"Advanced computing — MATLAB, Python",fr:"Calcul scientifique — MATLAB, Python"},
+{i:"leaf",en:"Responsible engineering",fr:"Ingénierie responsable"}];
+const BE_COURSES={en:["Metal working processes","Materials engineering","Operations research","Instrumentation & control","Automation","Data science (Python)","Design of experiments"],fr:["Procédés de mise en forme","Génie des matériaux","Recherche opérationnelle","Instrumentation et contrôle","Automatisme","Data science (Python)","Plans d'expériences"]};
+const CATS=["all","mach","surf","mat"];
+const P=[
+{id:"superfin",cat:"surf",data:1,cover:"sf-cover.jpg",org:"LTDS · Centrale Lyon – ENISE",year:"Jan 2026",lab:null,img:"sf-LC-Belt-Finishing_Confocal.jpg",embed:"",dash:"sf",kc:[{en:"−90 % Sa after belt finishing",fr:"−90 % de Sa après toilage"},{en:"18 measurements",fr:"18 mesures"}],
+ title:{en:"Superfinishing of functional surfaces — coatings measured by two microscopes",fr:"Superfinition de surfaces fonctionnelles — revêtements mesurés par deux microscopes"},
+ sum:{en:"Laser-cladded and cold-sprayed coatings, turned then belt-finished, measured 18 times by confocal and focus-variation microscopy (ISO 25178).",fr:"Revêtements par rechargement laser et cold spray, tournés puis toilés, mesurés 18 fois en microscopie confocale et à variation focale (ISO 25178)."},
+ tools:["Confocal microscopy","Focus variation (10×)","MountainsMap","ISO 25178-2","Abbott–Firestone (Sk)"],
+ ctx:{en:"A functional surface is only as good as its finish. We compared two coating routes — laser cladding (LC) and cold spray (CS) — after finish turning and after belt finishing, and measured each surface with two optical instruments to see both how much the process improves the surface and how much the answer depends on the microscope.",fr:"Une surface fonctionnelle vaut ce que vaut sa finition. Nous avons comparé deux voies de revêtement — rechargement laser (LC) et cold spray (CS) — après tournage de finition puis après toilage, en mesurant chaque surface avec deux instruments optiques : pour quantifier le gain apporté par le procédé, et l'influence du microscope sur la réponse."},
+ act:{en:["Finish turning at Vc = 210 m/min, f = 0.2 mm/rev, ap = 0.5 mm, then belt finishing.","Measured every surface by confocal microscopy (828 × 621 µm field, 0.65 µm sampling) and focus variation at 10× (5.9–7.4 × 1.6 mm field, 0.88 µm sampling).","Processed the 18 topographies in MountainsMap: non-measured points filled, form removed (polynomial, degree 3), λs = 2.5 µm S-filter (plus λc = 0.8 mm L-filter on FV data), ISO 25178-2 areal parameters."],fr:["Tournage de finition à Vc = 210 m/min, f = 0,2 mm/tr, ap = 0,5 mm, puis toilage.","Mesure de chaque surface en microscopie confocale (champ 828 × 621 µm, pas 0,65 µm) et en variation focale ×10 (champ 5,9–7,4 × 1,6 mm, pas 0,88 µm).","Traitement des 18 topographies sous MountainsMap : points non mesurés rebouchés, forme supprimée (polynôme de degré 3), filtre S λs = 2,5 µm (plus filtre L λc = 0,8 mm sur les données FV), paramètres surfaciques ISO 25178-2."]},
+ res:{en:[],fr:[]}},
+{id:"toolwear",cat:"mach",data:1,cover:"tw-cover.jpg",org:"ENISE · Centrale Lyon",year:"2025–26",lab:null,img:"",embed:"",dash:"tw",
+ kc:[{en:"13.3 min tool life",fr:"13,3 min de durée de vie"},{en:"VB 0 → 0.155 mm",fr:"VB 0 → 0,155 mm"}],
+ title:{en:"Tool wear & tool life in dry turning of gray cast iron",fr:"Usure et durée de vie d'outil en tournage à sec de fonte grise"},
+ sum:{en:"Nine roughing passes with a coated carbide insert: flank wear tracked under the microscope, power measured each pass, working domain of the tool–material pair validated.",fr:"Neuf passes d'ébauche avec une plaquette carbure revêtue : usure en dépouille suivie au microscope, puissance mesurée à chaque passe, domaine de fonctionnement du couple outil–matière validé."},
+ tools:["Flank wear VB (ISO 3685)","Binocular microscope","Wattmeter","Tool–material pair (NF E66-520)","MATLAB","Excel"],
+ ctx:{en:"Metal Working Processes project at ENISE (supervisor Dr. Cédric Courbon, with Danish Iqbal and Peiqin Chin). Goal: measure how fast a carbide insert wears when rough-turning FGL200 gray cast iron dry, estimate its tool life, and check the working domain proposed by the previous group.",fr:"Projet du cours Metal Working Processes à l'ENISE (encadrant Dr Cédric Courbon, avec Danish Iqbal et Peiqin Chin). Objectif : mesurer la vitesse d'usure d'une plaquette carbure en ébauche à sec de fonte grise FGL200, estimer sa durée de vie et vérifier le domaine de fonctionnement proposé par le groupe précédent."},
+ act:{en:["Rough-turned a Ø146 mm FGL200 bar on a TRANSMAB T450 lathe, dry, at Vc = 378 m/min, f = 0.35 mm/rev, ap = 2 mm, with a CNMG 120408-PR coated carbide insert — nine 480 mm passes.","After every pass: flank wear VB measured on a binocular microscope (0.01 mm resolution), cutting power read on a wattmeter, pass time recorded.","Checked the tool–material pair data from earlier groups: Kc repeatability over five tests, then minimum cutting speed, feed and depth of cut from Kc and chip segmentation."],fr:["Ébauche d'une barre FGL200 de Ø146 mm sur un tour TRANSMAB T450, à sec, à Vc = 378 m/min, f = 0,35 mm/tr, ap = 2 mm, avec une plaquette carbure revêtue CNMG 120408-PR — neuf passes de 480 mm.","Après chaque passe : usure en dépouille VB mesurée au microscope binoculaire (résolution 0,01 mm), puissance de coupe relevée au wattmètre, temps de passe enregistré.","Vérification des données du couple outil–matière des groupes précédents : répétabilité de Kc sur cinq essais, puis vitesse de coupe, avance et profondeur de passe minimales à partir de Kc et de la fragmentation des copeaux."]},
+ res:{en:[],fr:[]}},
+{id:"hip",cat:"mat",cover:"hip-parts.jpg",org:"École Centrale de Lyon – ENISE",year:"Feb 2026",lab:null,img:"",embed:"",dash:"hip",
+ kc:[{en:"Ra < 0.02 µm",fr:"Ra < 0,02 µm"},{en:"Ø32 mm ± 5 µm",fr:"Ø32 mm ± 5 µm"}],
+ title:{en:"Design and manufacturing route of a CoCr28Mo femoral head for hip prosthesis",fr:"Conception et gamme de fabrication d'une tête fémorale CoCr28Mo pour prothèse de hanche"},
+ sum:{en:"Team project: material selection in Granta EduPack, CNC process route from bar to mirror finish, and the surface-integrity checks that decide fatigue life.",fr:"Projet d'équipe : sélection du matériau sous Granta EduPack, gamme CN de la barre au poli miroir, et contrôles d'intégrité de surface qui conditionnent la tenue en fatigue."},
+ tools:["Ansys Granta EduPack","CNC turn–mill route","Surface integrity","WLI / confocal","CMM & roundness","XRD residual stress"],
+ ctx:{en:"The femoral head is the ball of a total hip replacement. It carries 3–5 × body weight at every step, 1–3 million times a year, for 15–20+ years, inside a saline body. Our team of five (with Riccardo Braccini, Clément Frêne, John Joshua Garcia and Daniel Fragozo Zuleta) had to choose its material, define how to make it and specify how to prove it is good enough.",fr:"La tête fémorale est la rotule d'une prothèse totale de hanche. Elle supporte 3 à 5 fois le poids du corps à chaque pas, 1 à 3 millions de fois par an, pendant 15 à 20 ans et plus, dans un milieu salin. Notre équipe de cinq (avec Riccardo Braccini, Clément Frêne, John Joshua Garcia et Daniel Fragozo Zuleta) devait choisir son matériau, définir sa fabrication et préciser comment prouver sa conformité."},
+ act:{en:[],fr:[]},res:{en:[],fr:[]}},
+{id:"removal",cat:"mach",data:1,cover:"fem-cutting.jpg",org:"ENISE · Centrale Lyon",year:"2025–26",lab:null,img:"",embed:"",dash:"fem",
+ kc:[{en:"Abaqus/Explicit",fr:"Abaqus/Explicit"},{en:"2 FE models",fr:"2 modèles EF"}],
+ title:{en:"Finite-element modelling of chip formation and frictional heating",fr:"Modélisation par éléments finis de la formation du copeau et de l'échauffement par frottement"},
+ sum:{en:"Orthogonal cutting of A2024-T351 aluminium with Johnson–Cook plasticity and damage, plus a sliding-contact model that turns friction into heat.",fr:"Coupe orthogonale de l'aluminium A2024-T351 avec plasticité et endommagement de Johnson–Cook, plus un modèle de contact glissant qui transforme le frottement en chaleur."},
+ tools:["Abaqus/Explicit","Coupled temperature–displacement","Johnson–Cook","Hillerborg fracture energy","Coulomb friction"],
+ ctx:{en:"Machining is a contact problem: the tool shears the material into a chip, and friction at every contact turns work into heat that drives tool wear. Two finite-element models looked at each side — chip formation in orthogonal cutting, and heat generated by a sliding contact.",fr:"L'usinage est un problème de contact : l'outil cisaille la matière en copeau, et le frottement à chaque contact transforme le travail en chaleur, moteur de l'usure de l'outil. Deux modèles éléments finis en traitent chaque aspect — la formation du copeau en coupe orthogonale, et la chaleur générée par un contact glissant."},
+ act:{en:[],fr:[]},res:{en:[],fr:[]}},
+{id:"panto",cat:"mach",data:1,ongoing:1,cover:"tri-cover.jpg",org:"ENISE · Centrale Lyon",year:"2026–27",lab:null,img:"",embed:"",dash:"tri",
+ kc:[{en:"k ≈ 3 × 10⁻⁴ mm³/N·m",fr:"k ≈ 3 × 10⁻⁴ mm³/N·m"},{en:"5 tests · SEM-EDS",fr:"5 essais · MEB-EDS"}],
+ title:{en:"Tribology of the pantograph–catenary contact — cold-sprayed copper coatings",fr:"Tribologie du contact pantographe–caténaire — revêtements de cuivre cold spray"},
+ sum:{en:"Reciprocating ball-on-flat wear tests on a cold-sprayed copper coating, analysed with Hertz contact, Archard wear rates, focus variation and SEM-EDS.",fr:"Essais d'usure bille-plan alternatifs sur un revêtement de cuivre cold spray, analysés par contact de Hertz, taux d'usure d'Archard, variation focale et MEB-EDS."},
+ tools:["RTEC MFT-5000 tribometer","Hertz contact","Archard wear law","Focus variation","SEM-EDS","Optical microscopy"],
+ ctx:{en:"A train collects its current through the copper strip of the pantograph sliding against the catenary wire, so wear of the contact sets maintenance intervals. In the Surface Repairing & Functionalization course, three groups each tested one copper cold-spray option — pure Cu, Cu-CS and Cu-SiC — to decide which gives the longest surface life. My group tested the Cu-CS coating.",fr:"Un train capte son courant par la bande de cuivre du pantographe qui glisse sur le fil de la caténaire : l'usure du contact fixe les intervalles de maintenance. Dans le cours Surface Repairing & Functionalization, trois groupes ont chacun testé une solution de cuivre cold spray — Cu pur, Cu-CS et Cu-SiC — pour choisir celle qui offre la plus longue durée de vie. Mon groupe a testé le revêtement Cu-CS."},
+ act:{en:[],fr:[]},res:{en:[],fr:[]}},
+{id:"am",cat:"mat",cover:"lc-cover.jpg",org:"ENISE · Centrale Lyon",year:"2025–26",lab:null,img:"",embed:"",dash:"lc",
+ kc:[{en:"316L powder",fr:"Poudre 316L"},{en:"Lab videos",fr:"Vidéos au labo"}],
+ title:{en:"Laser cladding and cold spray of 316L stainless steel",fr:"Rechargement laser et cold spray d'acier inoxydable 316L"},
+ sum:{en:"Hands-on deposition of 316L powder by coaxial laser cladding on a rotating steel shaft, with melt-pool monitoring, SEM powder analysis and Ansys melt-pool modelling.",fr:"Dépôt de poudre 316L par rechargement laser coaxial sur un arbre en acier en rotation, avec suivi du bain fondu, analyse MEB des poudres et modélisation du bain fondu sous Ansys."},
+ tools:["Coaxial laser cladding","Cold spray","316L powder","Melt-pool camera","SEM","Ansys"],
+ ctx:{en:"Laser cladding melts a metal powder into a thin layer bonded to a part — used to repair worn shafts or give a cheap steel a hard, corrosion-resistant surface. Cold spray does the same without melting, by firing particles at supersonic speed. Transverse Project in Manufacturing at ENISE.",fr:"Le rechargement laser fond une poudre métallique en une couche mince liée à la pièce — pour réparer des arbres usés ou donner à un acier courant une surface dure et résistante à la corrosion. Le cold spray fait de même sans fusion, en projetant les particules à vitesse supersonique. Transverse Project in Manufacturing à l'ENISE."},
+ act:{en:["Ran laser-cladding passes of 316L powder on a rotating steel shaft: powder carried coaxially into the melt pool by inert gas, the head traversing along the part.","Followed the melt pool live on the process camera while the CNC (Siemens Sinumerik) drove the head.","Characterised 316L powders by SEM and used Ansys to estimate melt-pool size in cladding and welding."],fr:["Passes de rechargement laser de poudre 316L sur un arbre en acier en rotation : poudre amenée coaxialement dans le bain fondu par un gaz inerte, tête déplacée le long de la pièce.","Suivi du bain fondu en direct sur la caméra procédé pendant que la commande numérique (Siemens Sinumerik) pilotait la tête.","Caractérisation des poudres 316L au MEB et estimation de la taille du bain fondu sous Ansys (rechargement et soudage)."]},
+ res:{en:[],fr:[]}},
+{id:"weld",cat:"surf",cover:"weld-cover.jpg",org:"Mines Saint-Étienne",year:"2025–26",lab:null,img:"",embed:"",dash:"weld",
+ kc:[{en:"Nuclear QC · RCC-M",fr:"Contrôle nucléaire · RCC-M"},{en:"35-pass MMAW weld",fr:"Soudure MMAW 35 passes"}],
+ title:{en:"Metallography of a multi-pass C-Mn steel weld — nuclear quality control",fr:"Métallographie d'une soudure multipasse en acier C-Mn — contrôle qualité nucléaire"},
+ sum:{en:"Quality-control examination of a weld from the Flamanville EPR secondary circuit: sample preparation, Nital etching and optical microscopy of the weld zones.",fr:"Examen de contrôle qualité d'une soudure du circuit secondaire de l'EPR de Flamanville : préparation d'échantillon, attaque Nital et microscopie optique des zones de la soudure."},
+ tools:["Metallographic preparation","Nital etching","Optical microscopy","Weld metallurgy","RCC-M code"],
+ ctx:{en:"Welds in a nuclear plant's secondary circuit must meet the RCC-M code, and their microstructure decides toughness and sensitivity to strain ageing. The task: inspect a manual-metal-arc weld joining P265GH C-Mn steel with Tenacito R filler, and check its microstructure as a quality-control engineer would.",fr:"Les soudures du circuit secondaire d'une centrale nucléaire doivent respecter le code RCC-M, et leur microstructure conditionne la ténacité et la sensibilité au vieillissement. Mission : inspecter une soudure à l'arc à électrode enrobée assemblant de l'acier C-Mn P265GH avec un métal d'apport Tenacito R, et contrôler sa microstructure comme un ingénieur qualité."},
+ act:{en:[],fr:[]},res:{en:[],fr:[]}},
+{id:"nfrp",cat:"mat",cover:"nfrp-infographic.jpg",badge:"review",org:"Mines Saint-Étienne",year:"2025–26",lab:null,img:"",embed:"",dash:"bib",
+ kc:[{en:"6 treatments compared",fr:"6 traitements comparés"},{en:"6 fibres vs E-glass",fr:"6 fibres vs verre E"}],
+ title:{en:"Natural-fibre composites: fibre chemistry, surface treatments and interfacial adhesion",fr:"Composites à fibres naturelles : chimie des fibres, traitements de surface et adhésion interfaciale"},
+ sum:{en:"Literature review of how surface treatments make hydrophilic plant fibres bond to hydrophobic polymers — and what that does to strength and durability.",fr:"Revue de littérature sur la façon dont les traitements de surface font adhérer des fibres végétales hydrophiles à des polymères hydrophobes — et leur effet sur la résistance et la durabilité."},
+ tools:["Literature review","FTIR · XRD · SEM · TGA · XPS","Interfacial shear strength (IFSS)","Scientific writing"],
+ ctx:{en:"Flax, hemp, jute and sisal are light, renewable alternatives to glass fibre, but their –OH-rich, water-loving surface bonds poorly to polypropylene, polyethylene or epoxy. Bibliographic report for the course Searching, Analysing and Summarising Scientific Literature (supervisor Benjamin Faure).",fr:"Le lin, le chanvre, le jute et le sisal sont des alternatives légères et renouvelables à la fibre de verre, mais leur surface riche en –OH et hydrophile adhère mal au polypropylène, au polyéthylène ou à l'époxy. Rapport bibliographique du cours Searching, Analysing and Summarising Scientific Literature (encadrant Benjamin Faure)."},
+ act:{en:["Reviewed fibre chemistry (cellulose, hemicellulose, lignin, pectin) and cell-wall structure for seven common fibres.","Compared six surface treatments — alkali, silane, acetylation, maleic anhydride grafting, plasma, benzylation — by mechanism and reported IFSS gain.","Linked treatments to tensile, impact and moisture/durability behaviour, and to the characterisation techniques used to verify them."],fr:["Synthèse de la chimie des fibres (cellulose, hémicellulose, lignine, pectine) et de la structure de la paroi pour sept fibres courantes.","Comparaison de six traitements de surface — alcalin, silane, acétylation, greffage d'anhydride maléique, plasma, benzylation — par mécanisme et gain d'IFSS rapporté.","Lien entre traitements et comportement en traction, au choc, à l'humidité et en durabilité, et techniques de caractérisation utilisées pour les vérifier."]},
+ res:{en:[],fr:[]}},
+{id:"topo",cat:"surf",research:1,ongoing:1,org:"LTDS · Centrale Lyon – ENISE",year:"2026–27",lab:null,img:"",embed:"",
+ title:{en:"Limits of 3D microscopes for surface topography",fr:"Limites des microscopes 3D pour la topographie de surface"},
+ sum:{en:"Preparatory research project: how far can 3D microscopes be trusted to characterise surface topographies?",fr:"Projet de recherche préparatoire : jusqu'où peut-on se fier aux microscopes 3D pour caractériser les topographies de surface ?"},
+ tools:["3D surface microscopy","Surface topography","Roughness parameters"],
+ ctx:{en:"Research project with Prof. Frédéric Cabanettes at LTDS (Laboratoire de Tribologie et Dynamique des Systèmes). Functional surfaces are qualified from topography measurements, so the limits of the instrument directly affect the conclusions.",fr:"Projet de recherche avec le Pr Frédéric Cabanettes au LTDS (Laboratoire de Tribologie et Dynamique des Systèmes). Les surfaces fonctionnelles sont qualifiées à partir de mesures de topographie : les limites de l'instrument conditionnent directement les conclusions."},
+ act:{en:["Benchmark five instruments: Measure the same reference surfaces with optical, focus-variation, confocal, SEM and AFM microscopes.", "Map each instrument's limits: Find where lateral resolution, noise and steep slopes make areal parameters (Sa, Sq, Sdr…) drift from the true surface.", "Fast enough, accurate enough: Define, for each surface type, the quickest instrument and settings (objective, field, sampling) that still give results within the accuracy the application needs — so measurement time fits production or lab deadlines.", "Selection guide: Turn the results into a simple decision chart: which microscope, at which settings, for machined, ground, polished or coated surfaces."],fr:["Comparer cinq instruments : Mesurer les mêmes surfaces de référence en microscopie optique, à variation focale, confocale, MEB et AFM.", "Cartographier les limites de chacun : Identifier quand la résolution latérale, le bruit et les pentes raides font dériver les paramètres surfaciques (Sa, Sq, Sdr…) de la surface réelle.", "Assez rapide, assez précis : Définir, pour chaque type de surface, l'instrument et les réglages les plus rapides (objectif, champ, échantillonnage) qui donnent encore la précision requise par l'application — pour que le temps de mesure tienne les délais de production ou de labo.", "Guide de choix : Traduire les résultats en un tableau de décision simple : quel microscope, avec quels réglages, pour des surfaces usinées, rectifiées, polies ou revêtues."]},
+ res:{en:["Ongoing — results will be added here."],fr:["En cours — les résultats seront ajoutés ici."]}},
+];
+const EXP=[
+{id:"interloop",y:"Nov 2024 – Sep 2025",img:["interloop.jpg"],t:{en:"Lean Manufacturing Engineer",fr:"Ingénieur Lean Manufacturing"},o:"Interloop Limited, Pakistan",
+ b:{en:["Ramp-up of Plant 6, a new facility: production flows, standard work, and production-data analysis to find bottlenecks and rebalance assembly lines.","Reduced process variability with VSM, Kaizen and root-cause analysis; built OEE, defect and downtime dashboards."],
+ fr:["Démarrage de l'usine 6, un nouveau site : flux de production, standards de travail et analyse des données pour identifier les goulots et rééquilibrer les lignes.","Réduction de la variabilité par VSM, Kaizen et analyse des causes racines ; tableaux de bord TRS, défauts et arrêts."]},kpi:[{v:80,t:74,u:"%",dir:1,l:{en:"Average OEE",fr:"TRS moyen"},tl:{en:"target",fr:"objectif"}},{v:1.2,t:1.5,u:{en:" days",fr:" jours"},dir:-1,l:{en:"Average work-in-progress",fr:"En-cours moyen (WIP)"},tl:{en:"target",fr:"objectif"}}]},
+{y:"Jul – Aug 2023",img:["ogdcl-field.jpg","ogdcl-plant.jpg","ogdcl-me.jpg","ogdcl-badge.jpg"],t:{en:"Engineering intern",fr:"Stagiaire ingénieur"},o:"OGDCL — Dakhni Gas Processing Plant, Pakistan",
+ b:{en:["Observed and assisted with PLC-based control systems, HMI panels and SCADA monitoring.","Exposure to turbines, pumps, separators and wellhead equipment; collected operating data and prepared technical reports."],
+ fr:["Observation et assistance sur les systèmes de contrôle par automates, les IHM et la supervision SCADA.","Découverte des turbines, pompes, séparateurs et têtes de puits ; collecte de données d'exploitation et rédaction de rapports techniques."]}},
+{y:"2022 – 2024",t:{en:"Engineering intern — automation",fr:"Stagiaire ingénieur — automatisme"},o:"UET Peshawar (Jalozai campus)",
+ b:{en:["PLCs, sensors and basic control systems; robot programming, testing and small automation set-ups; Industry 4.0, IoT and data-driven systems."],
+ fr:["Automates, capteurs et systèmes de contrôle ; programmation et essais de robots, petites installations automatisées ; Industrie 4.0, IoT et systèmes pilotés par la donnée."]}}
+];
+const SK=[
+{h:{en:"Simulation & computing",fr:"Simulation & calcul"},s:[
+ {n:"Abaqus",u:{en:"Orthogonal cutting (Johnson–Cook) and frictional-heating models",fr:"Modèles de coupe orthogonale (Johnson–Cook) et d'échauffement par frottement"}},
+ {n:"Ansys",u:{en:"Melt-pool modelling (AM & welding)",fr:"Modélisation du bain fondu (FA et soudage)"}},
+ {n:"MATLAB",u:{en:"Tool-wear and cutting-pressure analysis, cutting models",fr:"Analyse d'usure d'outil et de pression de coupe, modèles de coupe"}},
+ {n:"Python",u:{en:"Advanced computing & data science courses",fr:"Cours de calcul scientifique et de data science"}}]},
+{h:{en:"Characterisation",fr:"Caractérisation"},s:[
+ {n:"Optical microscopy",fr:"Microscopie optique",u:{en:"Multi-pass C-Mn weld metallography",fr:"Métallographie d'une soudure C-Mn multipasse"}},
+ {n:"SEM",fr:"MEB",u:{en:"316L powder analysis (laser cladding, cold spray)",fr:"Analyse de poudres 316L (rechargement laser, cold spray)"}},
+ {n:"3D surface microscopy",fr:"Microscopie 3D de surface",u:{en:"Surface topography research at LTDS",fr:"Recherche sur la topographie de surface au LTDS"}},
+ {n:"Metallographic preparation",fr:"Préparation métallographique",u:{en:"Polishing and Nital etching of weld samples",fr:"Polissage et attaque au Nital d'échantillons soudés"}}]},
+{h:{en:"Analysis & reporting",fr:"Analyse & rédaction"},s:[
+ {n:"Statistical data analysis",fr:"Analyse statistique",u:{en:"Production data at Interloop; wear measurements",fr:"Données de production chez Interloop ; mesures d'usure"}},
+ {n:"Design of experiments",fr:"Plans d'expériences",u:{en:"BE coursework",fr:"Cours de licence (BE)"}},
+ {n:"Scientific writing",fr:"Rédaction scientifique",u:{en:"Lab reports and NFRP literature review, in English",fr:"Rapports de TP et synthèse bibliographique NFRP, en anglais"}},
+ {n:"Microsoft 365",u:{en:"Reports, dashboards and presentations",fr:"Rapports, tableaux de bord et présentations"}}]}];
+const LANGS=[{n:{en:"English",fr:"Anglais"},lv:5,t:"C1"},{n:{en:"French",fr:"Français"},lv:3,t:{en:"basic–intermediate",fr:"élémentaire–intermédiaire"}}];
+const LEAD=[
+{i:"users",t:{en:"Senior Vice President, Community Services Society",fr:"Vice-président senior, Community Services Society"}},
+{i:"heart-handshake",t:{en:"Founder, Let's Help Welfare Society",fr:"Fondateur de l'association Let's Help Welfare Society"}},
+{i:"leaf",t:{en:"Sustainable Future Drive and blood-donation camps",fr:"Sustainable Future Drive et collectes de sang"}}];
+
+/* ---------------- HELPERS ---------------- */
+let L="en",cat="all";
+try{const s=localStorage.getItem("lang");if(s==="fr"||s==="en")L=s}catch(e){}
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const t=k=>T[L][k]??T.en[k];
+const icons=()=>{try{lucide.createIcons()}catch(e){}};
+
+/* ---------------- RENDERERS ---------------- */
+function renderStatic(){document.documentElement.lang=L;document.querySelectorAll("[data-i]").forEach(el=>{const v=t(el.dataset.i);if(typeof v==="string")el.textContent=v});
+ $("#b-en").setAttribute("aria-pressed",L==="en");$("#b-fr").setAttribute("aria-pressed",L==="fr")}
+function renderEdu(){$("#courses").innerHTML=COURSES.map(c=>`<div class="flex gap-3 items-start rounded-lg p-3" style="background:var(--panel2)"><i data-lucide="${c.i}" class="w-5 h-5 flex-none mt-0.5" style="color:var(--steel)"></i><span class="text-[15px]">${esc(c[L])}</span></div>`).join("");
+ $("#be-courses").innerHTML=BE_COURSES[L].map(c=>`<span class="chip !text-xs">${esc(c)}</span>`).join("")}
+function renderFilters(){$("#filters").innerHTML=CATS.map(c=>`<button class="tab" data-c="${c}" aria-pressed="${c===cat}">${esc(t("f_"+c))}</button>`).join("")}
+function renderGrid(){const list=P.filter(p=>cat==="all"||p.cat===cat);
+ $("#grid").innerHTML=list.map(p=>`<article class="card lift ${p.cover?"feat overflow-hidden":""} flex flex-col">${p.cover?`<button data-open="${p.id}" class="cov relative block h-44 overflow-hidden" aria-label="${esc(t("view"))}"><img src="${p.cover}" alt="" class="absolute inset-0 w-full h-full object-cover"><span class="absolute inset-0" style="background:linear-gradient(180deg,rgba(15,17,21,0) 78%,var(--panel))"></span><span class="absolute right-3 bottom-3 flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold" style="background:rgba(15,17,21,.75);color:var(--hot);border:1px solid rgba(255,159,67,.5)"><i data-lucide="${p.dash==="fem"||p.dash==="lc"?"play":p.dash==="weld"?"shield-check":p.dash==="hip"?"settings-2":p.dash==="bib"?"book-open":"bar-chart-3"}" class="w-3.5 h-3.5"></i>${p.dash==="fem"?"Simulation":p.dash==="lc"?(L==="fr"?"Au labo":"In the lab"):p.dash==="weld"?(L==="fr"?"Contrôle qualité":"Quality control"):p.dash==="hip"?(L==="fr"?"Conception":"Design & manufacturing"):p.dash==="bib"?(L==="fr"?"Revue de littérature":"Literature review"):(L==="fr"?"Données réelles":"Real data")}</span></button>`:""}<div class="p-5 flex flex-col flex-1">
+  <div class="flex items-center gap-2 flex-wrap text-xs mb-3"><span class="chip">${esc(t("f_"+p.cat))}</span>${p.research?`<span class="chip" style="color:var(--hot);border-color:rgba(255,159,67,.45)"><i data-lucide="flask-conical" class="w-3 h-3"></i>${esc(t("research"))}</span>`:""}${p.ongoing?`<span class="chip" style="color:var(--ok)">${esc(t("ongoing"))}</span>`:""}${p.data&&!p.cover?`<span class="chip" style="color:var(--hot);border-color:rgba(255,159,67,.45)"><i data-lucide="bar-chart-3" class="w-3 h-3"></i>${L==="fr"?"Données réelles":"Real data"}</span>`:""}</div>
+  <h3 class="disp font-bold text-lg leading-snug">${esc(p.title[L])}</h3>
+  <div class="text-sm mt-1" style="color:var(--steel)">${esc(p.org)} · ${esc(p.year)}</div>
+  <p class="text-[15px] mt-3 flex-1" style="color:#dedad6">${esc(p.sum[L])}</p>${p.kc?`<div class="flex flex-wrap gap-1.5 mt-3">${p.kc.map(k=>`<span class="kcv text-xs font-semibold mono rounded-md px-2 py-1">${esc(k[L])}</span>`).join("")}</div>`:""}
+  <div class="flex flex-wrap gap-1.5 mt-4">${p.tools.slice(0,3).map(x=>`<span class="chip !text-xs">${esc(x)}</span>`).join("")}</div>
+  <button class="btn ${p.cover?"btn-hot glow":"btn-line"} mt-5 self-start" data-open="${p.id}">${esc(t("view"))}<i data-lucide="arrow-up-right" class="w-4 h-4"></i></button></div></article>`).join("");icons()}
+const IL={
+en:{intro:"Pakistan's leading textile exporter and its largest listed apparel company. Vertically integrated — hosiery, denim, knitwear and activewear — with 37,000+ people, making products for international brands and retailers such as adidas, Levi's and Target.",contrib:"My contribution",gte:"1 of 63 GTEs",gtec:"One of 63 Graduate Trainee Engineers selected for Interloop's programme for engineering graduates (MTOs are its separate non-engineering programme).",rep:"Interloop Sustainability Report 2025",reptxt:"For readers interested in lean manufacturing and Interloop's operations, the full report covers its plants, people and sustainability programmes.",open19:"Open page 19",full:"Full report (PDF, 16 MB)"},
+fr:{intro:"Premier exportateur textile du Pakistan et plus grande entreprise d'habillement cotée du pays. Groupe intégré verticalement — chaussettes, denim, maille et vêtements de sport — avec plus de 37 000 collaborateurs, qui fabrique pour des marques et distributeurs internationaux comme adidas, Levi's et Target.",contrib:"Ma contribution",gte:"1 des 63 GTE",gtec:"L'un des 63 ingénieurs stagiaires diplômés (GTE) sélectionnés pour le programme d'Interloop réservé aux ingénieurs (les MTO forment un programme distinct, non ingénieur).",rep:"Rapport de développement durable 2025 d'Interloop",reptxt:"Pour qui s'intéresse au Lean Manufacturing et aux opérations d'Interloop, le rapport complet présente ses usines, ses équipes et ses programmes de développement durable.",open19:"Ouvrir la page 19",full:"Rapport complet (PDF, 16 Mo)"}};
+const RPT="Interloop-Sustainability-Report-2025.pdf";
+function interloopCard(e){const t=IL[L],li=e.b[L].map(x=>`<li class="flex gap-2"><span style="color:var(--hot)">▸</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("");
+ const fmt=(n,u)=>(L==="fr"?String(n).replace(".",","):n)+(typeof u==="string"?u:u[L]);
+ const kpis=(e.kpi||e.b.kpi).map(k=>{const max=k.dir>0?100:Math.max(k.v,k.t)*1.6,pv=k.v/max*100,pt=k.t/max*100,ok=k.dir>0?k.v>=k.t:k.v<=k.t;
+  return `<div class="rounded-xl p-4" style="background:var(--panel2);border:1px solid var(--line)">
+   <div class="flex items-baseline justify-between gap-2"><span class="text-sm" style="color:var(--mute)">${esc(k.l[L])}</span>${ok?`<span class="chip !text-xs" style="color:var(--ok);border-color:rgba(125,211,252,.4)"><i data-lucide="check" class="w-3 h-3"></i>${L==="fr"?"objectif atteint":"target met"}</span>`:""}</div>
+   <div class="flex items-baseline gap-3 mt-1"><span class="disp font-extrabold text-[clamp(28px,3.4vw,38px)]" style="color:var(--hot)">${esc(fmt(k.v,k.u))}</span><span class="text-sm mono" style="color:var(--mute)">${esc(k.tl[L])} ${k.dir>0?"≥":"≤"} ${esc(fmt(k.t,k.u))}</span></div>
+   <div class="relative h-2.5 rounded-full mt-3" style="background:var(--bg)"><div class="bar absolute inset-y-0 left-0 kbar" data-w="${pv.toFixed(1)}" style="width:0;background:var(--hot)"></div><span class="absolute -top-1.5 w-0.5 h-5 rounded" style="left:${pt.toFixed(1)}%;background:var(--ink)" title="${esc(k.tl[L])}"></span></div></div>`}).join("");
+ return `<article class="card overflow-hidden">
+  <div class="relative h-44 sm:h-64"><img src="interloop-plant.jpg" alt="Interloop production hall" class="absolute inset-0 w-full h-full object-cover" style="object-position:50% 18%"><div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(23,25,30,0) 55%,var(--panel))"></div></div>
+  <div class="p-5 sm:p-7">
+   <div class="flex flex-wrap items-baseline justify-between gap-x-4"><h3 class="disp font-bold text-[clamp(20px,2.4vw,26px)]">${esc(e.t[L])}</h3><span class="mono text-sm" style="color:var(--steel)">${esc(e.y)}</span></div>
+   <div class="text-sm" style="color:var(--mute)">${esc(e.o)}</div>
+   <p class="mt-3 text-[15px] flex gap-2 max-w-[85ch]" style="color:var(--steel)"><i data-lucide="building-2" class="w-4 h-4 flex-none mt-1"></i><span>${esc(t.intro)}</span></p>
+   <div class="grid sm:grid-cols-[minmax(0,260px)_minmax(0,1fr)] gap-5 items-center mt-6 rounded-xl p-4" style="background:rgba(255,159,67,.07);border:1px solid rgba(255,159,67,.3)">
+    <div class="relative rounded-lg overflow-hidden"><img src="interloop.jpg" alt="Ammar Khan at Interloop" class="w-full aspect-[4/3] object-cover object-top"></div>
+    <div><span class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold" style="background:var(--hot);color:#0a0b0d"><i data-lucide="trophy" class="w-4 h-4"></i>${esc(t.gte)}</span>
+     <p class="mt-3 text-[15px]" style="color:#e7e5e4">${esc(t.gtec)}</p></div>
+   </div>
+   <h4 class="disp font-bold mt-7 mb-3">${esc(t.contrib)}</h4><ul class="space-y-2">${li}</ul>
+   <div class="grid sm:grid-cols-2 gap-3 mt-5">${kpis}</div>
+   <details class="rpt mt-6 rounded-xl" style="background:var(--panel2);border:1px solid var(--line)">
+    <summary class="flex items-center gap-3 p-4 cursor-pointer min-h-[48px]"><i data-lucide="file-text" class="w-5 h-5 flex-none" style="color:var(--hot)"></i><span class="font-medium flex-1">${esc(t.rep)}</span><i data-lucide="chevron-down" class="chev w-5 h-5 flex-none transition-transform"></i></summary>
+    <div class="px-4 pb-4">
+     <div><p class="text-sm" style="color:#e7e5e4">${esc(t.reptxt)}</p><div class="flex flex-wrap gap-2 mt-3"><a class="btn btn-line text-sm" href="${RPT}" target="_blank" rel="noopener"><i data-lucide="download" class="w-4 h-4"></i>${esc(t.full)}</a></div></div>
+    </div>
+   </details>
+  </div></article>`}
+const kio=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.style.width=x.target.dataset.w+"%";kio.unobserve(x.target)}}),{threshold:.5});
+function renderExp(){$("#exp").innerHTML=EXP.map(e=>e.id==="interloop"?interloopCard(e):`<article class="card p-5 sm:p-6 reveal in">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4"><h3 class="disp font-bold text-[clamp(18px,2.2vw,22px)]">${esc(e.t[L])}</h3><span class="mono text-sm" style="color:var(--steel)">${esc(e.y)}</span></div>
+  <div class="text-sm" style="color:var(--mute)">${esc(e.o)}</div>
+  <div class="${e.img?"grid md:grid-cols-[minmax(0,1fr)_minmax(0,300px)] gap-5":""} mt-3"><ul class="space-y-2">${e.b[L].map(x=>`<li class="flex gap-2"><span style="color:var(--hot)">▸</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ul>
+  ${e.img?`<div class="gallery">${e.img.map(s=>`<img src="${s}" alt="" class="h-36 rounded-lg object-cover" style="border:1px solid var(--line);max-width:${e.img.length>1?"75%":"100%"}">`).join("")}</div>`:""}</div></article>`).join("")}
+function renderSkills(){let k=0;$("#skillgroups").innerHTML=SK.map(g=>`<div><div class="text-sm font-semibold mb-2" style="color:var(--steel)">${esc(g.h[L])}</div><div class="flex flex-wrap gap-1.5">${g.s.map(x=>`<button class="chip sk" style="--i:${k++}" data-sk="${esc(x.n)}" aria-pressed="false"><span class="dot"></span>${esc(L==="fr"&&x.fr?x.fr:x.n)}</button>`).join("")}</div></div>`).join("");
+ $("#langs").innerHTML=LANGS.map(l=>`<div class="flex items-center gap-3"><span class="text-sm font-medium w-[70px]">${esc(l.n[L])}</span><span class="flex gap-1" aria-hidden="true">${["A1","A2","B1","B2","C1","C2"].map((c,i)=>`<span class="seg ${i<l.lv?"on":""}" style="--i:${i}" title="${c}"></span>`).join("")}</span><span class="text-xs mono" style="color:var(--mute)">${esc(typeof l.t==="string"?l.t:l.t[L])}</span></div>`).join("");
+ $("#lead").innerHTML=LEAD.map(x=>`<div class="card lift p-4 flex gap-3 items-start"><span class="grid place-items-center w-10 h-10 rounded-lg flex-none" style="background:var(--panel2);border:1px solid var(--line)"><i data-lucide="${x.i}" class="w-5 h-5" style="color:var(--hot)"></i></span><span class="text-[15px] pt-1.5">${esc(x.t[L])}</span></div>`).join("")}
+
+const SFD=[{"c":"CS","s":"belt","i":"fv","f":"C-S_belt_finishing_20micron_01","Sa":0.4613,"Sq":1.429,"Sz":227.7,"Ssk":-98.28,"Sku":12078.0,"Sk":1.348,"Spk":0.623,"Svk":0.9599,"Sdr":0.8797,"Sal":15.77,"DomWL":760.1,"X_len":5943.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.4626},{"c":"CS","s":"belt","i":"cf","f":"Cold_spray_Belt_finish_20micro_N1","Sa":0.1689,"Sq":0.2462,"Sz":6.272,"Ssk":-2.251,"Sku":31.38,"Sk":0.4781,"Spk":0.2737,"Svk":0.3518,"Sdr":2.669,"Sal":4.501,"DomWL":805.7,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"CS","s":"belt","i":"cf","f":"Cold_spray_Belt_finish_20micro_N2","Sa":0.1632,"Sq":0.2266,"Sz":12.07,"Ssk":-0.3955,"Sku":39.02,"Sk":0.4831,"Spk":0.2805,"Svk":0.2613,"Sdr":2.602,"Sal":2.515,"DomWL":423.3,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"CS","s":"belt","i":"cf","f":"Cold_spray_Belt_finish_20micro_N3","Sa":0.1704,"Sq":0.3082,"Sz":14.23,"Ssk":-11.58,"Sku":315.2,"Sk":0.473,"Spk":0.2718,"Svk":0.4026,"Sdr":2.888,"Sal":8.194,"DomWL":293.3,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"CS","s":"turn","i":"fv","f":"C-S_turning_f0-2_vc210_ap-5_01","Sa":1.876,"Sq":2.236,"Sz":38.04,"Ssk":0.3406,"Sku":2.535,"Sk":5.671,"Spk":2.105,"Svk":1.134,"Sdr":2.076,"Sal":39.73,"DomWL":200.0,"X_len":5944.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.4608},{"c":"CS","s":"turn","i":"cf","f":"Cold_spray_Turning_f0-2_Vc210_Ap0-5_N1","Sa":1.711,"Sq":1.963,"Sz":8.657,"Ssk":0.4758,"Sku":1.932,"Sk":3.544,"Spk":3.043,"Svk":0.2477,"Sdr":2.16,"Sal":42.67,"DomWL":211.7,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"LC","s":"belt","i":"cf","f":"Laser_cladding_Belt_finishing_20micron_N1","Sa":0.1429,"Sq":0.1935,"Sz":4.806,"Ssk":-0.3118,"Sku":6.294,"Sk":0.4028,"Spk":0.2301,"Svk":0.265,"Sdr":1.962,"Sal":2.508,"DomWL":427.7,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"LC","s":"belt","i":"cf","f":"Laser_cladding_Belt_finishing_20micron_N2","Sa":0.1426,"Sq":0.1889,"Sz":3.183,"Ssk":-0.1741,"Sku":5.194,"Sk":0.4203,"Spk":0.2145,"Svk":0.2354,"Sdr":1.917,"Sal":1.918,"DomWL":502.1,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"LC","s":"belt","i":"cf","f":"Laser_cladding_Belt_finishing_20micron_N3","Sa":0.1433,"Sq":0.1972,"Sz":3.486,"Ssk":-0.5886,"Sku":7.123,"Sk":0.4092,"Spk":0.2217,"Svk":0.2912,"Sdr":1.885,"Sal":3.858,"DomWL":611.1,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"LC","s":"belt","i":"fv","f":"laser_belt finishing-20microns-01","Sa":0.5107,"Sq":0.7043,"Sz":55.79,"Ssk":7.53,"Sku":458.4,"Sk":1.559,"Spk":0.7256,"Svk":0.7455,"Sdr":0.944,"Sal":12.1,"DomWL":1832.0,"X_len":5944.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.4638},{"c":"LC","s":"belt","i":"fv","f":"laser_belt finishing-20microns-02","Sa":0.5066,"Sq":0.6522,"Sz":9.346,"Ssk":-0.06766,"Sku":3.706,"Sk":1.555,"Spk":0.6917,"Svk":0.739,"Sdr":0.8978,"Sal":11.27,"DomWL":695.0,"X_len":5944.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.4744},{"c":"LC","s":"belt","i":"fv","f":"laser_belt finishing-20microns-03","Sa":0.5109,"Sq":0.66,"Sz":12.14,"Ssk":-0.1648,"Sku":4.15,"Sk":1.564,"Spk":0.6903,"Svk":0.7654,"Sdr":0.91,"Sal":11.24,"DomWL":1367.0,"X_len":5943.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.4597},{"c":"LC","s":"turn","i":"cf","f":"Laser_cladding_turning_20micron_N1","Sa":1.687,"Sq":1.993,"Sz":9.245,"Ssk":0.2814,"Sku":1.999,"Sk":6.128,"Spk":1.127,"Svk":0.2959,"Sdr":2.203,"Sal":42.69,"DomWL":212.1,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"LC","s":"turn","i":"cf","f":"Laser_cladding_turning_20micron_N2","Sa":1.579,"Sq":1.892,"Sz":11.86,"Ssk":0.3157,"Sku":2.243,"Sk":5.386,"Spk":1.45,"Svk":0.4435,"Sdr":2.325,"Sal":43.78,"DomWL":207.7,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"LC","s":"turn","i":"cf","f":"Laser_cladding_turning_20micron_N3","Sa":1.623,"Sq":1.914,"Sz":8.559,"Ssk":0.2913,"Sku":2.012,"Sk":5.481,"Spk":1.465,"Svk":0.2648,"Sdr":2.049,"Sal":43.08,"DomWL":206.6,"X_len":828.4,"Y_len":621.3,"X_sp":0.6477,"NM%":0.0},{"c":"LC","s":"turn","i":"fv","f":"laser_turning_Vc210_f0-2_ap0-5_01","Sa":1.9,"Sq":2.307,"Sz":14.91,"Ssk":0.3017,"Sku":2.31,"Sk":6.175,"Spk":1.916,"Svk":1.03,"Sdr":2.444,"Sal":40.49,"DomWL":200.0,"X_len":5944.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.4597},{"c":"LC","s":"turn","i":"fv","f":"laser_turning_Vc210_f0-2_ap0-5_02","Sa":2.027,"Sq":2.433,"Sz":15.57,"Ssk":0.1334,"Sku":2.187,"Sk":6.863,"Spk":1.456,"Svk":1.167,"Sdr":2.635,"Sal":40.86,"DomWL":200.0,"X_len":5944.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.4597},{"c":"LC","s":"turn","i":"fv","f":"laser_turning_Vc210_f0-2_ap0-5_03","Sa":1.905,"Sq":2.325,"Sz":16.17,"Ssk":0.3142,"Sku":2.331,"Sk":5.947,"Spk":2.136,"Svk":1.183,"Sdr":2.67,"Sal":39.53,"DomWL":200.0,"X_len":7390.0,"Y_len":1624.0,"X_sp":0.88,"NM%":0.519}];
+const SFT={en:{coat:{LC:"Laser cladding",CS:"Cold spray"},stage:{turn:"Turned",belt:"Belt-finished"},inst:{cf:"Confocal",fv:"Focus variation 10×"},
+ chain:["Coating deposited","Finish turning","Belt finishing"],explore:"Explore the measured surfaces",param:"Compare a parameter",mean:"mean",each:"each measurement",
+ field:"Field",n:"measurements",find:"What the data shows",caveat:"Caveats: CS turned and CS belt-finished (FV) were measured once; the two instruments cover different field sizes and FV data carries an extra 0.8 mm L-filter, so cross-instrument gaps mix resolution and filtering effects. Interpretations are mine and still being discussed.",
+ csv:"Download the data (CSV)",img:"3D view exported from MountainsMap",
+ F:["Belt finishing cuts Sa by ~90 % on both coatings (confocal: LC 1.63 → 0.143 µm, CS 1.71 → 0.168 µm) and shrinks the core roughness Sk from 3.5–5.7 µm to 0.4–0.5 µm (confocal means per coating).",
+    "On turned surfaces both microscopes agree (Sa within 10–19 %) and both recover the feed: dominant wavelength 200–212 µm for f = 0.2 mm/rev.",
+    "On belt-finished surfaces they don't: focus variation reads Sa 2.7–3.6× higher than confocal yet only one-third to one-half of the developed area Sdr — consistent with FV adding height noise while blurring the fine abrasive scratches (on LC: Sal 11.5 µm by FV vs 2.8 µm by confocal).",
+    "Sa and Sk are robust (coefficient of variation over repeats below 4 % and 8 %); extreme-value parameters are not — one FV spike pushed Sz to 228 µm on a surface with Sa = 0.46 µm, and Sz varied 9–56 µm across three FV repeats of the same LC surface.",
+    "After finishing, CS stays slightly rougher than LC (Sa 0.168 vs 0.143 µm, Sdr 2.7 vs 1.9 %) with isolated deep valleys (confocal Ssk down to −11.6) — possibly coating porosity, to be confirmed."]},
+fr:{coat:{LC:"Rechargement laser",CS:"Cold spray"},stage:{turn:"Tourné",belt:"Toilé"},inst:{cf:"Confocal",fv:"Variation focale ×10"},
+ chain:["Dépôt du revêtement","Tournage de finition","Toilage"],explore:"Explorer les surfaces mesurées",param:"Comparer un paramètre",mean:"moyenne",each:"chaque mesure",
+ field:"Champ",n:"mesures",find:"Ce que montrent les données",caveat:"Limites : CS tourné et CS toilé (FV) n'ont été mesurés qu'une fois ; les deux instruments couvrent des champs différents et les données FV portent un filtre L de 0,8 mm supplémentaire : les écarts entre instruments mêlent effets de résolution et de filtrage. Les interprétations sont les miennes et encore en discussion.",
+ csv:"Télécharger les données (CSV)",img:"Vue 3D exportée de MountainsMap",
+ F:["Le toilage réduit Sa d'environ 90 % sur les deux revêtements (confocal : LC 1,63 → 0,143 µm, CS 1,71 → 0,168 µm) et ramène la rugosité du noyau Sk de 3,5–5,7 µm à 0,4–0,5 µm (moyennes confocal par revêtement).",
+    "Sur les surfaces tournées, les deux microscopes concordent (Sa à 10–19 % près) et retrouvent l'avance : longueur d'onde dominante 200–212 µm pour f = 0,2 mm/tr.",
+    "Sur les surfaces toilées, non : la variation focale mesure un Sa 2,7 à 3,6 fois plus élevé que le confocal mais une aire développée Sdr deux à trois fois plus faible — cohérent avec un bruit de hauteur ajouté et un lissage des fines rayures d'abrasif (sur LC : Sal 11,5 µm en VF contre 2,8 µm en confocal).",
+    "Sa et Sk sont robustes (coefficient de variation entre répétitions inférieur à 4 % et 8 %) ; les paramètres d'extrêmes ne le sont pas — un pic isolé en FV porte Sz à 228 µm pour un Sa de 0,46 µm, et Sz varie de 9 à 56 µm sur trois répétitions FV d'une même surface LC.",
+    "Après finition, CS reste un peu plus rugueux que LC (Sa 0,168 contre 0,143 µm, Sdr 2,7 contre 1,9 %) avec des vallées profondes isolées (Ssk confocal jusqu'à −11,6) — peut-être la porosité du dépôt, à confirmer."]}};
+const SFIMG={"LC|turn|cf":"Laser-Turning_Confocal","LC|turn|fv":"Laser-Turning_FV10x","LC|belt|cf":"LC-Belt-Finishing_Confocal","LC|belt|fv":"LC-Belt-Finishing_FV10x","CS|turn|cf":"CS-Turning_Confocal","CS|turn|fv":"CS-Turning_FV10x","CS|belt|cf":"CS-Belt-Finishing_Confocal","CS|belt|fv":"CS-Belt-Finishing_FV10x"};
+const SFP=[["Sa","µm"],["Sk","µm"],["Spk","µm"],["Svk","µm"],["Sdr","%"],["Sz","µm"]];
+let sfSel={c:"LC",s:"belt",i:"cf"},sfPar="Sa";
+const avg=a=>a.reduce((x,y)=>x+y,0)/a.length,sdv=a=>a.length>1?Math.sqrt(a.reduce((x,y)=>x+(y-avg(a))**2,0)/(a.length-1)):0;
+const nf=(v,d)=>{let t=Math.abs(v)>=100?v.toFixed(0):Math.abs(v)>=10?v.toFixed(1):v.toFixed(d??3);return L==="fr"?t.replace(".",","):t};
+function sfDash(){const t=SFT[L],seg=(k,opts)=>`<div class="flex rounded-lg p-1 gap-1" style="background:var(--bg);border:1px solid var(--line)" role="group">${opts.map(([v,lab])=>`<button class="px-3 min-h-[38px] rounded-md text-sm font-medium" data-sf="${k}:${v}" aria-pressed="${sfSel[k]===v}" style="${sfSel[k]===v?"background:var(--hot);color:#0a0b0d":"color:var(--mute)"}">${esc(lab)}</button>`).join("")}</div>`;
+ const ms=SFD.filter(m=>m.c===sfSel.c&&m.s===sfSel.s&&m.i===sfSel.i),f0=ms[0];
+ const stat=p=>{const xs=ms.map(m=>m[p]).filter(v=>v!=null);return xs.length?`${nf(avg(xs))}${xs.length>1?` <span style="color:var(--mute)">± ${(v=>v<0.01?(L==="fr"?v.toPrecision(1).replace(".",","):v.toPrecision(1)):nf(v))(sdv(xs))}</span>`:""}`:"—"};
+ return `<div class="rounded-xl p-4 mb-5" style="background:var(--panel2);border:1px solid var(--line)">
+  <div class="flex flex-wrap items-center gap-2 text-sm">${t.chain.map((c,i)=>`<span class="chip" style="color:var(--ink)"><b class="mono" style="color:var(--hot)">${i+1}</b>${esc(c)}</span>${i<2?'<i data-lucide="arrow-right" class="w-4 h-4" style="color:var(--mute)"></i>':""}`).join("")}</div></div>
+  <h5 class="disp font-bold mb-3">${esc(t.explore)}</h5>
+  <div class="flex flex-wrap gap-2">${seg("c",[["LC",t.coat.LC],["CS",t.coat.CS]])}${seg("s",[["turn",t.stage.turn],["belt",t.stage.belt]])}${seg("i",[["cf",t.inst.cf],["fv",t.inst.fv]])}</div>
+  <div class="grid md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-4 mt-3">
+   <figure class="m-0 rounded-xl overflow-hidden grid place-items-center p-2" style="background:#fff;min-height:220px"><img src="sf-${SFIMG[sfSel.c+"|"+sfSel.s+"|"+sfSel.i]}.jpg" alt="${esc(t.coat[sfSel.c]+", "+t.stage[sfSel.s]+", "+t.inst[sfSel.i])}" class="max-h-[300px] w-auto"></figure>
+   <dl class="grid grid-cols-2 gap-2 content-start m-0">${[["Sa","µm"],["Sq","µm"],["Sk","µm"],["Spk","µm"],["Svk","µm"],["Sdr","%"],["Sal","µm"],["Sz","µm"]].map(([p,u])=>`<div class="rounded-lg px-3 py-2" style="background:var(--panel2)"><dt class="text-xs" style="color:var(--mute)">${p} (${u})</dt><dd class="m-0 mono text-[15px]">${stat(p)}</dd></div>`).join("")}
+    <div class="col-span-2 text-xs" style="color:var(--mute)">${esc(t.field)} ${nf(f0.X_len,0)} × ${nf(f0.Y_len,0)} µm · ${ms.length} ${esc(t.n)} · ${esc(t.img)}</div></dl>
+  </div>
+  <h5 class="disp font-bold mt-7 mb-3">${esc(t.param)}</h5>
+  <div class="flex flex-wrap gap-1.5">${SFP.map(([p])=>`<button class="tab !min-h-[36px] !py-1 !px-3 text-sm" data-sfp="${p}" aria-pressed="${sfPar===p}">${p}</button>`).join("")}</div>
+  <div class="fig mt-3 rounded-xl" style="background:var(--panel2);min-height:300px"><svg id="sf-chart" role="img" aria-label="Parameter comparison by surface and instrument"></svg></div>
+  <div class="flex flex-wrap gap-4 text-xs mt-2" style="color:var(--mute)"><span><span class="inline-block w-3 h-3 rounded-sm align-middle" style="background:#ff9f43"></span> ${esc(t.inst.cf)}</span><span><span class="inline-block w-3 h-3 rounded-sm align-middle" style="background:#7dd3fc"></span> ${esc(t.inst.fv)}</span><span>▮ ${esc(t.mean)} · ● ${esc(t.each)}</span></div>
+  <h5 class="disp font-bold mt-7 mb-3">${esc(t.find)}</h5>
+  <ol class="space-y-2 list-none p-0 m-0">${t.F.map((x,i)=>`<li class="flex gap-3"><span class="mono text-sm flex-none w-6 h-6 grid place-items-center rounded-full" style="background:rgba(255,159,67,.15);color:var(--hot)">${i+1}</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ol>
+  <p class="text-xs mt-4" style="color:var(--mute)">${esc(t.caveat)}</p>
+  <a href="superfinishing-data.csv" target="_blank" rel="noopener" class="btn btn-line text-sm mt-3"><i data-lucide="table" class="w-4 h-4"></i>${esc(t.csv)}</a>`}
+function sfChart(){const sv=document.getElementById("sf-chart");if(!sv)return;const W=sv.clientWidth,H=sv.clientHeight;if(!W)return;const t=SFT[L],small=W<520;
+ const groups=[["LC","turn"],["LC","belt"],["CS","turn"],["CS","belt"]],C={cf:"#ff9f43",fv:"#7dd3fc"},u=(SFP.find(x=>x[0]===sfPar)||[])[1];
+ const vals=SFD.map(m=>m[sfPar]).filter(v=>v!=null),log=sfPar==="Sz";
+ const top=Math.max(...vals)*1.08,m={l:small?40:54,r:10,t:16,b:small?46:34},pw=W-m.l-m.r,ph=H-m.t-m.b;
+ const lo=log?Math.log10(1):0,hi=log?Math.log10(top):top,Y=v=>m.t+ph-(((log?Math.log10(Math.max(v,1)):v)-lo)/(hi-lo))*ph;
+ let g="";const nstep=(()=>{const r=top/4,e=10**Math.floor(Math.log10(r)),f=r/e;return (f<1.5?1:f<3?2:f<7?5:10)*e})();const ticks=log?[1,10,100].filter(v=>v<=top):Array.from({length:Math.floor(top/nstep)+1},(_,k)=>+(k*nstep).toFixed(6));
+ ticks.forEach(v=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="#2f3238"/><text x="${m.l-6}" y="${Y(v)+4}" fill="#a8a29e" font-size="11" text-anchor="end">${nf(v,2)}</text>`});
+ g+=`<text x="12" y="${m.t+ph/2}" fill="#a8a29e" font-size="11" text-anchor="middle" transform="rotate(-90 12 ${m.t+ph/2})">${sfPar} (${u})${log?" · log":""}</text>`;
+ const gw=pw/4;groups.forEach(([c,s],gi)=>{const x0=m.l+gi*gw;
+  ["cf","fv"].forEach((ins,k)=>{const xs=SFD.filter(d=>d.c===c&&d.s===s&&d.i===ins).map(d=>d[sfPar]).filter(v=>v!=null);if(!xs.length)return;
+   const bw=Math.min(34,gw*.28),cx=x0+gw/2+(k?bw*.65:-bw*.65),mv=avg(xs),yb=Y(log?Math.max(mv,1):mv),y0=Y(log?1:0);
+   g+=`<rect x="${cx-bw/2}" y="${yb}" width="${bw}" height="${Math.max(1,y0-yb)}" rx="3" fill="${C[ins]}" opacity=".35"/><line x1="${cx-bw/2}" x2="${cx+bw/2}" y1="${yb}" y2="${yb}" stroke="${C[ins]}" stroke-width="2.5"/>`;
+   xs.forEach((v,j)=>{g+=`<circle cx="${cx+(j-(xs.length-1)/2)*7}" cy="${Y(v)}" r="4" fill="${C[ins]}" stroke="#0f1115" stroke-width="1.5"><title>${nf(v)} ${u}</title></circle>`});});
+  g+=`<text x="${x0+gw/2}" y="${H-m.b+16}" fill="#f5f5f4" font-size="${small?11:12}" text-anchor="middle"><tspan font-weight="600">${c}</tspan>${small?`<tspan x="${x0+gw/2}" dy="14" fill="#a8a29e">${esc(t.stage[s])}</tspan>`:` · ${esc(t.stage[s])}`}</text>`;});
+ sv.innerHTML=g}
+const sfro=new ResizeObserver(()=>{sfChart();twCharts();triChart()});
+
+/* ---------------- TOOL WEAR DASHBOARD ---------------- */
+const TWD={t:[99.9,197.1,291.5,383.2,472.1,558.3,641.8,722.5,800.5].map(x=>x/60),vb:[.09,.101,.109,.118,.126,.13,.143,.147,.155],P:[4773,4810,5969,4877,4761,4877,5009.5,5281.5,4978.5],
+ vc:[75,115,155,195,275,315,355,395,435],kc1:[1721.6,1636.92,1543.08,1492.35,1418.81,1399.81,1385.0,1366.24,1350.33],kc2:[1739.43,1634.16,1554.47,1496.22,1417.71,1401.63,1382.2,1365.24,1350.17]};
+const TWT={en:{stats:[["13.3 min","tool life to VB = 0.155 mm (9 passes, test end)"],["0.0054 mm/min","steady flank-wear rate (linear fit, passes 2–9)"],["0.054 mm/min","break-in wear rate in the first 1.7 min"],["Pass 9","the cutting edge chipped at 13.3 min — end of the tool's life"]],
+ cond:["FGL200 gray cast iron, Ø146 → 114 mm","CNMG 120408-PR coated carbide","Vc 378 m/min · f 0.35 mm/rev · ap 2 mm","Dry cutting"],curve:"Flank wear over cutting time",ax:"Cumulative cutting time (min)",ay:"Flank wear VB (mm)",fit:"linear fit (passes 2–9)",brk:"break-in",steady:"steady wear",fail:"edge failure after pass 9",
+ photos:"The insert under the microscope",ph:[["Pass 1","VB ≈ 0.09 mm — break-in"],["Pass 5","VB = 0.126 mm — even flank wear, heat tint"],["After pass 9","edge chipped — end of test"]],
+ kcT:"Working domain check: specific cutting pressure vs cutting speed",kcx:"Cutting speed Vc (m/min)",kcy:"Kc (N/mm²)",ref:"manufacturer reference 1500 N/mm²",vmin:"Vc,min = 210 m/min",
+ find:"What we found",F:["The insert followed the classic wear curve: fast break-in (0 → 0.09 mm in the first pass), then steady flank wear at about 0.0054 mm/min.","Abrasion by the hard phases of cast iron dominated — a smooth, scratched wear land — with heat tint on the flank suggesting oxidation in dry cutting.","The cutting edge chipped suddenly after pass 9 (13.3 min), before the wear reached the usual 0.3 mm limit — at this cutting speed, edge breakage, not gradual wear, ended the tool's life.","Cutting power stayed between 4.8 and 5.3 kW in eight of the nine passes (one reading of 6.0 kW in pass 3); the highest regular value, 5.3 kW, came in pass 8 with a worn edge.","Working domain proposed by earlier groups checked and confirmed: their five Kc qualification tests agree within 1.7 % and sit 5.2 % below the 1500 N/mm² reference; Vc ≥ 210 m/min, f 0.30–0.40 mm/rev, ap ≥ 0.8 mm."],
+ cav:"Limits: one insert at one cutting speed, so the Taylor exponents could not be identified — NF E66-520 needs four to seven wear tests."},
+fr:{stats:[["13,3 min","durée de vie jusqu'à VB = 0,155 mm (9 passes, fin d'essai)"],["0,0054 mm/min","vitesse d'usure stabilisée (régression linéaire, passes 2–9)"],["0,054 mm/min","usure de rodage sur les 1,7 premières minutes"],["Passe 9","l'arête s'est écaillée à 13,3 min — fin de vie de l'outil"]],
+ cond:["Fonte grise FGL200, Ø146 → 114 mm","Plaquette carbure revêtue CNMG 120408-PR","Vc 378 m/min · f 0,35 mm/tr · ap 2 mm","Usinage à sec"],curve:"Usure en dépouille en fonction du temps de coupe",ax:"Temps de coupe cumulé (min)",ay:"Usure en dépouille VB (mm)",fit:"régression linéaire (passes 2–9)",brk:"rodage",steady:"usure stabilisée",fail:"rupture d'arête après la passe 9",
+ photos:"La plaquette au microscope",ph:[["Passe 1","VB ≈ 0,09 mm — rodage"],["Passe 5","VB = 0,126 mm — usure régulière, coloration thermique"],["Après la passe 9","arête écaillée — fin d'essai"]],
+ kcT:"Vérification du domaine : pression spécifique de coupe selon la vitesse de coupe",kcx:"Vitesse de coupe Vc (m/min)",kcy:"Kc (N/mm²)",ref:"référence fabricant 1500 N/mm²",vmin:"Vc,min = 210 m/min",
+ find:"Ce que nous avons trouvé",F:["La plaquette a suivi la courbe d'usure classique : rodage rapide (0 → 0,09 mm à la première passe), puis usure en dépouille stabilisée d'environ 0,0054 mm/min.","L'abrasion par les phases dures de la fonte domine — bande d'usure lisse et rayée — avec une coloration thermique en dépouille qui suggère une oxydation à sec.","L'arête s'est écaillée brutalement après la passe 9 (13,3 min), avant que l'usure n'atteigne la limite usuelle de 0,3 mm — à cette vitesse, c'est la rupture d'arête, et non l'usure progressive, qui a mis fin à la vie de l'outil.","La puissance de coupe est restée entre 4,8 et 5,3 kW sur huit des neuf passes (une mesure à 6,0 kW à la passe 3) ; la valeur régulière la plus haute, 5,3 kW, a été relevée à la passe 8, arête usée.","Domaine proposé par les groupes précédents vérifié et confirmé : leurs cinq essais de qualification de Kc concordent à 1,7 % près et se situent 5,2 % sous la référence de 1500 N/mm² ; Vc ≥ 210 m/min, f 0,30–0,40 mm/tr, ap ≥ 0,8 mm."],
+ cav:"Limites : une seule plaquette à une seule vitesse de coupe, donc les exposants de Taylor n'ont pas pu être identifiés — la norme NF E66-520 demande quatre à sept essais d'usure."}};
+let twSel=4;
+function twDash(){const t=TWT[L],P=[0,4,8];
+ return `<div class="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-4">${t.stats.map(([v,l])=>`<div class="rounded-xl p-3" style="background:var(--panel2);border:1px solid var(--line)"><div class="disp font-extrabold text-[clamp(20px,2.4vw,26px)]" style="color:var(--hot)">${esc(v)}</div><div class="text-xs mt-1" style="color:var(--mute)">${esc(l)}</div></div>`).join("")}</div>
+ <div class="flex flex-wrap gap-1.5 mb-5">${t.cond.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
+ <h5 class="disp font-bold mb-2">${esc(t.curve)}</h5>
+ <div class="fig rounded-xl" style="background:var(--panel2);min-height:290px"><svg id="tw-chart" role="img" aria-label="${esc(t.curve)}"></svg></div>
+ <h5 class="disp font-bold mt-6 mb-2">${esc(t.photos)}</h5>
+ <div class="grid grid-cols-3 gap-2">${t.ph.map(([h,c],i)=>`<button class="text-left rounded-xl overflow-hidden" data-twp="${P[i]}" style="border:2px solid ${twSel===P[i]?"var(--hot)":"var(--line)"};background:var(--panel2)"><img src="tw-${["pass1","pass5","final"][i]}.jpg" alt="${esc(h+": "+c)}" class="w-full aspect-[4/3] object-cover"><span class="block p-2"><b class="text-sm">${esc(h)}</b><span class="block text-xs" style="color:var(--mute)">${esc(c)}</span></span></button>`).join("")}</div>
+ <h5 class="disp font-bold mt-6 mb-2">${esc(t.kcT)}</h5>
+ <div class="fig rounded-xl" style="background:var(--panel2);min-height:240px"><svg id="tw-kc" role="img" aria-label="${esc(t.kcT)}"></svg></div>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.find)}</h5>
+ <ol class="space-y-2 list-none p-0 m-0">${t.F.map((x,i)=>`<li class="flex gap-3"><span class="mono text-sm flex-none w-6 h-6 grid place-items-center rounded-full" style="background:rgba(255,159,67,.15);color:var(--hot)">${i+1}</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ol>
+ <p class="text-xs mt-4" style="color:var(--mute)">${esc(t.cav)}</p>`}
+function twCharts(){const t=TWT[L],sv=document.getElementById("tw-chart");if(!sv)return;const W=sv.clientWidth,H=sv.clientHeight;if(!W)return;const small=W<520,dec=v=>L==="fr"?String(v).replace(".",","):String(v);
+ let m={l:small?42:54,r:14,t:16,b:40},pw=W-m.l-m.r,ph=H-m.t-m.b,X=v=>m.l+v/14*pw,Y=v=>m.t+ph-(v/.18)*ph,g="";
+ g+=`<rect x="${X(0)}" y="${m.t}" width="${X(1.665)-X(0)}" height="${ph}" fill="rgba(125,211,252,.10)"/><text x="${X(.83)}" y="${m.t+14}" fill="#7dd3fc" font-size="11" text-anchor="middle">${esc(t.brk)}</text>`;
+ g+=`<text x="${X(7.5)}" y="${m.t+14}" fill="#a8a29e" font-size="11" text-anchor="middle">${esc(t.steady)}</text>`;
+ [0,.05,.1,.15].forEach(v=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="#2f3238"/><text x="${m.l-6}" y="${Y(v)+4}" fill="#a8a29e" font-size="11" text-anchor="end">${dec(v.toFixed(2))}</text>`});
+ [0,2,4,6,8,10,12,14].forEach(v=>{if(small&&v%4)return;g+=`<text x="${X(v)}" y="${H-m.b+16}" fill="#a8a29e" font-size="11" text-anchor="middle">${v}</text>`});
+ g+=`<text x="${m.l+pw/2}" y="${H-6}" fill="#e7e5e4" font-size="11" text-anchor="middle">${esc(t.ax)}</text>`;
+ if(!small)g+=`<text x="12" y="${m.t+ph/2}" fill="#e7e5e4" font-size="11" text-anchor="middle" transform="rotate(-90 12 ${m.t+ph/2})">${esc(t.ay)}</text>`;
+ g+=`<line x1="${X(1.6)}" y1="${Y(.0832+.00536*1.6)}" x2="${X(14)}" y2="${Y(.0832+.00536*14)}" stroke="#a8a29e" stroke-dasharray="5 4"/>${small?"":`<text x="${X(11)}" y="${Y(.0832+.00536*11)+18}" fill="#a8a29e" font-size="10" text-anchor="middle">${esc(t.fit)}</text>`}`;
+ let d=`M${X(0)},${Y(0)}`;TWD.t.forEach((x,i)=>d+=`L${X(x)},${Y(TWD.vb[i])}`);g+=`<path d="${d}" fill="none" stroke="#ff9f43" stroke-width="2.5"/>`;
+ TWD.t.forEach((x,i)=>{const on=i===twSel;g+=`<circle cx="${X(x)}" cy="${Y(TWD.vb[i])}" r="${on?8:5}" fill="${on?"#ff9f43":"#0f1115"}" stroke="#ff9f43" stroke-width="2.5"><title>Pass ${i+1}: VB ${TWD.vb[i]} mm, ${x.toFixed(1)} min</title></circle>`;if(on)g+=`<text x="${X(x)}" y="${Y(TWD.vb[i])-14}" fill="#f5f5f4" font-size="12" text-anchor="middle">VB ${dec(TWD.vb[i])} mm</text>`});
+ g+=`<path d="M${X(13.34)} ${Y(.155)-30} l0 20" stroke="#fb7185" stroke-width="2"/><text x="${X(13.2)}" y="${Y(.155)-34}" fill="#fb7185" font-size="11" text-anchor="end">✕ ${esc(t.fail)}</text>`;
+ sv.innerHTML=g;
+ const kv=document.getElementById("tw-kc");if(!kv)return;const W2=kv.clientWidth,H2=kv.clientHeight;if(!W2)return;
+ m={l:small?44:56,r:14,t:16,b:40};pw=W2-m.l-m.r;ph=H2-m.t-m.b;const X2=v=>m.l+(v-50)/400*pw,Y2=v=>m.t+ph-((v-1300)/500)*ph;g="";
+ [1300,1400,1500,1600,1700,1800].forEach(v=>{g+=`<line x1="${m.l}" x2="${W2-m.r}" y1="${Y2(v)}" y2="${Y2(v)}" stroke="#2f3238"/><text x="${m.l-6}" y="${Y2(v)+4}" fill="#a8a29e" font-size="11" text-anchor="end">${v}</text>`});
+ [100,200,300,400].forEach(v=>{g+=`<text x="${X2(v)}" y="${H2-m.b+16}" fill="#a8a29e" font-size="11" text-anchor="middle">${v}</text>`});
+ g+=`<text x="${m.l+pw/2}" y="${H2-6}" fill="#e7e5e4" font-size="11" text-anchor="middle">${esc(t.kcx)}</text>`;
+ g+=`<line x1="${m.l}" x2="${W2-m.r}" y1="${Y2(1500)}" y2="${Y2(1500)}" stroke="#fb7185" stroke-dasharray="5 4"/><text x="${W2-m.r-4}" y="${Y2(1500)-6}" fill="#fb7185" font-size="10" text-anchor="end">${esc(t.ref)}</text>`;
+ g+=`<rect x="${X2(210)}" y="${m.t}" width="${X2(450)-X2(210)}" height="${ph}" fill="rgba(125,211,252,.08)"/><line x1="${X2(210)}" x2="${X2(210)}" y1="${m.t}" y2="${m.t+ph}" stroke="#7dd3fc" stroke-dasharray="4 3"/><text x="${X2(214)}" y="${m.t+ph-8}" fill="#7dd3fc" font-size="11">${esc(t.vmin)}</text>`;
+ let d2="";TWD.vc.forEach((v,i)=>{const k=(TWD.kc1[i]+TWD.kc2[i])/2;d2+=(i?"L":"M")+X2(v)+","+Y2(k)});g+=`<path d="${d2}" fill="none" stroke="#ff9f43" stroke-width="2"/>`;
+ TWD.vc.forEach((v,i)=>{[TWD.kc1[i],TWD.kc2[i]].forEach((k,j)=>{g+=`<circle cx="${X2(v)+(j?3:-3)}" cy="${Y2(k)}" r="3.5" fill="#ff9f43" stroke="#0f1115"><title>Vc ${v} m/min: Kc ${k.toFixed(0)} N/mm²</title></circle>`})});
+ kv.innerHTML=g}
+
+/* ---------------- FEM DASHBOARD ---------------- */
+const FMT={en:{m1:"Model 1 — Orthogonal cutting (2D)",m1s:"Set up following Mabrouki et al., Int. J. Machine Tools & Manufacture, 2008 (A2024-T351 dry cutting)",cap1:"Von Mises stress (MPa) as the tool advances: the chip curls up and segments into a saw-tooth shape, with the highest stress in the primary shear zone.",
+ m1p:[["Workpiece","A2024-T351 (AU4G) aluminium"],["Elements","CPE4RT, plane strain, coupled temperature–displacement"],["Plasticity","Johnson–Cook: A 352 MPa · B 440 MPa · n 0.42 · C 0.0083 · m 1"],["Damage initiation","Johnson–Cook: D1 0.13 · D2 0.13 · D3 −1.5 · D4 0.011 · D5 0"],["Damage evolution","Hillerborg fracture energy from K_IC / K_IIC (modes I and II)"],["Tool","Carbide, rake 17.5°, clearance 7° · Coulomb friction"]],
+ m2:"Model 2 — Frictional heating in a sliding contact (3D)",m2s:"A block is pressed onto a plate and slid along it; contact friction is converted to heat in both bodies",cap2:"Nodal temperature NT11 (°C): heat builds up under the sliding block and is left behind along its track on the plate.",
+ m2p:[["Geometry","Top block 20 × 20 × 20 mm on a 200 × 50 × 15 mm plate"],["Material","Aluminium: E 70 GPa · ν 0.3 · ρ 2700 kg/m³ · k 150 W/m·K · cp 670 J/kg·K"],["Load","10 MPa contact pressure, ramped in with an amplitude curve"],["Contact","Coulomb μ = 0.3, hard normal contact, kinematic constraint"],["Heat","100 % of friction work becomes heat, split 50/50 between the two surfaces"],["Step","Dynamic temperature–displacement, explicit, 0.1 s · start at 20 °C"]],
+ learn:"What these models show",F:["The cutting model reproduces the segmented (saw-tooth) chip that Mabrouki et al. observed with a high-speed camera, by coupling Johnson–Cook damage with fracture energy so the result depends less on mesh size.","Stress concentrates in the primary shear zone ahead of the tool tip — the same zone where tool wear starts.","In the sliding model the temperature rises under the contact and stays highest at the trailing edge, where the surface has been rubbing longest.","Peak values on the colour scale are capped at 250 °C: isolated nodes read higher (over 1000 °C), a typical explicit-contact spike rather than a physical temperature for aluminium."],
+ note:"Simulations run in Abaqus/Explicit. Videos are screen recordings of the results, sped up."},
+fr:{m1:"Modèle 1 — Coupe orthogonale (2D)",m1s:"Mis en place d'après Mabrouki et al., Int. J. Machine Tools & Manufacture, 2008 (coupe à sec de l'A2024-T351)",cap1:"Contrainte de Von Mises (MPa) pendant l'avance de l'outil : le copeau s'enroule et se segmente en dents de scie, avec la contrainte maximale dans la zone de cisaillement primaire.",
+ m1p:[["Pièce","Aluminium A2024-T351 (AU4G)"],["Éléments","CPE4RT, déformations planes, couplage thermomécanique"],["Plasticité","Johnson–Cook : A 352 MPa · B 440 MPa · n 0,42 · C 0,0083 · m 1"],["Amorçage de l'endommagement","Johnson–Cook : D1 0,13 · D2 0,13 · D3 −1,5 · D4 0,011 · D5 0"],["Évolution de l'endommagement","Énergie de rupture de Hillerborg à partir de K_IC / K_IIC (modes I et II)"],["Outil","Carbure, angle de coupe 17,5°, dépouille 7° · frottement de Coulomb"]],
+ m2:"Modèle 2 — Échauffement par frottement dans un contact glissant (3D)",m2s:"Un bloc est pressé sur une plaque et glisse le long de celle-ci ; le frottement de contact est converti en chaleur dans les deux corps",cap2:"Température nodale NT11 (°C) : la chaleur s'accumule sous le bloc et reste le long de sa trace sur la plaque.",
+ m2p:[["Géométrie","Bloc 20 × 20 × 20 mm sur une plaque 200 × 50 × 15 mm"],["Matériau","Aluminium : E 70 GPa · ν 0,3 · ρ 2700 kg/m³ · k 150 W/m·K · cp 670 J/kg·K"],["Chargement","Pression de contact 10 MPa, appliquée progressivement (amplitude)"],["Contact","Coulomb μ = 0,3, contact normal « hard », contrainte cinématique"],["Chaleur","100 % du travail de frottement devient chaleur, répartie 50/50 entre les deux surfaces"],["Étape","Dynamique température–déplacement, explicite, 0,1 s · départ à 20 °C"]],
+ learn:"Ce que montrent ces modèles",F:["Le modèle de coupe reproduit le copeau segmenté (en dents de scie) observé par Mabrouki et al. à la caméra rapide, en couplant l'endommagement de Johnson–Cook à l'énergie de rupture pour limiter la dépendance au maillage.","La contrainte se concentre dans la zone de cisaillement primaire devant la pointe de l'outil — là où commence l'usure de l'outil.","Dans le modèle de glissement, la température monte sous le contact et reste maximale au bord arrière, qui frotte depuis le plus longtemps.","L'échelle de couleur est plafonnée à 250 °C : quelques nœuds isolés dépassent 1000 °C, un pic typique du contact en explicite et non une température physique pour l'aluminium."],
+ note:"Simulations réalisées sous Abaqus/Explicit. Les vidéos sont des enregistrements d'écran des résultats, accélérés."}};
+function femDash(){const t=FMT[L],tbl=r=>`<dl class="grid gap-1.5 m-0">${r.map(([k,v])=>`<div class="grid grid-cols-[minmax(0,130px)_minmax(0,1fr)] gap-3 rounded-lg px-3 py-2 text-sm" style="background:var(--panel2)"><dt style="color:var(--mute)">${esc(k)}</dt><dd class="m-0">${esc(v)}</dd></div>`).join("")}</dl>`,
+ vid=(src,poster,cap,bg)=>`<figure class="m-0"><div class="rounded-xl overflow-hidden" style="background:${bg};border:1px solid var(--line)"><video src="${src}" poster="${poster}" autoplay muted loop playsinline class="w-full block" aria-label="${esc(cap)}"></video></div><figcaption class="text-xs mt-2" style="color:var(--mute)">${esc(cap)}</figcaption></figure>`;
+ return `<section class="mb-7"><h5 class="disp font-bold text-lg">${esc(t.m1)}</h5><p class="text-sm mb-3" style="color:var(--steel)">${esc(t.m1s)}</p>${vid("fem-cutting.mp4","fem-cutting.jpg",t.cap1,"#fff")}<div class="mt-3">${tbl(t.m1p)}</div></section>
+ <section class="mb-7"><h5 class="disp font-bold text-lg">${esc(t.m2)}</h5><p class="text-sm mb-3" style="color:var(--steel)">${esc(t.m2s)}</p>${vid("fem-friction.mp4","fem-friction.jpg",t.cap2,"#fff")}<div class="mt-3">${tbl(t.m2p)}</div></section>
+ <h5 class="disp font-bold mb-3">${esc(t.learn)}</h5><ol class="space-y-2 list-none p-0 m-0">${t.F.map((x,i)=>`<li class="flex gap-3"><span class="mono text-sm flex-none w-6 h-6 grid place-items-center rounded-full" style="background:rgba(255,159,67,.15);color:var(--hot)">${i+1}</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ol>
+ <p class="text-xs mt-4" style="color:var(--mute)">${esc(t.note)}</p>`}
+
+/* ---------------- TRIBOLOGY DASHBOARD ---------------- */
+const TRD={kd:[9.336e-5,7.533e-5,4.3199e-4,5.8092e-4,2.9643e-4],kb:[1.4544e-6,2.5462e-6,1.2051e-5,3.3092e-5,4.8087e-6],dep:[3.37,1.85,9.33,10.35,6.38]};
+const TRT={en:{stats:[["5 N · 5 mm/s","reciprocating ball-on-flat, 10 mm stroke, 3.9 m sliding"],["586 MPa","initial Hertz mean contact pressure (a = 52 µm)"],["3.0 × 10⁻⁴","mean coating wear rate k (mm³/N·m)"],["≈ 27×","more wear volume on the coating than on the ball"]],
+ chart:"Archard wear rate per test (log scale)",ax:"k (mm³ / N·m)",disk:"Coating (Cu-CS)",ball:"Ball",brake:"disc brakes",tool:"cutting tools",
+ mm:"Wear track measured by focus variation (MountainsMap)",mmc1:"Height map of the full wear track, test 4 — blue = deepest wear",mmc2:"Cross-section profile across the track: grooves down to about 10 µm deep with ridges of displaced copper on each side",imgs:"What the surfaces show",cap:[["Wear track, SEM (×100)","Smooth, polished track with ploughing grooves along the sliding direction"],["Track, SEM (×500)","Parallel grooves and lips of displaced copper — abrasive and adhesive wear"],["Oxygen map, EDS","Oxygen detected across the track — a sign of copper oxidation during sliding"],["Ball scar, optical (test 4)","Copper-coloured transfer layer and debris around a 409 × 495 µm scar"]],
+ find:"What we found",F:["The coating wore about 27 times more than the ball (mean k = 3.0 × 10⁻⁴ vs 1.1 × 10⁻⁵ mm³/N·m).","Wear mechanisms: abrasive ploughing, a copper-coloured transfer layer on the ball (adhesion) and oxygen across the track in EDS, pointing to oxidation.","As the ball flattens, contact pressure drops from 586 MPa (Hertz) to 30–150 MPa at the final scars — the test is self-limiting.","Scatter between the five identical tests is large (k from 7.5 × 10⁻⁵ to 5.8 × 10⁻⁴), possibly from porosity and local variations of the cold-spray deposit."],
+ next:"Next step: the three groups compare Cu, Cu-CS and Cu-SiC on the same test to recommend the coating with the longest surface life.",
+ note:"Wear volumes from focus-variation cross-sections of the track (5 profiles per test) and from the ball scar diameter (spherical cap). Sliding distance of 3.9 m back-calculated from the group's wear-rate sheet."},
+fr:{stats:[["5 N · 5 mm/s","bille-plan alternatif, course 10 mm, 3,9 m de glissement"],["586 MPa","pression moyenne de Hertz initiale (a = 52 µm)"],["3,0 × 10⁻⁴","taux d'usure moyen k du revêtement (mm³/N·m)"],["≈ 27×","plus de volume usé sur le revêtement que sur la bille"]],
+ chart:"Taux d'usure d'Archard par essai (échelle log)",ax:"k (mm³ / N·m)",disk:"Revêtement (Cu-CS)",ball:"Bille",brake:"disques de frein",tool:"outils de coupe",
+ mm:"Trace d'usure mesurée en variation focale (MountainsMap)",mmc1:"Carte de hauteur de toute la trace, essai 4 — bleu = usure la plus profonde",mmc2:"Profil en travers de la trace : sillons jusqu'à environ 10 µm de profondeur, bourrelets de cuivre déplacé de part et d'autre",imgs:"Ce que montrent les surfaces",cap:[["Trace d'usure, MEB (×100)","Trace lissée avec des sillons de labourage dans le sens du glissement"],["Trace, MEB (×500)","Sillons parallèles et bourrelets de cuivre déplacé — usure abrasive et adhésive"],["Carte de l'oxygène, EDS","Oxygène détecté sur la trace — signe d'oxydation du cuivre pendant le glissement"],["Trace sur la bille, optique (essai 4)","Couche de transfert cuivrée et débris autour d'une empreinte de 409 × 495 µm"]],
+ find:"Ce que nous avons trouvé",F:["Le revêtement s'use environ 27 fois plus que la bille (k moyen = 3,0 × 10⁻⁴ contre 1,1 × 10⁻⁵ mm³/N·m).","Mécanismes : labourage abrasif, couche de transfert cuivrée sur la bille (adhésion) et oxygène sur toute la trace en EDS, signe d'oxydation.","À mesure que la bille s'aplatit, la pression de contact passe de 586 MPa (Hertz) à 30–150 MPa sur les empreintes finales — l'essai s'auto-limite.","La dispersion entre les cinq essais identiques est forte (k de 7,5 × 10⁻⁵ à 5,8 × 10⁻⁴), peut-être liée à la porosité et aux variations locales du dépôt cold spray."],
+ next:"Étape suivante : les trois groupes comparent Cu, Cu-CS et Cu-SiC sur le même essai pour recommander le revêtement à plus longue durée de vie.",
+ note:"Volumes usés à partir de coupes de la trace en variation focale (5 profils par essai) et du diamètre d'empreinte sur la bille (calotte sphérique). Distance de glissement de 3,9 m recalculée à partir de la feuille de calcul du groupe."}};
+function triDash(){const t=TRT[L],im=["track_sem","track_se500","eds_o","ball_scar"];
+ return `<div class="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-5">${t.stats.map(([v,l])=>`<div class="rounded-xl p-3" style="background:var(--panel2);border:1px solid var(--line)"><div class="disp font-extrabold text-[clamp(18px,2.2vw,24px)]" style="color:var(--hot)">${esc(v)}</div><div class="text-xs mt-1" style="color:var(--mute)">${esc(l)}</div></div>`).join("")}</div>
+ <h5 class="disp font-bold mb-2">${esc(t.chart)}</h5><div class="fig rounded-xl" style="background:var(--panel2);min-height:270px"><svg id="tri-chart" role="img" aria-label="${esc(t.chart)}"></svg></div>
+ <div class="flex flex-wrap gap-4 text-xs mt-2" style="color:var(--mute)"><span><span class="inline-block w-3 h-3 rounded-sm align-middle" style="background:#ff9f43"></span> ${esc(t.disk)}</span><span><span class="inline-block w-3 h-3 rounded-full align-middle" style="background:#7dd3fc"></span> ${esc(t.ball)}</span></div>
+ <h5 class="disp font-bold mt-6 mb-2">${esc(t.mm)}</h5>
+ <figure class="m-0 rounded-xl overflow-hidden" style="border:1px solid var(--line)"><img src="tri-fv_map.jpg" alt="${esc(t.mmc1)}" class="w-full block"></figure>
+ <div class="flex justify-between text-xs mt-1 mono" style="color:var(--mute)"><span>${esc(t.mmc1)}</span><span>≈ 11 × 1.6 mm</span></div>
+ <figure class="m-0 mt-3 rounded-xl overflow-hidden" style="background:#fff;border:1px solid var(--line)"><img src="tri-fv_profile.jpg" alt="${esc(t.mmc2)}" class="w-full block"></figure>
+ <p class="text-xs mt-1" style="color:var(--mute)">${esc(t.mmc2)}</p>
+ <h5 class="disp font-bold mt-6 mb-2">${esc(t.imgs)}</h5>
+ <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">${t.cap.map(([h,c],i)=>`<figure class="m-0 rounded-xl overflow-hidden" style="background:var(--panel2);border:1px solid var(--line)"><img src="tri-${im[i]}.jpg" alt="${esc(h)}" class="w-full aspect-square object-cover"><figcaption class="p-2"><b class="text-sm">${esc(h)}</b><span class="block text-xs" style="color:var(--mute)">${esc(c)}</span></figcaption></figure>`).join("")}</div>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.find)}</h5>
+ <ol class="space-y-2 list-none p-0 m-0">${t.F.map((x,i)=>`<li class="flex gap-3"><span class="mono text-sm flex-none w-6 h-6 grid place-items-center rounded-full" style="background:rgba(255,159,67,.15);color:var(--hot)">${i+1}</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ol>
+ <p class="mt-4 rounded-lg p-3 text-sm" style="background:rgba(125,211,252,.08);border:1px solid rgba(125,211,252,.35);color:#e7e5e4">${esc(t.next)}</p>
+ <p class="text-xs mt-3" style="color:var(--mute)">${esc(t.note)}</p>`}
+function triChart(){const sv=document.getElementById("tri-chart");if(!sv)return;const W=sv.clientWidth,H=sv.clientHeight;if(!W)return;const t=TRT[L],small=W<520;
+ const m={l:small?46:60,r:12,t:14,b:34},pw=W-m.l-m.r,ph=H-m.t-m.b,lo=-6,hi=-3,Y=v=>m.t+ph-((Math.log10(v)-lo)/(hi-lo))*ph,gw=pw/5;let g="";
+ g+=`<rect x="${m.l}" y="${Y(1e-4)}" width="${pw}" height="${Y(1e-5)-Y(1e-4)}" fill="rgba(251,113,133,.07)"/><text x="${W-m.r-4}" y="${Y(1e-4)+14}" fill="#fda4af" font-size="10" text-anchor="end">${esc(t.brake)}</text>`;
+ g+=`<rect x="${m.l}" y="${Y(1e-5)}" width="${pw}" height="${Y(1e-6)-Y(1e-5)}" fill="rgba(255,159,67,.05)"/><text x="${W-m.r-4}" y="${Y(1e-5)+14}" fill="#a8a29e" font-size="10" text-anchor="end">${esc(t.tool)}</text>`;
+ [-6,-5,-4,-3].forEach(e=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(10**e)}" y2="${Y(10**e)}" stroke="#2f3238"/><text x="${m.l-6}" y="${Y(10**e)+4}" fill="#a8a29e" font-size="11" text-anchor="end">10<tspan dy="-5" font-size="8">${e}</tspan></text>`});
+ if(!small)g+=`<text x="12" y="${m.t+ph/2}" fill="#e7e5e4" font-size="11" text-anchor="middle" transform="rotate(-90 12 ${m.t+ph/2})">${esc(t.ax)}</text>`;
+ TRD.kd.forEach((k,i)=>{const cx=m.l+gw*i+gw/2,bw=Math.min(34,gw*.38);
+  g+=`<rect x="${cx-bw/2}" y="${Y(k)}" width="${bw}" height="${Y(1e-6)-Y(k)}" rx="3" fill="#ff9f43" opacity=".8"><title>Test ${i+1}: k = ${k.toExponential(2)}</title></rect>`;
+  g+=`<circle cx="${cx}" cy="${Y(TRD.kb[i])}" r="6" fill="#7dd3fc" stroke="#0f1115" stroke-width="2"><title>Ball, test ${i+1}: k = ${TRD.kb[i].toExponential(2)}</title></circle>`;
+  g+=`<text x="${cx}" y="${H-m.b+18}" fill="#f5f5f4" font-size="12" text-anchor="middle">${L==="fr"?"Essai":"Test"} ${i+1}</text>`});
+ sv.innerHTML=g}
+
+/* ---------------- BIBLIO DASHBOARD ---------------- */
+const BBD={tr:[["Silane",40,65],["Maleic anhydride",35,55],["Alkali (NaOH)",30,50],["Acetylation",25,35],["Plasma",20,40],["Benzylation",15,25]],
+ fb:[["Flax",53],["Hemp",47],["Bamboo",29],["E-glass",28],["Jute",21],["Sisal",15],["Coir",4]]};
+const BBT={en:{t1:"Reported IFSS gain by surface treatment",t2:"Specific modulus (GPa per g/cm³) — plant fibres vs E-glass",trn:{"Silane":"Silane","Maleic anhydride":"Maleic anhydride","Alkali (NaOH)":"Alkali (NaOH)","Acetylation":"Acetylation","Plasma":"Plasma","Benzylation":"Benzylation"},fbn:{},
+ find:"Key takeaways",F:["Silane coupling and maleic-anhydride grafting give the largest interface gains (+35–65 % IFSS) because they form covalent or ester bonds with the matrix.","Alkali treatment is the usual first step: it strips lignin and waxes, roughens the surface and is often combined with silane.","Flax and hemp beat E-glass on stiffness per unit weight (≈ 53 and 47 vs 28 GPa·cm³/g) — the main argument for lightweight parts.","Stronger is not always better: a very strong interface can lower impact toughness by suppressing fibre pull-out.","Moisture is the weak point: treated composites keep 60–85 % of their properties after 1,000 h at 50 °C / 90 % RH, untreated ones only 30–50 %."],
+ note:"All values are ranges compiled from the published literature reviewed in the report, not my own measurements."},
+fr:{t1:"Gain d'IFSS rapporté selon le traitement de surface",t2:"Module spécifique (GPa par g/cm³) — fibres végétales vs verre E",trn:{"Silane":"Silane","Maleic anhydride":"Anhydride maléique","Alkali (NaOH)":"Alcalin (NaOH)","Acetylation":"Acétylation","Plasma":"Plasma","Benzylation":"Benzylation"},fbn:{"Flax":"Lin","Hemp":"Chanvre","Bamboo":"Bambou","E-glass":"Verre E","Jute":"Jute","Sisal":"Sisal","Coir":"Coco"},
+ find:"À retenir",F:["Le couplage silane et le greffage d'anhydride maléique donnent les plus forts gains à l'interface (+35–65 % d'IFSS) car ils créent des liaisons covalentes ou ester avec la matrice.","Le traitement alcalin est la première étape habituelle : il élimine lignine et cires, rugosifie la surface et se combine souvent au silane.","Le lin et le chanvre dépassent le verre E en rigidité par unité de masse (≈ 53 et 47 contre 28 GPa·cm³/g) — l'argument principal pour les pièces allégées.","Plus fort n'est pas toujours mieux : une interface très résistante peut réduire la ténacité au choc en supprimant l'arrachement des fibres.","L'humidité est le point faible : les composites traités conservent 60–85 % de leurs propriétés après 1 000 h à 50 °C / 90 % HR, les non traités seulement 30–50 %."],
+ note:"Toutes les valeurs sont des plages issues de la littérature analysée dans le rapport, pas mes propres mesures."}};
+function bibDash(){const t=BBT[L],X=v=>v/70*100;
+ const r1=BBD.tr.map(([n,a,b])=>`<div class="grid grid-cols-[minmax(0,130px)_minmax(0,1fr)_56px] items-center gap-3"><span class="text-sm">${esc(t.trn[n]||n)}</span><div class="relative h-4 rounded-full" style="background:var(--panel2)"><div class="absolute inset-y-0 rounded-full" style="left:${X(a)}%;width:${X(b-a)}%;background:linear-gradient(90deg,#7dd3fc,#ff9f43)"></div></div><span class="mono text-xs text-right" style="color:var(--hot)">+${a}–${b}%</span></div>`).join("");
+ const r2=BBD.fb.map(([n,v])=>{const g=n==="E-glass";return `<div class="grid grid-cols-[minmax(0,90px)_minmax(0,1fr)_40px] items-center gap-3"><span class="text-sm" style="${g?"color:var(--mute)":""}">${esc(t.fbn[n]||n)}</span><div class="h-4 rounded-full" style="background:var(--panel2)"><div class="h-full rounded-full" style="width:${v/55*100}%;background:${g?"#a8a29e":"#c9a94b"}"></div></div><span class="mono text-xs text-right">${v}</span></div>`}).join("");
+ return `<img src="nfrp-infographic.jpg" alt="Natural fibre composites: chemistry, surface treatments and performance" class="w-full rounded-xl mb-5" style="border:1px solid var(--line)"><h5 class="disp font-bold mb-3">${esc(t.t1)}</h5><div class="space-y-2">${r1}</div>
+ <h5 class="disp font-bold mt-7 mb-3">${esc(t.t2)}</h5><div class="space-y-2">${r2}</div>
+ <h5 class="disp font-bold mt-7 mb-3">${esc(t.find)}</h5><ol class="space-y-2 list-none p-0 m-0">${t.F.map((x,i)=>`<li class="flex gap-3"><span class="mono text-sm flex-none w-6 h-6 grid place-items-center rounded-full" style="background:rgba(255,159,67,.15);color:var(--hot)">${i+1}</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ol>
+ <p class="text-xs mt-4" style="color:var(--mute)">${esc(t.note)}</p>`}
+
+/* ---------------- LASER CLADDING DASHBOARD ---------------- */
+const LCT={en:{v1:"Cladding in progress",c1:"The laser melts the shaft surface while 316L powder is blown into the melt pool; sparks are unmelted particles bouncing off.",v2:"Melt-pool camera and CNC",c2:"Live view of the melt pool used to keep the process stable, next to the Siemens Sinumerik controller.",
+ how:"How the process works",steps:[["Laser","A diode laser (3 kW class) melts a shallow pool on the part"],["Powder","316L powder is carried by inert gas through a coaxial nozzle into the pool"],["Track","The head traverses while the shaft turns; overlapping tracks build a uniform layer"],["Bond","The pool solidifies fused to the substrate — a metallurgical bond with a thin dilution zone"]],
+ set:"Reference setup on this line (course procedure)",sp:[["Laser power","3 kW, fibre-coupled diode"],["Traverse speed","1 m/min"],["Stand-off distance","13 mm"],["Powder","316L stainless steel, gravity feeder with carrier gas"],["Substrate","42CrMo4 steel shaft"],["Track width","≈ 4 mm, ~30 % overlap"]],
+ vs:"Laser cladding vs cold spray",rows:[["Bonding","Melting and fusion","Plastic deformation on impact"],["Heat input","High — heat-affected zone","Very low — no melting"],["Interface","Thin dilution zone","No dilution, mechanical bond"],["Typical issue","Distortion, porosity","Porosity, low ductility"]],
+ note:"Setup values are the standard parameters of the ENISE cladding line given in the course procedure."},
+fr:{v1:"Rechargement en cours",c1:"Le laser fond la surface de l'arbre pendant que la poudre 316L est soufflée dans le bain ; les étincelles sont des particules non fondues qui rebondissent.",v2:"Caméra bain fondu et CN",c2:"Vue en direct du bain fondu pour garder le procédé stable, à côté de la commande Siemens Sinumerik.",
+ how:"Principe du procédé",steps:[["Laser","Un laser à diode (classe 3 kW) fond un bain peu profond sur la pièce"],["Poudre","La poudre 316L est amenée par gaz inerte à travers une buse coaxiale dans le bain"],["Cordon","La tête avance pendant que l'arbre tourne ; les cordons recouvrants forment une couche uniforme"],["Liaison","Le bain se solidifie lié au substrat — liaison métallurgique avec une fine zone de dilution"]],
+ set:"Réglage de référence de la ligne (procédure du cours)",sp:[["Puissance laser","3 kW, diode fibrée"],["Vitesse d'avance","1 m/min"],["Distance de travail","13 mm"],["Poudre","Acier inoxydable 316L, distributeur gravitaire avec gaz porteur"],["Substrat","Arbre en acier 42CrMo4"],["Largeur de cordon","≈ 4 mm, recouvrement ~30 %"]],
+ vs:"Rechargement laser vs cold spray",rows:[["Liaison","Fusion","Déformation plastique à l'impact"],["Apport de chaleur","Élevé — zone affectée thermiquement","Très faible — pas de fusion"],["Interface","Fine zone de dilution","Pas de dilution, liaison mécanique"],["Défaut typique","Distorsion, porosité","Porosité, faible ductilité"]],
+ note:"Les valeurs de réglage sont les paramètres standard de la ligne de rechargement de l'ENISE indiqués dans la procédure du cours."}};
+function lcDash(){const t=LCT[L],vid=(s,p,h,c)=>`<figure class="m-0"><div class="rounded-xl overflow-hidden" style="background:#000;border:1px solid var(--line)"><video src="lc-${s}.mp4" poster="lc-${p}.jpg" autoplay muted loop playsinline class="w-full block" style="max-height:440px;object-fit:cover;object-position:50% ${s==="meltpool"?"20%":"60%"}" aria-label="${esc(h)}"></video></div><figcaption class="mt-2"><b class="text-sm">${esc(h)}</b><span class="block text-xs" style="color:var(--mute)">${esc(c)}</span></figcaption></figure>`;
+ return `<div class="grid grid-cols-2 gap-3">${vid("cladding","cladding",t.v1,t.c1)}${vid("meltpool","meltpool",t.v2,t.c2)}</div>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.how)}</h5><div class="grid sm:grid-cols-4 gap-2">${t.steps.map(([h,c],i)=>`<div class="rounded-xl p-3" style="background:var(--panel2);border:1px solid var(--line)"><div class="flex items-center gap-2"><span class="mono text-xs w-6 h-6 grid place-items-center rounded-full" style="background:rgba(251,113,133,.18);color:#fda4af">${i+1}</span><b class="text-sm">${esc(h)}</b></div><p class="text-xs mt-2 m-0" style="color:var(--mute)">${esc(c)}</p></div>`).join("")}</div>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.set)}</h5><dl class="grid sm:grid-cols-2 gap-1.5 m-0">${t.sp.map(([k,v])=>`<div class="grid grid-cols-[minmax(0,130px)_minmax(0,1fr)] gap-3 rounded-lg px-3 py-2 text-sm" style="background:var(--panel2)"><dt style="color:var(--mute)">${esc(k)}</dt><dd class="m-0">${esc(v)}</dd></div>`).join("")}</dl>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.vs)}</h5><div class="scroll"><table class="w-full text-sm" style="border-collapse:separate;border-spacing:0 4px"><thead><tr style="color:var(--mute)"><th class="text-left font-medium px-3"></th><th class="text-left font-medium px-3">${L==="fr"?"Rechargement laser":"Laser cladding"}</th><th class="text-left font-medium px-3">Cold spray</th></tr></thead><tbody>${t.rows.map(r=>`<tr style="background:var(--panel2)"><td class="px-3 py-2" style="color:var(--mute)">${esc(r[0])}</td><td class="px-3 py-2">${esc(r[1])}</td><td class="px-3 py-2">${esc(r[2])}</td></tr>`).join("")}</tbody></table></div>
+ <p class="text-xs mt-3" style="color:var(--mute)">${esc(t.note)}</p>`}
+
+/* ---------------- WELD DASHBOARD ---------------- */
+const WDT={en:{stats:[["35 passes","manual metal arc welding in a 60° V-groove, 25 mm plates"],["7.5–9 kJ/cm","heat input per pass"],["≈ 5 s","cooling from 800 to 500 °C (≈ 60 °C/s) — fast enough for non-equilibrium phases"],["3 % Nital","etchant: nitric acid in ethanol, 5–10 s"]],
+ dg:"The weld in cross-section",dgc:"Each new pass reheats the one before it, so the weld metal ends up as a patchwork of as-welded and reheated zones.",
+ prep:"Sample preparation I carried out",steps:[["P1000","flatten, remove resin and oxide"],["P2500","refine the scratch pattern"],["P4000","near-mirror finish"],["3 µm diamond","remove SiC scratches"],["1 µm diamond","mirror polish"],["Nital 3 %","5–10 s, stop at first darkening"]],
+ tips:["Sample turned 90° between papers to check every previous scratch was gone","Ethanol, not water, between steps to avoid oxidation","Result: flat, scratch-free surface; V-shaped weld, HAZ and base metal visible by eye"],
+ zones:"What each zone looks like under the microscope",zh:["Zone","Thermal history","Microstructure"],
+ zr:[["As-welded (root, pass cores)","Cooled from liquid, never reheated","Pro-eutectoid ferrite on prior-austenite boundaries + acicular ferrite"],["Coarse-grained reheated zone","0–800 µm from the next pass, reheated above ≈ 1100 °C","Same two phases, but rounded instead of columnar grains"],["Fine-grained reheated zone","800–1600 µm from the next pass, lower peak temperature","Polygonal ferrite with cementite at grain boundaries"],["Base metal (P265GH)","Rolled plate, only heated near the fusion line","Banded ferrite–pearlite"]],
+ next:"Next stage: optical microscopy — grain size in the base metal and fine-grained zone, and the fraction of pro-eutectoid vs acicular ferrite in the columnar weld metal.",
+ note:"Weld data (passes, heat input, cooling time, zone widths) from the material dossier provided for the lab."},
+fr:{stats:[["35 passes","soudage à l'électrode enrobée dans un chanfrein en V de 60°, tôles de 25 mm"],["7,5–9 kJ/cm","énergie de soudage par passe"],["≈ 5 s","refroidissement de 800 à 500 °C (≈ 60 °C/s) — assez rapide pour des phases hors équilibre"],["Nital 3 %","réactif : acide nitrique dans l'éthanol, 5–10 s"]],
+ dg:"La soudure en coupe",dgc:"Chaque nouvelle passe réchauffe la précédente : le métal fondu devient une mosaïque de zones brutes de soudage et réchauffées.",
+ prep:"La préparation d'échantillon que j'ai réalisée",steps:[["P1000","planéité, retrait résine et oxyde"],["P2500","affiner les rayures"],["P4000","quasi-miroir"],["Diamant 3 µm","éliminer les rayures SiC"],["Diamant 1 µm","poli miroir"],["Nital 3 %","5–10 s, arrêt au premier assombrissement"]],
+ tips:["Échantillon tourné de 90° entre chaque papier pour vérifier l'élimination des rayures précédentes","Éthanol, et non eau, entre les étapes pour éviter l'oxydation","Résultat : surface plane sans rayure ; soudure en V, ZAT et métal de base visibles à l'œil nu"],
+ zones:"À quoi ressemble chaque zone au microscope",zh:["Zone","Histoire thermique","Microstructure"],
+ zr:[["Brut de soudage (racine, cœur des passes)","Refroidi depuis le liquide, jamais réchauffé","Ferrite proeutectoïde aux anciens joints austénitiques + ferrite aciculaire"],["Zone réchauffée à gros grains","0–800 µm de la passe suivante, réchauffée au-dessus de ≈ 1100 °C","Mêmes deux phases, mais grains arrondis au lieu de colonnaires"],["Zone réchauffée à grains fins","800–1600 µm de la passe suivante, température maximale plus basse","Ferrite polygonale avec cémentite aux joints de grains"],["Métal de base (P265GH)","Tôle laminée, chauffée seulement près de la ligne de fusion","Ferrite–perlite en bandes"]],
+ next:"Étape suivante : microscopie optique — taille de grain dans le métal de base et la zone à grains fins, et fraction de ferrite proeutectoïde et aciculaire dans le métal fondu colonnaire.",
+ note:"Données de soudage (passes, énergie, temps de refroidissement, largeurs de zones) issues du dossier matériau fourni pour le TP."}};
+function weldDash(){const t=WDT[L];
+ return `<div class="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-5">${t.stats.map(([v,l])=>`<div class="rounded-xl p-3" style="background:var(--panel2);border:1px solid var(--line)"><div class="disp font-extrabold text-[clamp(18px,2.2vw,24px)]" style="color:var(--hot)">${esc(v)}</div><div class="text-xs mt-1" style="color:var(--mute)">${esc(l)}</div></div>`).join("")}</div>
+ <h5 class="disp font-bold mb-2">${esc(t.dg)}</h5><img src="weld-diagram.svg" alt="${esc(t.dg)}" class="w-full rounded-xl" style="border:1px solid var(--line)"><p class="text-xs mt-1" style="color:var(--mute)">${esc(t.dgc)}</p>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.prep)}</h5>
+ <div class="grid grid-cols-3 lg:grid-cols-6 gap-2">${t.steps.map(([h,c],i)=>`<div class="relative rounded-xl p-3" style="background:var(--panel2);border:1px solid ${i===5?"rgba(125,211,252,.5)":"var(--line)"}"><div class="h-1.5 rounded-full mb-2" style="background:linear-gradient(90deg,${i===5?"#7dd3fc,#7dd3fc":"#ff9f43,#7dd3fc"});width:${30+i*14}%"></div><b class="text-sm">${esc(h)}</b><span class="block text-xs mt-1" style="color:var(--mute)">${esc(c)}</span></div>`).join("")}</div>
+ <ul class="mt-3 space-y-1.5">${t.tips.map(x=>`<li class="flex gap-2 text-sm"><span style="color:var(--hot)">▸</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ul>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.zones)}</h5>
+ <div class="scroll"><table class="w-full text-sm stack" style="border-collapse:separate;border-spacing:0 4px"><thead><tr style="color:var(--mute)">${t.zh.map(h=>`<th class="text-left font-medium px-3">${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.zr.map(r=>`<tr style="background:var(--panel2)"><td class="px-3 py-2 font-semibold">${esc(r[0])}</td><td class="px-3 py-2" style="color:#e7e5e4">${esc(r[1])}</td><td class="px-3 py-2" style="color:#e7e5e4">${esc(r[2])}</td></tr>`).join("")}</tbody></table></div>
+ <p class="mt-4 rounded-lg p-3 text-sm" style="background:rgba(125,211,252,.08);border:1px solid rgba(125,211,252,.35);color:#e7e5e4">${esc(t.next)}</p>
+ <p class="text-xs mt-3" style="color:var(--mute)">${esc(t.note)}</p>`}
+
+/* ---------------- HIP DASHBOARD ---------------- */
+const HPT={en:{sel:"Material selection (Granta EduPack)",funnel:[["Metals universe","brief required a metallic alloy"],["Screening limits","E ≥ 200 GPa · ≥ 300 HV · σy ≥ 500 MPa · excellent in salt water and weak acids/alkalis"],["3 families left","stainless steels · titanium alloys · CoCrMo"],["CoCr28Mo retained","ISO 5832-12 / ASTM F1537 — Ti rubs too much, stainless scratches and wears the liner"]],
+ route:"Process route — one set-up on an Okuma MULTUS B200II turn–mill centre",steps:["Cut-off from bar","Rough turning to ≈ Ø34.5 mm","Taper bore","Semi-finish turning","Finish turning","Grinding & polishing","Cleaning & heat treatment","Passivation"],
+ acc:"What we specified — and how to measure it",ah:["Parameter","Acceptance","Why","Measured by"],
+ ar:[["Roughness","Ra ≤ 0.02 µm","Low friction, little wear debris","White-light interferometry / confocal"],["Roundness","≤ 5 µm","Even contact pressure, no micro-pitting","Roundness tester"],["Diameter","Ø32 mm ± 5 µm","Fit with liner and taper","CMM"],["Residual stress","+200 to −500 MPa","No surface cracking","X-ray diffraction"],["Subsurface","No cracks, uniform carbides","No fatigue-crack initiation","Optical microscopy, SEM, eddy current"]],
+ key:"Key takeaway",kt:"The alloy's fatigue strength (≈ 266 MPa at 10⁷ cycles) is not what limits the implant — surface integrity is. Roughness, tensile residual stresses from bad grinding and carbide clusters all start fatigue cracks, so the finishing steps and their checks decide the implant's life.",
+ note:"Design and manufacturing study — values are targets and literature/supplier data, not measurements on a produced part."},
+fr:{sel:"Sélection du matériau (Granta EduPack)",funnel:[["Univers des métaux","le cahier des charges imposait un alliage métallique"],["Limites de tri","E ≥ 200 GPa · ≥ 300 HV · Re ≥ 500 MPa · excellente tenue en eau salée et acides/bases faibles"],["3 familles restantes","aciers inoxydables · alliages de titane · CoCrMo"],["CoCr28Mo retenu","ISO 5832-12 / ASTM F1537 — le Ti frotte trop, l'inox se raye et use l'insert"]],
+ route:"Gamme — un seul montage sur centre de tournage-fraisage Okuma MULTUS B200II",steps:["Tronçonnage de la barre","Ébauche à ≈ Ø34,5 mm","Alésage du cône","Demi-finition","Finition","Rectification et polissage","Nettoyage et traitement thermique","Passivation"],
+ acc:"Ce que nous avons spécifié — et comment le mesurer",ah:["Paramètre","Acceptation","Pourquoi","Mesuré par"],
+ ar:[["Rugosité","Ra ≤ 0,02 µm","Faible frottement, peu de débris","Interférométrie en lumière blanche / confocal"],["Circularité","≤ 5 µm","Pression de contact uniforme, pas de micro-piqûres","Machine de circularité"],["Diamètre","Ø32 mm ± 5 µm","Ajustement avec l'insert et le cône","MMT"],["Contraintes résiduelles","+200 à −500 MPa","Pas de fissuration en surface","Diffraction des rayons X"],["Sous-couche","Sans fissure, carbures uniformes","Pas d'amorçage de fissure de fatigue","Microscopie optique, MEB, courants de Foucault"]],
+ key:"À retenir",kt:"Ce n'est pas la résistance en fatigue de l'alliage (≈ 266 MPa à 10⁷ cycles) qui limite l'implant, mais l'intégrité de surface. Rugosité, contraintes résiduelles de traction dues à une mauvaise rectification et amas de carbures amorcent les fissures : la finition et ses contrôles décident de la durée de vie.",
+ note:"Étude de conception et de fabrication — valeurs cibles et données de la littérature et du fournisseur, pas de mesures sur une pièce produite."}};
+function hipDash(){const t=HPT[L];
+ return `<figure class="m-0 mb-5"><img src="hip-parts.jpg" alt="Total hip prosthesis and CoCrMo femoral heads" class="w-full rounded-xl" style="border:1px solid var(--line)"><figcaption class="text-xs mt-1" style="color:var(--mute)">${L==="fr"?"Prothèse totale de hanche et têtes fémorales en CoCrMo (images de référence de fabricants, reprises dans notre rapport)":"Total hip prosthesis and CoCrMo femoral heads (manufacturer reference images used in our report)"}</figcaption></figure><img src="hip-cover.jpg" alt="" class="w-full rounded-xl mb-5" style="border:1px solid var(--line)">
+ <h5 class="disp font-bold mb-3">${esc(t.sel)}</h5><div class="space-y-2">${t.funnel.map(([h,c],i)=>`<div class="rounded-xl p-3 mx-auto" style="width:${100-i*8}%;background:${i===3?"rgba(255,159,67,.14)":"var(--panel2)"};border:1px solid ${i===3?"rgba(255,159,67,.5)":"var(--line)"}"><b class="text-sm" style="${i===3?"color:var(--hot)":""}">${esc(h)}</b><span class="block text-xs mt-0.5" style="color:var(--mute)">${esc(c)}</span></div>`).join("")}</div>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.route)}</h5><div class="flex flex-wrap gap-2">${t.steps.map((x,i)=>`<span class="chip" style="color:var(--ink)"><b class="mono" style="color:var(--hot)">${i+1}</b>${esc(x)}</span>`).join("")}</div>
+ <h5 class="disp font-bold mt-6 mb-3">${esc(t.acc)}</h5><div class="scroll"><table class="w-full text-sm stack" style="border-collapse:separate;border-spacing:0 4px"><thead><tr style="color:var(--mute)">${t.ah.map(h=>`<th class="text-left font-medium px-3">${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.ar.map(r=>`<tr style="background:var(--panel2)"><td class="px-3 py-2 font-semibold">${esc(r[0])}</td><td class="px-3 py-2 mono" style="color:var(--hot)">${esc(r[1])}</td><td class="px-3 py-2" style="color:#e7e5e4">${esc(r[2])}</td><td class="px-3 py-2" style="color:#e7e5e4">${esc(r[3])}</td></tr>`).join("")}</tbody></table></div>
+ <div class="mt-5 rounded-xl p-4" style="background:rgba(255,159,67,.08);border:1px solid rgba(255,159,67,.35)"><b class="text-sm" style="color:var(--hot)">${esc(t.key)}</b><p class="text-sm mt-1 m-0" style="color:#e7e5e4">${esc(t.kt)}</p></div>
+ <p class="text-xs mt-3" style="color:var(--mute)">${esc(t.note)}</p>`}
+/* ---------------- MODAL ---------------- */
+let openId=null;const dlg=$("#modal");
+function renderModal(id){const p=P.find(x=>x.id===id);if(!p)return;openId=id;
+ $("#m-hero").innerHTML=(p.img?`<img src="${p.img}" alt="" class="absolute inset-0 w-full h-full object-cover opacity-60">`:"")+`<div class="absolute inset-0" style="background:linear-gradient(transparent 10%,var(--panel))"></div><div class="absolute left-5 right-16 bottom-4 sm:left-8"><div class="text-sm" style="color:var(--steel)">${esc(p.org)} · ${esc(p.year)}</div><h3 id="m-title" class="disp font-extrabold text-[clamp(22px,3vw,30px)] leading-tight">${esc(p.title[L])}</h3></div>`;
+ const sec=(ic,k,html)=>`<section class="mb-7"><h4 class="disp font-bold flex items-center gap-2 mb-3"><i data-lucide="${ic}" class="w-5 h-5" style="color:var(--hot)"></i>${esc(t(k))}</h4>${html}</section>`;
+ const li=a=>`<ul class="space-y-2">${a.map(x=>`<li class="flex gap-2"><span style="color:var(--hot)">▸</span><span style="color:#e7e5e4">${esc(x)}</span></li>`).join("")}</ul>`;
+ const media=p.embed?`<div class="aspect-video rounded-xl overflow-hidden" style="border:1px solid var(--line)"><iframe src="${esc(p.embed)}" class="w-full h-full" allowfullscreen loading="lazy" title="${esc(p.title[L])}"></iframe></div>`
+  :`<div class="aspect-[16/7] rounded-xl grid place-items-center text-center p-6" style="border:2px dashed var(--line);background:var(--panel2)"><div><i data-lucide="image-plus" class="w-9 h-9 mx-auto" style="color:var(--steel)"></i><div class="font-semibold mt-2">${esc(t("m_ph"))}</div><div class="text-sm mt-1" style="color:var(--mute)">${esc(t("m_ph2"))}</div></div></div>`;
+ $("#m-body").innerHTML=sec("target","m_ctx",`<p style="color:#e7e5e4">${esc(p.ctx[L])}</p>`)+
+  sec("wrench","m_meth",`<div class="flex flex-wrap gap-2">${p.tools.map(x=>`<span class="chip" style="color:var(--steel);border-color:rgba(255,159,67,.35)"><i data-lucide="check" class="w-3.5 h-3.5"></i>${esc(x)}</span>`).join("")}</div>`)+
+  (p.act[L].length?sec(p.id==="topo"?"target":"hammer",p.id==="topo"?"obj_t":"m_act",li(p.act[L])):"")+sec("trending-up","m_res",(p.dash==="sf"?sfDash():p.dash==="tw"?twDash():p.dash==="fem"?femDash():p.dash==="tri"?triDash():p.dash==="bib"?bibDash():p.dash==="lc"?lcDash():p.dash==="weld"?weldDash():p.dash==="hip"?hipDash():"")+li(p.res[L])+(p.lab?`<button class="btn btn-hot mt-5" data-lab="${p.lab}"><i data-lucide="sliders-horizontal" class="w-4 h-4"></i>${esc(t("m_lab"))}</button>`:""))+
+  (p.dash?"":sec("image","m_media",media));icons();sfro.disconnect();if(p.dash==="sf"){const sv=document.getElementById("sf-chart");if(sv){sfro.observe(sv);requestAnimationFrame(sfChart)}}if(p.dash==="tri"){const e=document.getElementById("tri-chart");if(e)sfro.observe(e);requestAnimationFrame(triChart)}if(p.dash==="tw"){["tw-chart","tw-kc"].forEach(id=>{const e=document.getElementById(id);if(e)sfro.observe(e)});requestAnimationFrame(twCharts)}}
+$("#m-close").addEventListener("click",()=>dlg.close());
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener("close",()=>openId=null);
+
+/* ---------------- ONGOING RESEARCH: MICROSCOPE EXPLORER ---------------- */
+const MIC=[
+{id:"om",c:"#7dd3fc",d3:0,rng:[300,1000],blur:2.2,noise:0,mode:"refl",
+ n:{en:"Optical microscope",fr:"Microscope optique"},
+ pr:{en:"Reflected visible light magnified by objective lenses.",fr:"Lumière visible réfléchie, agrandie par des objectifs."},
+ lat:"≈ 0.3 – 1 µm",ver:{en:"— (2D image)",fr:"— (image 2D)"},
+ s:{en:"Fast, simple, colour image, large field of view",fr:"Rapide, simple, image couleur, grand champ"},
+ l:{en:"No height information; limited by light diffraction",fr:"Pas d'information de hauteur ; limité par la diffraction"}},
+{id:"fv",c:"#7dd3fc",d3:1,rng:[500,3000],blur:2.8,noise:.035,mode:"height",
+ n:{en:"Focus variation microscope",fr:"Microscope à variation focale"},
+ pr:{en:"Scans the focal plane in z and keeps, for each pixel, the height where the image is sharpest.",fr:"Balaye le plan focal en z et retient, pour chaque pixel, la hauteur où l'image est la plus nette."},
+ lat:"≈ 0.5 – 3 µm",ver:{en:"≈ 10 nm – 1 µm",fr:"≈ 10 nm – 1 µm"},
+ s:{en:"Rough surfaces, steep flanks, true-colour 3D",fr:"Surfaces rugueuses, flancs raides, 3D en couleurs réelles"},
+ l:{en:"Needs local contrast; struggles on polished, mirror-like surfaces",fr:"Nécessite du contraste local ; difficile sur surfaces polies miroir"}},
+{id:"cf",c:"#ff9f43",d3:1,rng:[150,500],blur:1,noise:.008,mode:"height",
+ n:{en:"Confocal microscope",fr:"Microscope confocal"},
+ pr:{en:"A pinhole rejects out-of-focus light; scanning in z gives the height of each point.",fr:"Un diaphragme rejette la lumière hors focus ; le balayage en z donne la hauteur de chaque point."},
+ lat:"≈ 0.15 – 0.5 µm",ver:{en:"≈ 1 – 10 nm",fr:"≈ 1 – 10 nm"},
+ s:{en:"High vertical resolution, non-contact, fast areal measurement",fr:"Haute résolution verticale, sans contact, mesure surfacique rapide"},
+ l:{en:"Steep slopes, transparent or very dark surfaces lose signal",fr:"Pentes raides, surfaces transparentes ou très sombres : perte de signal"}},
+{id:"sem",c:"#c084fc",d3:0,rng:[1,10],blur:1,noise:0,mode:"sem",
+ n:{en:"Scanning electron microscope (SEM)",fr:"Microscope électronique à balayage (MEB)"},
+ pr:{en:"A focused electron beam scans the surface; emitted electrons build the image.",fr:"Un faisceau d'électrons focalisé balaye la surface ; les électrons émis forment l'image."},
+ lat:"≈ 1 – 10 nm",ver:{en:"— (2D; 3D only by stereo pairs)",fr:"— (2D ; 3D seulement par stéréo)"},
+ s:{en:"Very high magnification, large depth of field, chemistry with EDS",fr:"Très fort grossissement, grande profondeur de champ, chimie par EDS"},
+ l:{en:"Vacuum, conductive samples, no direct height measurement",fr:"Vide, échantillons conducteurs, pas de mesure directe de hauteur"}},
+{id:"afm",c:"#fb7185",d3:1,rng:[1,20],blur:0,noise:.004,mode:"height",zoom:3,
+ n:{en:"Atomic force microscope (AFM)",fr:"Microscope à force atomique (AFM)"},
+ pr:{en:"A sharp tip on a cantilever feels the surface; its deflection gives the height.",fr:"Une pointe fine sur un levier palpe la surface ; sa déflexion donne la hauteur."},
+ lat:"≈ 1 – 10 nm",ver:{en:"≈ 0.1 nm",fr:"≈ 0,1 nm"},
+ s:{en:"Sub-nanometre height resolution, true 3D",fr:"Résolution verticale sub-nanométrique, vraie 3D"},
+ l:{en:"Tiny scan area (≤ ~100 µm), slow, tip shape distorts steep features",fr:"Petite zone (≤ ~100 µm), lent, la forme de la pointe déforme les reliefs raides"}}];
+let mic="cf";
+const OBJ={en:[["Benchmark five instruments", "Measure the same reference surfaces with optical, focus-variation, confocal, SEM and AFM microscopes."], ["Map each instrument's limits", "Find where lateral resolution, noise and steep slopes make areal parameters (Sa, Sq, Sdr…) drift from the true surface."], ["Fast enough, accurate enough", "Define, for each surface type, the quickest instrument and settings (objective, field, sampling) that still give results within the accuracy the application needs — so measurement time fits production or lab deadlines."], ["Selection guide", "Turn the results into a simple decision chart: which microscope, at which settings, for machined, ground, polished or coated surfaces."]],fr:[["Comparer cinq instruments", "Mesurer les mêmes surfaces de référence en microscopie optique, à variation focale, confocale, MEB et AFM."], ["Cartographier les limites de chacun", "Identifier quand la résolution latérale, le bruit et les pentes raides font dériver les paramètres surfaciques (Sa, Sq, Sdr…) de la surface réelle."], ["Assez rapide, assez précis", "Définir, pour chaque type de surface, l'instrument et les réglages les plus rapides (objectif, champ, échantillonnage) qui donnent encore la précision requise par l'application — pour que le temps de mesure tienne les délais de production ou de labo."], ["Guide de choix", "Traduire les résultats en un tableau de décision simple : quel microscope, avec quels réglages, pour des surfaces usinées, rectifiées, polies ou revêtues."]]};
+function renderObj(){const o=document.getElementById("res-obj");if(!o)return;o.innerHTML=OBJ[L].map(([h,c],i)=>`<div class="rounded-xl p-4 flex gap-3" style="background:${i===2?"rgba(255,159,67,.10)":"var(--panel2)"};border:1px solid ${i===2?"rgba(255,159,67,.5)":"var(--line)"}"><span class="mono text-sm flex-none w-7 h-7 grid place-items-center rounded-full" style="background:rgba(255,159,67,.15);color:var(--hot)">${i+1}</span><span><b class="text-[15px]">${esc(h)}</b>${i===2?`<i data-lucide="timer" class="inline w-4 h-4 ml-1 align-[-2px]" style="color:var(--hot)"></i>`:""}<span class="block text-sm mt-1" style="color:#e7e5e4">${esc(c)}</span></span></div>`).join("")}
+const MT={en:{lat:"Lateral resolution",ver:"Vertical resolution",pr:"Principle",s:"Strengths",l:"Limits",d2:"2D image",d3:"3D height map",z:"zoomed — AFM scans a much smaller area",no2d:"2D image: no height profile"},
+ fr:{lat:"Résolution latérale",ver:"Résolution verticale",pr:"Principe",s:"Atouts",l:"Limites",d2:"Image 2D",d3:"Carte de hauteur 3D",z:"zoom — l'AFM balaye une zone bien plus petite",no2d:"Image 2D : pas de profil de hauteur"}};
+/* synthetic ground surface: grinding grooves + bumps + pits + fine roughness */
+let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const vn=sc=>{const g=Math.ceil(400/sc)+3,r=Float32Array.from({length:g*g},rnd);return(x,y)=>{const gx=x/sc+1,gy=y/sc+1,i=gx|0,j=gy|0,fx=gx-i,fy=gy-j,sx=fx*fx*(3-2*fx),sy=fy*fy*(3-2*fy),a=r[j*g+i],b=r[j*g+i+1],c=r[(j+1)*g+i],d=r[(j+1)*g+i+1];return a+(b-a)*sx+(c-a)*sy+(a-b-c+d)*sx*sy}};
+const N1=vn(45),N2=vn(16),N3=vn(6),N4=vn(2.2),N5=vn(.8);
+const PITS=Array.from({length:7},()=>[rnd()*220,rnd()*220,5+rnd()*9]);
+const surf=(x,y,fine)=>{let h=.45*Math.sin(x*.42+2.6*N1(x,y))+.25*Math.sin(x*1.1+5*N2(x,y))+.5*N1(x,y)+.3*N2(x,y)+.15*N3(x,y)+.07*N4(x,y);
+ for(const[px,py,r]of PITS){const d2=(x-px)**2+(y-py)**2;h-=.9*Math.exp(-d2/(r*r))}
+ if(fine)h+=.05*N5(x,y);return h};
+const S=220;
+function boxBlur(a,r){if(r<.5)return a;const k=Math.round(r),o=new Float32Array(a.length),t=new Float32Array(a.length);
+ for(let pass=0;pass<2;pass++){const src=pass?t:a,dst=pass?o:t;for(let y=0;y<S;y++)for(let x=0;x<S;x++){let s=0,n=0;for(let d=-k;d<=k;d++){const xx=pass?x:x+d,yy=pass?y+d:y;if(xx<0||yy<0||xx>=S||yy>=S)continue;s+=src[yy*S+xx];n++}dst[y*S+x]=s/n}}return o}
+const turbo=t=>[.13572138+t*(4.6153926+t*(-42.66032258+t*(132.13108234+t*(-152.94239396+t*59.28637943)))),.09140261+t*(2.19418839+t*(4.84296658+t*(-14.18503333+t*(4.27729857+t*2.82956604)))),.1066733+t*(12.64194608+t*(-60.58204836+t*(110.36276771+t*(-89.90310912+t*27.34824973))))].map(v=>Math.max(0,Math.min(255,v*255)));
+const cache={};
+function measure(m){if(cache[m.id])return cache[m.id];const z=m.zoom||1,off=z>1?S*(1-1/z)/2:0,truth=new Float32Array(S*S);
+ for(let y=0;y<S;y++)for(let x=0;x<S;x++)truth[y*S+x]=surf(off+x/z,off+y/z,z>1);
+ let h=boxBlur(boxBlur(truth,m.blur),m.blur*.6);
+ if(m.noise){seed=11;h=h.map(v=>v+(rnd()-.5)*2*m.noise*3)}
+ return cache[m.id]={truth,h}}
+function drawMap(){const m=MIC.find(x=>x.id===mic),{h,truth}=measure(m),cv=$("#mic-map"),ctx=cv.getContext("2d"),img=ctx.createImageData(S,S);
+ let lo=Infinity,hi=-Infinity;for(const v of h){if(v<lo)lo=v;if(v>hi)hi=v}
+ for(let y=0;y<S;y++)for(let x=0;x<S;x++){const i=y*S+x,v=(h[i]-lo)/(hi-lo),dx=(h[y*S+Math.min(S-1,x+1)]-h[y*S+Math.max(0,x-1)]),dy=(h[Math.min(S-1,y+1)*S+x]-h[Math.max(0,y-1)*S+x]);
+  const sh=Math.max(0,Math.min(1,.6-(dx*2.2+dy*2.2)*(m.zoom?1/m.zoom*2:1))),sl=Math.min(1,Math.hypot(dx,dy)*4);let c;
+  if(m.mode==="height"){const t=turbo(v);c=t.map(q=>q*(.62+.5*sh))}
+  else if(m.mode==="refl"){const g=150+100*(sh-.5)+30*(v-.5);c=[g*1.06,g*.98,g*.82]}
+  else{const g=70+110*Math.min(1,sl*.7)+70*sh;c=[g*.95,g*.93,g*1.06]}
+  img.data.set([...c.map(q=>Math.max(0,Math.min(255,q))),255],i*4)}
+ ctx.putImageData(img,0,0);
+ $("#mic-label").textContent=m.n[L];$("#mic-type").textContent=(m.d3?MT[L].d3:MT[L].d2)+(m.zoom?" · ×3":"");$("#mic-zoom").hidden=!m.zoom;$("#mic-zoom").textContent=MT[L].z;
+ const pc=$("#mic-prof"),W=pc.clientWidth,H=pc.clientHeight,dpr=window.devicePixelRatio||1;if(!W)return;pc.width=W*dpr;pc.height=H*dpr;const p=pc.getContext("2d");p.scale(dpr,dpr);p.clearRect(0,0,W,H);
+ $("#mic-col").style.color=m.c;
+ const row=S>>1,tr=Array.from({length:S},(_,x)=>truth[row*S+x]),me=Array.from({length:S},(_,x)=>h[row*S+x]),all=tr.concat(me),a=Math.min(...all),b=Math.max(...all),Y=v=>H-6-(v-a)/(b-a)*(H-12);
+ const line=(arr,col,w)=>{p.beginPath();arr.forEach((v,x)=>{const X=x/(S-1)*W;x?p.lineTo(X,Y(v)):p.moveTo(X,Y(v))});p.strokeStyle=col;p.lineWidth=w;p.stroke()};
+ if(m.d3){line(tr,"#6b6560",1.5);line(me,m.c,2)}else{p.fillStyle="#a8a29e";p.font="13px Inter,sans-serif";p.textAlign="center";p.fillText(MT[L].no2d,W/2,H/2)}}
+function renderMic(){const m=MIC.find(x=>x.id===mic);
+ $("#mic-list").innerHTML=MIC.map(x=>`<button class="flex items-center gap-3 text-left rounded-xl px-3 py-2.5 min-h-[48px] transition" data-mic="${x.id}" aria-pressed="${x.id===mic}" style="border:1px solid ${x.id===mic?x.c:"var(--line)"};background:${x.id===mic?x.c+"1f":"var(--panel2)"}"><span class="w-3 h-3 rounded-full flex-none" style="background:${x.c};box-shadow:0 0 10px ${x.c}"></span><span class="flex-1 font-medium">${esc(x.n[L])}</span><span class="mono text-xs" style="color:var(--mute)">${x.d3?"3D":"2D"}</span></button>`).join("");
+ const row=(k,v,wide)=>`<div class="rounded-lg p-3 ${wide?"col-span-2":""}" style="background:var(--panel2)"><dt class="text-xs" style="color:var(--mute)">${esc(MT[L][k])}</dt><dd class="m-0 text-[15px] ${k==="lat"||k==="ver"?"mono":""}" ${k==="lat"?`style="color:${m.c}"`:""}>${esc(v)}</dd></div>`;
+ $("#mic-spec").innerHTML=row("pr",m.pr[L],1)+row("lat",m.lat)+row("ver",m.ver[L])+row("s",m.s[L],1)+row("l",m.l[L],1);
+ const lg=v=>Math.log10(v)/4*100;
+ $("#mic-chart").innerHTML=MIC.map(x=>`<div class="flex items-center gap-3"><span class="w-[98px] sm:w-[168px] text-xs sm:text-sm truncate flex-none" style="color:${x.id===mic?"var(--ink)":"var(--mute)"}">${esc(x.n[L])}</span><div class="relative flex-1 h-4 rounded-full" style="background:var(--panel2)"><div class="absolute inset-y-0 rounded-full transition-all" style="left:${lg(x.rng[0])}%;width:${Math.max(3,lg(x.rng[1])-lg(x.rng[0]))}%;background:${x.c};opacity:${x.id===mic?1:.35};box-shadow:${x.id===mic?"0 0 14px "+x.c:"none"}"></div></div></div>`).join("");
+ drawMap()}
+const mro=new ResizeObserver(()=>drawMap());mro.observe($("#mic-prof"));
+
+/* ---------------- TYPEWRITER ---------------- */
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;let wi=0,ci=0,del=false,tmr;
+function type(){const words=T[L].typed,w=words[wi%words.length],el=$("#typed");
+ if(reduce){el.textContent=w;wi++;tmr=setTimeout(type,2500);return}
+ ci+=del?-1:1;el.textContent=w.slice(0,ci);let d=del?30:65;
+ if(!del&&ci===w.length){del=true;d=1600}else if(del&&ci===0){del=false;wi++;d=300}
+ tmr=setTimeout(type,d)}
+
+/* ---------------- REVEAL ---------------- */
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rio.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(el=>rio.observe(el));
+
+/* ---------------- EVENTS ---------------- */
+document.addEventListener("click",e=>{const f=e.target.closest("[data-c]");if(f){cat=f.dataset.c;renderFilters();renderGrid();return}
+ const o=e.target.closest("[data-open]");if(o){e.preventDefault();renderModal(o.dataset.open);if(!dlg.open)dlg.showModal();return}
+ const sk=e.target.closest("[data-sk]");if(sk){const on=sk.getAttribute("aria-pressed")!=="true";document.querySelectorAll(".sk").forEach(b=>b.setAttribute("aria-pressed","false"));const tip=$("#sk-tip");if(!on){tip.hidden=true;return}
+  sk.setAttribute("aria-pressed","true");let it;SK.forEach(g=>g.s.forEach(x=>{if(x.n===sk.dataset.sk)it=x}));tip.textContent=(L==="fr"?"Utilisé pour : ":"Used in: ")+it.u[L];tip.hidden=false;
+  const c=$("#skcard").getBoundingClientRect(),r=sk.getBoundingClientRect(),w=Math.min(260,c.width-24);let x=r.left-c.left;x=Math.max(12,Math.min(x,c.width-w-12));tip.style.left=x+"px";tip.style.top=(r.bottom-c.top+10)+"px";tip.style.setProperty("--ax",Math.max(10,r.left-c.left-x+14)+"px");return}
+ if(!e.target.closest("#sk-tip")){const t=$("#sk-tip");if(t&&!t.hidden){t.hidden=true;document.querySelectorAll(".sk").forEach(b=>b.setAttribute("aria-pressed","false"))}}
+ const sfb=e.target.closest("[data-sf]");if(sfb){const[k,v]=sfb.dataset.sf.split(":");sfSel[k]=v;renderModal(openId);return}
+ const twp=e.target.closest("[data-twp]");if(twp){twSel=+twp.dataset.twp;renderModal(openId);return}
+ const sfp=e.target.closest("[data-sfp]");if(sfp){sfPar=sfp.dataset.sfp;renderModal(openId);return}
+ const mb=e.target.closest("[data-mic]");if(mb){mic=mb.dataset.mic;renderMic();return}});
+function renderAll(){renderStatic();renderEdu();renderFilters();renderGrid();renderExp();document.querySelectorAll(".kbar").forEach(b=>kio.observe(b));renderSkills();renderMic();renderObj();icons()}
+function setLang(l){L=l;try{localStorage.setItem("lang",l)}catch(e){}renderAll();ci=0;del=false;clearTimeout(tmr);type();if(openId)renderModal(openId)}
+$("#b-en").addEventListener("click",()=>setLang("en"));$("#b-fr").addEventListener("click",()=>setLang("fr"));
+renderAll();type();
+if(reduce)document.querySelectorAll("#tiles svg").forEach(v=>{try{v.pauseAnimations()}catch(e){}});
+}
+</script>
+<script src="bg-bg.js"></script>
+<script>{const C={en:{profile:"Background: my measured profiles — turned vs belt-finished (confocal, LTDS)",grains:"Background: ferrite grains nucleating and growing (Johnson–Mehl)",blueprint:"Background: insert · multi-pass weld · femoral head",fem:"Background: my Abaqus models — chip formation & frictional heating",spray:"Background: cold-spray particles building a coating"},fr:{profile:"Fond : mes profils mesurés — tourné vs toilé (confocal, LTDS)",grains:"Fond : germination et croissance de grains de ferrite (Johnson–Mehl)",blueprint:"Fond : plaquette · soudure multipasse · tête fémorale",fem:"Fond : mes modèles Abaqus — formation du copeau et échauffement",spray:"Fond : particules cold spray formant un revêtement"}};const cap=document.getElementById("bgcap");const upd=()=>{const on=document.querySelector("#bgfx>div.on");if(!on)return;const l=document.documentElement.lang==="fr"?"fr":"en";cap.textContent=C[l][on.dataset.scene]||"";cap.style.opacity=1;clearTimeout(cap._t);cap._t=setTimeout(()=>cap.style.opacity=0,4500)};setTimeout(upd,1500);new MutationObserver(upd).observe(document.getElementById("bgfx"),{subtree:true,attributes:true,attributeFilter:["class"]});new MutationObserver(upd).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});}</script>
+</body>
+</html>

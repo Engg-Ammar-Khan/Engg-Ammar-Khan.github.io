@@ -1,6 +1,6 @@
 # Hi, I'm Ammar Khan 👋
 
-**MSc Sustainable Manufacturing & Advanced Technologies (SMAT) — M2**
+**MSc (Mechanics) Sustainable Manufacturing and Advanced Technologies (SMAT) — M2**
 École Centrale de Lyon (ENISE) · Mines Saint-Étienne, France
 
 🔎 **Looking for a 6-month end-of-studies internship (M2) in manufacturing & materials R&D — from February 2027 — France, Europe or Canada.**
