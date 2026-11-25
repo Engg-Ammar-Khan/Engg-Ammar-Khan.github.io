@@ -1,0 +1,19 @@
+coating,stage,instrument,file,Sa_um,Sq_um,Sz_um,Ssk,Sku,Sk_um,Spk_um,Svk_um,Sdr_pct,Sal_um,dominant_wavelength_um,field_x_um,field_y_um,spacing_um,non_measured_pct
+cold spray,belt finished,focus variation 10x,C-S_belt_finishing_20micron_01,0.4613,1.429,227.7,-98.28,12078.0,1.348,0.623,0.9599,0.8797,15.77,760.1,5943.0,1624.0,0.88,0.4626
+cold spray,belt finished,confocal,Cold_spray_Belt_finish_20micro_N1,0.1689,0.2462,6.272,-2.251,31.38,0.4781,0.2737,0.3518,2.669,4.501,805.7,828.4,621.3,0.6477,0.0
+cold spray,belt finished,confocal,Cold_spray_Belt_finish_20micro_N2,0.1632,0.2266,12.07,-0.3955,39.02,0.4831,0.2805,0.2613,2.602,2.515,423.3,828.4,621.3,0.6477,0.0
+cold spray,belt finished,confocal,Cold_spray_Belt_finish_20micro_N3,0.1704,0.3082,14.23,-11.58,315.2,0.473,0.2718,0.4026,2.888,8.194,293.3,828.4,621.3,0.6477,0.0
+cold spray,turned,focus variation 10x,C-S_turning_f0-2_vc210_ap-5_01,1.876,2.236,38.04,0.3406,2.535,5.671,2.105,1.134,2.076,39.73,200.0,5944.0,1624.0,0.88,0.4608
+cold spray,turned,confocal,Cold_spray_Turning_f0-2_Vc210_Ap0-5_N1,1.711,1.963,8.657,0.4758,1.932,3.544,3.043,0.2477,2.16,42.67,211.7,828.4,621.3,0.6477,0.0
+laser cladding,belt finished,confocal,Laser_cladding_Belt_finishing_20micron_N1,0.1429,0.1935,4.806,-0.3118,6.294,0.4028,0.2301,0.265,1.962,2.508,427.7,828.4,621.3,0.6477,0.0
+laser cladding,belt finished,confocal,Laser_cladding_Belt_finishing_20micron_N2,0.1426,0.1889,3.183,-0.1741,5.194,0.4203,0.2145,0.2354,1.917,1.918,502.1,828.4,621.3,0.6477,0.0
+laser cladding,belt finished,confocal,Laser_cladding_Belt_finishing_20micron_N3,0.1433,0.1972,3.486,-0.5886,7.123,0.4092,0.2217,0.2912,1.885,3.858,611.1,828.4,621.3,0.6477,0.0
+laser cladding,belt finished,focus variation 10x,laser_belt finishing-20microns-01,0.5107,0.7043,55.79,7.53,458.4,1.559,0.7256,0.7455,0.944,12.1,1832.0,5944.0,1624.0,0.88,0.4638
+laser cladding,belt finished,focus variation 10x,laser_belt finishing-20microns-02,0.5066,0.6522,9.346,-0.06766,3.706,1.555,0.6917,0.739,0.8978,11.27,695.0,5944.0,1624.0,0.88,0.4744
+laser cladding,belt finished,focus variation 10x,laser_belt finishing-20microns-03,0.5109,0.66,12.14,-0.1648,4.15,1.564,0.6903,0.7654,0.91,11.24,1367.0,5943.0,1624.0,0.88,0.4597
+laser cladding,turned,confocal,Laser_cladding_turning_20micron_N1,1.687,1.993,9.245,0.2814,1.999,6.128,1.127,0.2959,2.203,42.69,212.1,828.4,621.3,0.6477,0.0
+laser cladding,turned,confocal,Laser_cladding_turning_20micron_N2,1.579,1.892,11.86,0.3157,2.243,5.386,1.45,0.4435,2.325,43.78,207.7,828.4,621.3,0.6477,0.0
+laser cladding,turned,confocal,Laser_cladding_turning_20micron_N3,1.623,1.914,8.559,0.2913,2.012,5.481,1.465,0.2648,2.049,43.08,206.6,828.4,621.3,0.6477,0.0
+laser cladding,turned,focus variation 10x,laser_turning_Vc210_f0-2_ap0-5_01,1.9,2.307,14.91,0.3017,2.31,6.175,1.916,1.03,2.444,40.49,200.0,5944.0,1624.0,0.88,0.4597
+laser cladding,turned,focus variation 10x,laser_turning_Vc210_f0-2_ap0-5_02,2.027,2.433,15.57,0.1334,2.187,6.863,1.456,1.167,2.635,40.86,200.0,5944.0,1624.0,0.88,0.4597
+laser cladding,turned,focus variation 10x,laser_turning_Vc210_f0-2_ap0-5_03,1.905,2.325,16.17,0.3142,2.331,5.947,2.136,1.183,2.67,39.53,200.0,7390.0,1624.0,0.88,0.519
