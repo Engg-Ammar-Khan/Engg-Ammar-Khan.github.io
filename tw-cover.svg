@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="DejaVu Sans,Inter,Arial,sans-serif">
+ <defs>
+  <radialGradient id="bg" cx="30%" cy="40%" r="80%"><stop offset="0" stop-color="#18324f"/><stop offset="1" stop-color="#0b1726"/></radialGradient>
+  <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8c27a"/><stop offset=".45" stop-color="#b89548"/><stop offset="1" stop-color="#7a5e26"/></linearGradient>
+  <linearGradient id="side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b5524"/><stop offset="1" stop-color="#3b2e12"/></linearGradient>
+  <linearGradient id="wear" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfd6de"/><stop offset=".5" stop-color="#f4f7fa"/><stop offset="1" stop-color="#aeb7c2"/></linearGradient>
+  <radialGradient id="hot" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff4c2"/><stop offset=".35" stop-color="#ffb347"/><stop offset="1" stop-color="#ff6a3d" stop-opacity="0"/></radialGradient>
+  <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a96a3"/><stop offset=".5" stop-color="#4b5664"/><stop offset="1" stop-color="#2a323c"/></linearGradient>
+ </defs>
+ <rect width="1200" height="600" fill="url(#bg)"/>
+ <g opacity=".12" stroke="#7cc4ff"><path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M200 0V600M400 0V600M600 0V600M800 0V600M1000 0V600" stroke-width=".8"/></g>
+ <!-- workpiece bar -->
+ <rect x="-20" y="380" width="520" height="150" rx="8" fill="url(#bar)"/>
+ <g stroke="#9aa6b4" stroke-opacity=".35"><path d="M20 385V525M50 385V525M80 385V525M110 385V525M140 385V525M170 385V525M200 385V525M230 385V525M260 385V525"/></g>
+ <!-- rhombic insert CNMG (80°), isometric -->
+ <g transform="translate(300 120)">
+  <polygon points="40,210 250,120 370,230 160,320" fill="url(#side)" transform="translate(0 34)"/>
+  <polygon points="40,210 160,320 160,354 40,244" fill="#4a3a17"/>
+  <polygon points="160,320 370,230 370,264 160,354" fill="#5c4920"/>
+  <polygon points="40,210 250,120 370,230 160,320" fill="url(#top)" stroke="#e8d79a" stroke-width="1.5"/>
+  <ellipse cx="205" cy="220" rx="42" ry="24" fill="#2a2210" stroke="#a88a3d" stroke-width="3"/>
+  <!-- chip breaker groove -->
+  <polygon points="70,210 250,132 268,148 88,226" fill="#a8873a" opacity=".6"/>
+  <!-- flank wear land on lower-left cutting edge -->
+  <polygon points="40,212 160,322 160,338 40,228" fill="url(#wear)"/>
+  <polygon points="40,212 160,322 160,327 40,217" fill="#ffffff" opacity=".8"/>
+  <!-- heat tint -->
+  <polygon points="40,228 160,338 160,346 40,236" fill="#6a7fd0" opacity=".55"/>
+  <circle cx="44" cy="214" r="38" fill="url(#hot)"/>
+ </g>
+ <!-- chips & sparks -->
+ <g fill="#ffb347"><circle cx="330" cy="300" r="4"/><circle cx="300" cy="270" r="3"/><circle cx="360" cy="262" r="2.5"/><circle cx="276" cy="312" r="2.5"/></g>
+ <path d="M345 330 q-40 -60 -10 -100 q30 -20 40 15" fill="none" stroke="#c9a46a" stroke-width="7" stroke-linecap="round"/>
+ <!-- label for VB -->
+ <g stroke="#7cc4ff" fill="#7cc4ff" font-size="20">
+  <line x1="410" y1="405" x2="520" y2="455" stroke-width="2"/>
+  <text x="525" y="465" stroke="none" font-weight="700">flank wear land VB</text>
+ </g>
+ <!-- inset wear curve -->
+ <g transform="translate(720 90)">
+  <rect width="430" height="300" rx="16" fill="#0b1726" fill-opacity=".85" stroke="#233d5c"/>
+  <text x="22" y="38" fill="#f1f5f9" font-size="20" font-weight="700">VB vs cutting time</text>
+  <g stroke="#233d5c"><line x1="40" y1="250" x2="410" y2="250"/><line x1="40" y1="190" x2="410" y2="190"/><line x1="40" y1="130" x2="410" y2="130"/><line x1="40" y1="70" x2="410" y2="70"/></g>
+  <rect x="40" y="60" width="44" height="190" fill="#f5c451" opacity=".14"/>
+  <polyline points="40,250 84,139 128,126 172,116 215,105 256,95 296,91 335,75 373,70 412,60" fill="none" stroke="#7cc4ff" stroke-width="10" stroke-opacity=".18"/>
+  <polyline points="40,250 84,139 128,126 172,116 215,105 256,95 296,91 335,75 373,70 412,60" fill="none" stroke="#7cc4ff" stroke-width="3.5"/>
+  <g fill="#0b1726" stroke="#7cc4ff" stroke-width="2.5"><circle cx="84" cy="139" r="5"/><circle cx="128" cy="126" r="5"/><circle cx="172" cy="116" r="5"/><circle cx="215" cy="105" r="5"/><circle cx="256" cy="95" r="5"/><circle cx="296" cy="91" r="5"/><circle cx="335" cy="75" r="5"/><circle cx="373" cy="70" r="5"/></g>
+  <text x="412" y="66" fill="#ff6a3d" font-size="26" font-weight="700" text-anchor="middle">✕</text>
+  <text x="22" y="282" fill="#94a3b8" font-size="15">0 → 0.155 mm in 13.3 min · edge chipped</text>
+ </g>
+ <g font-size="18" fill="#94a3b8"><text x="40" y="575">CNMG 120408-PR carbide · FGL200 gray cast iron · Vc 378 m/min · dry</text></g>
+</svg>

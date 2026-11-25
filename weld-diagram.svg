@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="Inter,Helvetica,Arial,sans-serif">
+ <defs>
+  <pattern id="band" width="800" height="7" patternUnits="userSpaceOnUse"><rect width="800" height="7" fill="#5d6b7a"/><rect width="800" height="2.5" fill="#6f7e8e"/></pattern>
+  <linearGradient id="haz" x1="0" x2="1"><stop offset="0" stop-color="#f5c451" stop-opacity=".0"/><stop offset="1" stop-color="#f5c451" stop-opacity=".55"/></linearGradient>
+  <linearGradient id="hazr" x1="1" x2="0"><stop offset="0" stop-color="#f5c451" stop-opacity=".0"/><stop offset="1" stop-color="#f5c451" stop-opacity=".55"/></linearGradient>
+ </defs>
+ <rect width="800" height="400" fill="#0d1b2a"/>
+ <!-- plates -->
+ <polygon points="20,70 245,70 330,310 20,310" fill="url(#band)"/>
+ <polygon points="555,70 780,70 780,310 470,310" fill="url(#band)"/>
+ <!-- HAZ bands -->
+ <polygon points="218,70 245,70 330,310 303,310" fill="url(#haz)"/>
+ <polygon points="555,70 582,70 497,310 470,310" fill="url(#hazr)"/>
+ <!-- weld metal multipass -->
+ <g stroke="#0d1b2a" stroke-width="2">
+  <path d="M330 310 L470 310 L470 330 Q400 350 330 330 Z" fill="#4fd1a5"/>
+  <path d="M330 310 Q365 278 400 310 Z" fill="#2fa983"/><path d="M400 310 Q435 278 470 310 Z" fill="#38b88f"/>
+  <path d="M313 262 Q345 236 378 262 L400 310 Q365 278 330 310 Z" fill="#7cc4ff"/>
+  <path d="M378 262 Q412 234 446 262 L470 310 Q435 278 400 310 Z" fill="#5fb0f0"/>
+  <path d="M446 262 L487 262 L470 310 Z" fill="#7cc4ff"/>
+  <path d="M296 214 Q330 188 364 214 L378 262 Q345 236 313 262 Z" fill="#a78bfa"/>
+  <path d="M364 214 Q398 186 432 214 L446 262 Q412 234 378 262 Z" fill="#9277f0"/>
+  <path d="M432 214 L504 214 L487 262 L446 262 Z" fill="#a78bfa"/>
+  <path d="M279 166 Q318 140 357 166 L364 214 Q330 188 296 214 Z" fill="#7cc4ff"/>
+  <path d="M357 166 Q398 138 440 166 L432 214 Q398 186 364 214 Z" fill="#5fb0f0"/>
+  <path d="M440 166 L521 166 L504 214 L432 214 Z" fill="#7cc4ff"/>
+  <path d="M262 118 Q300 92 340 118 L357 166 Q318 140 279 166 Z" fill="#a78bfa"/>
+  <path d="M340 118 Q385 90 430 118 L440 166 Q398 138 357 166 Z" fill="#9277f0"/>
+  <path d="M430 118 L538 118 L521 166 L440 166 Z" fill="#a78bfa"/>
+  <path d="M245 70 L555 70 L538 118 L430 118 Q385 90 340 118 L262 118 Z" fill="#7cc4ff"/>
+  <path d="M240 70 Q400 30 560 70 Z" fill="#4fd1a5"/>
+ </g>
+ <g fill="#f1f5f9" font-size="15" font-weight="700">
+  <text x="40" y="100">Base metal</text><text x="40" y="120" font-size="12" font-weight="400" fill="#c9d5e2">P265GH · banded ferrite–pearlite</text>
+  <text x="600" y="100">Base metal</text>
+  <text x="352" y="385" text-anchor="middle" fill="#4fd1a5">root pass (not reheated)</text>
+ </g>
+ <g stroke="#f5c451" fill="#f5c451" font-size="13" font-weight="700">
+  <line x1="300" y1="250" x2="180" y2="250"/><text x="40" y="255" stroke="none">HAZ (fusion → base)</text>
+  <line x1="395" y1="42" x2="395" y2="22" stroke="#4fd1a5"/><text x="402" y="22" stroke="none" fill="#4fd1a5">cap</text>
+ </g>
+ <!-- legend -->
+ <g transform="translate(600 170)" font-size="12" fill="#c9d5e2"><rect x="-12" y="-20" width="185" height="128" rx="10" fill="#0d1b2a" fill-opacity=".88" stroke="#233d5c"/>
+  <text x="0" y="0" fill="#f1f5f9" font-weight="700" font-size="13">Multi-pass weld metal</text>
+  <rect x="0" y="14" width="14" height="14" fill="#7cc4ff"/><text x="22" y="26">pass N</text>
+  <rect x="0" y="36" width="14" height="14" fill="#a78bfa"/><text x="22" y="48">pass N+1 — reheats N</text>
+  <text x="0" y="78" fill="#94a3b8">V-groove 60° · 25 mm plates</text>
+  <text x="0" y="96" fill="#94a3b8">35 MMAW passes + root</text>
+ </g>
+</svg>
