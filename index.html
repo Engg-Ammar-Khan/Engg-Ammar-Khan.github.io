@@ -148,7 +148,6 @@ input[type=range]{width:100%;accent-color:var(--hot);height:28px}
       <div class="lang flex items-center rounded-lg p-1" style="border:1px solid var(--line)" role="group" aria-label="Language">
         <button id="b-en" aria-pressed="true">EN</button><span style="color:var(--line)">|</span><button id="b-fr" aria-pressed="false">FR</button>
       </div>
-      <!-- REPLACE: put your CV PDF at Ammar_Khan_CV.pdf (same name) -->
       <a href="Ammar_Khan_CV.pdf" target="_blank" rel="noopener" class="btn btn-hot !min-h-[40px] !py-1.5 text-sm"><i data-lucide="download" class="w-4 h-4"></i><span data-i="cv">CV (PDF)</span></a>
     </div>
   </nav>
@@ -173,7 +172,6 @@ input[type=range]{width:100%;accent-color:var(--hot);height:28px}
 
     <div class="mt-7 inline-flex flex-wrap items-center gap-2 px-3 py-2 rounded-xl" style="background:rgba(125,211,252,.1);border:1px solid rgba(125,211,252,.35)">
       <span class="relative flex w-2.5 h-2.5"><span class="absolute inset-0 rounded-full animate-ping" style="background:var(--ok);opacity:.6"></span><span class="relative w-2.5 h-2.5 rounded-full" style="background:var(--ok)"></span></span>
-      <!-- REPLACE: start month / mobility live in the translations (key "avail") at the bottom of this file -->
       <span class="text-sm font-medium" style="color:#d6f0fd" data-i="avail">Available from February 2027 • 6-month M2 internship • Mobility: France, Europe &amp; Canada</span>
     </div>
 
@@ -411,7 +409,6 @@ input[type=range]{width:100%;accent-color:var(--hot);height:28px}
           <span class="chip"><i data-lucide="mic" class="w-3.5 h-3.5" style="color:var(--hot)"></i><span data-i="iise_k2">Public speaking</span></span>
           <span class="chip"><i data-lucide="calendar-check" class="w-3.5 h-3.5" style="color:var(--hot)"></i><span data-i="iise_k3">Event hosting</span></span>
         </div>
-        <!-- REPLACE: add 2–3 real figures here (members, events organised, guest speakers) once you have them -->
       </div>
     </article>
     <div class="grid sm:grid-cols-3 gap-3 mt-4" id="lead"></div>
@@ -427,8 +424,7 @@ input[type=range]{width:100%;accent-color:var(--hot);height:28px}
       <a href="mailto:ammarkhan5274@gmail.com" class="card lift p-4 flex items-center gap-3"><i data-lucide="mail" style="color:var(--hot)"></i><span class="break-all">ammarkhan5274@gmail.com</span></a>
       <a href="tel:+33753640118" class="card lift p-4 flex items-center gap-3"><i data-lucide="phone" style="color:var(--hot)"></i><span class="whitespace-nowrap">+33 7 53 64 01 18</span></a>
       <a href="https://www.linkedin.com/in/ammar-khan-a016a524a" target="_blank" rel="noopener" class="card lift p-4 flex items-center gap-3"><i data-lucide="linkedin" style="color:var(--hot)"></i><span>LinkedIn</span></a>
-      <!-- REPLACE: your GitHub username -->
-      <a href="https://github.com/REPLACE-USERNAME" target="_blank" rel="noopener" class="card lift p-4 flex items-center gap-3"><i data-lucide="github" style="color:var(--hot)"></i><span>GitHub</span></a>
+      <a href="https://github.com/Engg-Ammar-Khan" target="_blank" rel="noopener" class="card lift p-4 flex items-center gap-3"><i data-lucide="github" style="color:var(--hot)"></i><span>GitHub</span></a>
     </div>
     <div class="mt-6 flex items-center justify-center gap-2 text-sm" style="color:var(--mute)"><i data-lucide="map-pin" class="w-4 h-4"></i><span data-i="ct_loc">Saint-Étienne, France · open to relocation</span></div>
   </div>
@@ -494,7 +490,6 @@ const COURSES=[
 {i:"leaf",en:"Responsible engineering",fr:"Ingénierie responsable"}];
 const BE_COURSES={en:["Metal working processes","Materials engineering","Operations research","Instrumentation & control","Automation","Data science (Python)","Design of experiments"],fr:["Procédés de mise en forme","Génie des matériaux","Recherche opérationnelle","Instrumentation et contrôle","Automatisme","Data science (Python)","Plans d'expériences"]};
 const CATS=["all","mach","surf","mat"];
-/* REPLACE: for any project set img:"xxx.jpg" (a figure from your report) and/or embed:"https://..." (Loom/YouTube/GitHub embed) */
 const P=[
 {id:"superfin",cat:"surf",data:1,cover:"sf-cover.jpg",org:"LTDS · Centrale Lyon – ENISE",year:"Jan 2026",lab:null,img:"sf-LC-Belt-Finishing_Confocal.jpg",embed:"",dash:"sf",kc:[{en:"−90 % Sa after belt finishing",fr:"−90 % de Sa après toilage"},{en:"18 measurements",fr:"18 mesures"}],
  title:{en:"Superfinishing of functional surfaces — coatings measured by two microscopes",fr:"Superfinition de surfaces fonctionnelles — revêtements mesurés par deux microscopes"},
@@ -647,7 +642,6 @@ function interloopCard(e){const t=IL[L],li=e.b[L].map(x=>`<li class="flex gap-2"
      <a href="${RPT}#page=19" target="_blank" rel="noopener"><img src="report-p19.jpg" alt="Interloop Sustainability Report 2025, page 19" class="w-full rounded-lg" style="border:1px solid var(--line)"></a>
      <div><p class="text-sm" style="color:#e7e5e4">${esc(t.reptxt)}</p><div class="flex flex-wrap gap-2 mt-3"><a class="btn btn-hot text-sm" href="${RPT}#page=19" target="_blank" rel="noopener"><i data-lucide="book-open" class="w-4 h-4"></i>${esc(t.open19)}</a><a class="btn btn-line text-sm" href="${RPT}" target="_blank" rel="noopener"><i data-lucide="download" class="w-4 h-4"></i>${esc(t.full)}</a></div></div>
     </div>
-    <!-- REPLACE: Plant 6 ramp-up video — add it here once available -->
    </details>
   </div></article>`}
 const kio=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.style.width=x.target.dataset.w+"%";kio.unobserve(x.target)}}),{threshold:.5});
